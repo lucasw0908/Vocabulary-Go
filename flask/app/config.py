@@ -96,9 +96,6 @@ except IOError:
 
 
 # Load environment variables from .env file
-if not os.path.exists(os.path.join(BASEDIR, ".env")):
-    raise FileNotFoundError("The .env file is missing. Please ensure it exists in the app directory.")
-
 load_dotenv(os.path.join(BASEDIR, ".env"), override=True)
 
 SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
