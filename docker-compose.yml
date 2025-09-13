@@ -1,5 +1,6 @@
+version: "3.7"
+
 services:
- 
   flask:
     build: ./flask
     container_name: flask
@@ -21,8 +22,7 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - 5432:5432
- 
- 
+
   nginx:
     build: ./nginx
     container_name: nginx
