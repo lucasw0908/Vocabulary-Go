@@ -1,0 +1,336 @@
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #2a2a2a !important;
+}
+
+.table-striped tbody > tr:nth-child(even) > td,
+.table-striped tbody > tr:nth-child(even) > th {
+  background-color: #1f1f1f !important;
+}
+
+.table {
+  color: #e0e0e0 !important;
+}
+
+.table-bordered th, 
+.table-bordered td {
+  border-left: 1px solid #424242 !important;
+}
+
+.table th, 
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #424242 !important;
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border-color: #424242 !important;
+  border-style: solid !important;
+}
+
+.navbar-inner {
+  min-height: 40px;
+  padding: 0 20px;
+  background-color: #2a2a2a;
+  background-image: linear-gradient(to bottom, #383838, #2a2a2a);
+  border: 1px solid #424242;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  color: #e0e0e0;
+}
+
+.navbar .nav > li > a {
+  float: none;
+  padding: 10px 15px 10px;
+  color: #ccc;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+a {
+  color: #66aaff;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #99ccff;
+  text-decoration: underline;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #565656;
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .brand {
+  display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #ccc;
+  text-shadow: none;
+}
+
+@media (max-width: 979px) {
+  .navbar .brand {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0 0 0 -5px;
+  }
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #2a2a2a;
+  border: 1px solid #424242;
+  border-left-width: 0;
+  color: #ccc;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > li > span:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: #fff;
+  cursor: default;
+  background-color: #375a7f;
+  border: 1px solid #2a2a2a;
+  border-left-width: 1px;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+  color: #eee;
+  cursor: default;
+  background-color: #2a2a2a;
+  border: 1px solid #424242;
+  border-bottom-color: transparent;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  background-color: #1f1f1f !important;
+  border: 1px solid #424242;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.7);
+  color: #ccc;
+  transition: border 0.2s linear, box-shadow 0.2s linear;
+  border-radius: 4px;
+}
+
+
+.admin_index {
+    margin-left: 1.5vw;
+}
+
+.select2-drop {
+    background: #2a2a2a !important;    /* 深色背景 */
+    color: #eee !important;            /* 淺色文字 */
+    border: 1px solid #555 !important; /* 深色邊框 */
+    border-top: 0 !important;
+    border-radius: 0 0 4px 4px !important;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  .select2-results .select2-result-label {
+    color: #eee !important;            /* 選項文字淺色 */
+  }
+  
+  .select2-results li.select2-highlighted {
+    background-color: #444 !important; /* 滑鼠移上或選中背景色 */
+    color: #fff !important;
+  }
+
+  .select2-container .select2-choice {
+    background-color: #2a2a2a !important; /* 深灰背景 */
+    background-image: linear-gradient(to top, #2f2f2f 0%, #2a2a2a 50%) !important; /* 深色漸層 */
+    border: 1px solid #555 !important; /* 深灰邊框 */
+    color: #eee !important; /* 淺灰文字 */
+    text-shadow: none !important;
+}
+
+.select2-container .select2-choice {
+    background-color: #2a2a2a !important;
+    border: 1px solid #555 !important;
+    color: #eee !important;
+    text-shadow: none !important;
+}
+
+
+.dropdown-menu > li > a {
+    color: #ccc !important;       /* 淺灰文字 */
+    background-color: #2a2a2a !important;  /* 深色背景 */
+    padding: 8px 20px !important;  /* 調整內距更好看 */
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #fff !important;        /* 滑鼠移上變白 */
+    background-color: #3a3a3a !important; /* 較亮深色 */
+    text-decoration: none !important;
+}
+
+/* 全站 a 連結淺藍色，hover 時變亮 */
+a {
+    text-decoration: none !important;
+}
+
+a:hover,
+a:focus {
+    color: #99ccff !important;
+    text-decoration: underline !important;
+}
+
+
+/* 深色背景輸入框 */
+input,
+textarea,
+select,
+.uneditable-input {
+  background-color: #1f1f1f;
+  border: 1px solid #424242;
+  color: #ccc;
+  padding: 6px 8px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.7);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline-offset: 0;
+  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+/* 輸入框聚焦時變亮 */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus,
+.uneditable-input:focus {
+  border-color: #66aaff;
+  box-shadow: 0 0 5px 1px rgba(102,170,255,0.7);
+  background-color: #222222;
+  color: #eee;
+}
+
+/* placeholder 文字色 */
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+/* disabled 狀態 */
+input[disabled],
+textarea[disabled],
+select[disabled],
+.uneditable-input[disabled] {
+  background-color: #2a2a2a;
+  color: #666;
+  border-color: #333;
+  cursor: not-allowed;
+}
+
+/* readonly 狀態 */
+input[readonly],
+textarea[readonly] {
+  background-color: #2a2a2a;
+  color: #bbb;
+  border-color: #424242;
+  cursor: default;
+}
+
+/* Select 下拉箭頭深色 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #ccc 50%),
+    linear-gradient(135deg, #ccc 50%, transparent 50%),
+    linear-gradient(to right, #424242, #424242);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 25px) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+
+/* 滾動條深色 (可選) */
+textarea, select {
+  scrollbar-color: #424242 #1f1f1f;
+  scrollbar-width: thin;
+}
+
+textarea::-webkit-scrollbar,
+select::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+textarea::-webkit-scrollbar-track,
+select::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+textarea::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  border-radius: 4px;
+  border: 1px solid #1f1f1f;
+}
+
+.admin_index {
+  text-align: center;
+}

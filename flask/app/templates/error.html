@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section id="hero" class="hero section">
+
+  <div id="bg">
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center" data-aos="zoom-out">
+      <div class="col-xl-8 col-lg-10 text-center">
+        <div class="mb-4">
+          {% set level = 'danger' if code >= 500 else ('warning' if code >= 400 else 'success') %}
+          {% if level == 'success' %}
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+          {% elif level == 'warning' %}
+            <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 4rem;"></i>
+          {% else %}
+            <i class="bi bi-x-circle-fill text-danger" style="font-size: 4rem;"></i>
+          {% endif %}
+        </div>
+        <h1 style="color: #e4ebef;">{{ code }}</h1>
+        <p class="mt-2" style="color: #e4ebef; font-size: 1.1rem;">{{ message }}</p>
+        <div class="d-flex gap-2 justify-content-center mt-4">
+          <a href="/" class="btn btn-primary">返回主頁</a>
+          <a href="javascript:history.back()" class="btn btn-outline-light">回到上一頁</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endblock main %}

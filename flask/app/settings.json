@@ -1,0 +1,84 @@
+{
+    "server": {
+        "host": "localhost",
+        "port": 8080,
+        "debug": false
+    },
+    "database": {
+        "sqlite": "db.sqlite3",
+        "echo": false,
+        "pool_size": 5,
+        "pool_recycle": 3600
+    },
+    "security": {
+        "csrf_protection": true,
+        "password_hashing_algorithm": "bcrypt",
+        "password_hashing_rounds": 12,
+        "rate_limiting": {
+            "enabled": true,
+            "requests_per_minute": 60,
+            "requests_per_hour": 1000,
+            "requests_per_day": 10000,
+            "ban_duration_minutes": 30,
+            "whitelist_ips": ["127.0.0.1", "::1"]
+        }
+    },
+    "logging": {
+        "level": "DEBUG",
+        "format": "[{asctime}] {levelname} {name}: {message}",
+        "file": "app.log",
+        "max_bytes": 10485760,
+        "backup_count": 5
+    },
+    "api": {
+        "model_name": "gemini-2.0-flash",
+        "retry_attempts": 5,
+        "retry_delay": 1,
+        "generation_duration": 3600,
+        "max_sentences_per_word": 5
+    },
+    "smtp": {
+        "server": "smtp.gmail.com",
+        "port": 465,
+        "default_sender": "Vocabulary_Go"
+    },
+    "development": {
+        "admins": [
+            "lucasw0",
+            "ianwen_is_a_sheep"
+        ],
+        "always_update_dist": false,
+        "init_generator": true
+    },
+    "defaults": {
+        "supported_languages": ["en", "zh", "ja"],
+        "theme": "dark",
+        "items_per_page": 10,
+        "max_content_length": 16777216,
+        "max_avatar_size": 1048576,
+        "datetime_format": "%Y-%m-%d %H:%M:%S",
+        "library": "Welcome",
+        "locale": "en",
+        "avatar": "assets/img/default-avatar.png",
+        "avatar_folder": "assets/avatars/"
+    },
+    "social_links": {
+        "github": "/",
+        "discord": "/",
+        "twitter": "/",
+        "facebook": "/",
+        "instagram": "/"
+    },
+    "fallbackQuotes": [
+        "Words are the keys to understanding the world.",
+        "Read more, learn more.",
+        "Every word you learn is a step forward.",
+        "Language is the roadmap of a culture.",
+        "Learning a new language is like gaining a new soul.",
+        "Reading is dreaming with open eyes.",
+        "A reader lives a thousand lives before he dies.",
+        "The more you read, the more you know.",
+        "Great minds speak through great books.",
+        "Language shapes the way we think."
+    ]
+}

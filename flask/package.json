@@ -1,0 +1,29 @@
+{
+  "name": "vocabulary_website_project",
+  "version": "1.0.0",
+  "description": "A website for learning vocabulary",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasw0908/Vocabulary_Website_Project.git"
+  },
+  "author": "lucas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasw0908/Vocabulary_Website_Project/issues"
+  },
+  "homepage": "https://github.com/lucasw0908/Vocabulary_Website_Project#readme",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link href="{{ url_for('static', filename='assets/css/settings.css') }}" rel="stylesheet">
+
+<div id="bg">
+</div>
+
+<div class="settings-container">
+  <aside class="settings-sidebar">
+    <div class="avatar-section">
+      <div class="avatar-preview">
+        {% if current_user.avatar_url %}
+          <img src="{{ current_user.avatar_url }}" 
+               alt="{% trans %}User Avatar{% endtrans %}" 
+               onerror="this.onerror=null;this.src='{{ url_for('static', filename='assets/img/default-avatar.png') }}';">
+        {% else %}
+          <img src="{{ url_for('static', filename='assets/img/default-avatar.png') }}" 
+               alt="{% trans %}Default Avatar{% endtrans %}">
+        {% endif %}
+      </div>
+      
+      <h2 class="username">{{ current_user.username }}</h2>
+      <p class="join-date">{% trans %}Joined on:{% endtrans %} {{ current_user.created_at.strftime('%Y-%m-%d') }}</p>
+    </div>
+  </aside>
+
+  <section class="settings-main">
+    {# inline alerts removed; global modal now handles messages #}
+
+    <div class="settings-section">
+      <h3>{% trans %}Update Avatar{% endtrans %}</h3>
+      <form method="POST" action="{{ url_for('account_sys.settings') }}" enctype="multipart/form-data">
+        {{ avatar_form.hidden_tag() }}
+        <div class="form-group">
+          {{ avatar_form.avatar.label(class="form-label") }}
+          <div class="custom-file-upload">
+            {{ avatar_form.avatar(class="form-control custom-file-input", placeholder=_('Upload image...')) }}
+            <label for="{{ avatar_form.avatar.id }}" class="custom-file-label">
+              <span id="customFileName">{% trans %}Choose File{% endtrans %}</span>
+            </label>
+          </div>
+          {% if avatar_form.avatar.errors %}
+            {% for error in avatar_form.avatar.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <button type="submit" name="submit" value="avatar" class="btn btn-primary">
+          {{ avatar_form.submit.label }}
+        </button>
+      </form>
+    </div>
+    <div class="settings-section">
+      <h3>{% trans %}Bio{% endtrans %}</h3>
+      <form method="POST" action="{{ url_for('account_sys.settings') }}">
+        {{ bio_form.hidden_tag() }}
+        <div class="form-group">
+          {{ bio_form.bio.label }}
+          {{ bio_form.bio(class="form-control", placeholder=_('Write your bio... (max 75 characters)'), rows="4", maxlength="75") }}
+          {% if bio_form.bio.errors %}
+            {% for error in bio_form.bio.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+          {% endif %}
+          <small class="form-text text-muted">{% trans %}Up to 75 characters{% endtrans %}</small>
+        </div>
+        <button type="submit" name="submit" value="bio" class="btn btn-primary">
+          {{ bio_form.submit.label }}
+        </button>
+      </form>
+    </div>
+
+    <div class="settings-section">
+      <h3>{% trans %}Change Password{% endtrans %}</h3>
+      <form method="POST" action="{{ url_for('account_sys.settings') }}">
+        {{ password_form.hidden_tag() }}
+        <div class="form-group">
+          {{ password_form.current_password.label }}
+          {{ password_form.current_password(class="form-control", placeholder=_('Enter current password')) }}
+          {% if password_form.current_password.errors %}
+            {% for error in password_form.current_password.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+            {% endif %}
+          </div>
+        <div class="form-group">
+          {{ password_form.new_password.label }}
+          {{ password_form.new_password(class="form-control", placeholder=_('Enter new password')) }}
+          {% if password_form.new_password.errors %}
+            {% for error in password_form.new_password.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+            {% endif %}
+          </div>
+        <div class="form-group">
+          {{ password_form.confirm_password.label }}
+          {{ password_form.confirm_password(class="form-control", placeholder=_('Confirm new password')) }}
+          {% if password_form.confirm_password.errors %}
+            {% for error in password_form.confirm_password.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button type="submit" name="submit" value="password" class="btn btn-primary">
+            {{ password_form.submit.label }}
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="sendPasswordReset()">
+            {% trans %}Forgot Password{% endtrans %}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="settings-section">
+      <h3>{% trans %}Third-Party Account Linking{% endtrans %}</h3>
+      {% if current_user.password %}
+        <div class="oauth-section">
+          <!-- Google OAuth -->
+          <div class="oauth-card">
+            <h4>Google</h4>
+            
+            {% if current_user.google_id %}
+              <div class="status connected">{% trans %}Linked{% endtrans %}</div>
+              <br>
+              <a href="{{ url_for('account_sys.google_unlink') }}" class="btn btn-danger">
+                {% trans %}Unlink{% endtrans %}
+              </a>
+            {% else %}
+              <div class="status disconnected">{% trans %}Not linked{% endtrans %}</div>
+              <br>
+
+              <a href="{{ url_for('account_sys.google_oauth') }}" class="btn btn-success">
+                {% trans %}Link Google{% endtrans %}
+              </a>
+      {% endif %}
+    </div>
+
+          <div class="oauth-card">
+            <h4>Discord</h4>
+            {% if current_user.discord_id %}
+              <div class="status connected">{% trans %}Linked{% endtrans %}</div>
+              <br>
+
+              <a href="{{ url_for('account_sys.discord_unlink') }}" class="btn btn-danger">
+                {% trans %}Unlink{% endtrans %}
+              </a>
+            {% else %}
+              <div class="status disconnected">{% trans %}Not linked{% endtrans %}</div>
+              <br>
+
+              <a href="{{ url_for('account_sys.discord_oauth') }}" class="btn btn-success">
+                {% trans %}Link Discord{% endtrans %}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <div class="oauth-section-disabled">
+          <div class="disabled-overlay">
+            <p class="disabled-message">{% trans %}Please set a password before linking/unlinking accounts{% endtrans %}</p>
+            <a href="#password" class="btn btn-primary">{% trans %}Go to set password{% endtrans %}</a>
+          </div>
+          <div class="oauth-section" style="opacity: 0.5; pointer-events: none;">
+            <!-- Google OAuth -->
+            <div class="oauth-card">
+              <h4>Google</h4>
+              {% if current_user.google_id %}
+                <div class="status connected">{% trans %}Linked{% endtrans %}</div>
+                <br>
+                <button class="btn btn-danger" disabled>{% trans %}Unlink{% endtrans %}</button>
+              {% else %}
+                <div class="status disconnected">{% trans %}Not linked{% endtrans %}</div>
+                <br>
+                <button class="btn btn-success" disabled>{% trans %}Link Google{% endtrans %}</button>
+              {% endif %}
+            </div>
+
+            <div class="oauth-card">
+              <h4>Discord</h4>
+              {% if current_user.discord_id %}
+                <div class="status connected">{% trans %}Linked{% endtrans %}</div>
+                <br>
+                <button class="btn btn-danger" disabled>{% trans %}Unlink{% endtrans %}</button>
+              {% else %}
+                <div class="status disconnected">{% trans %}Not linked{% endtrans %}</div>
+                <br>
+                <button class="btn btn-success" disabled>{% trans %}Link Discord{% endtrans %}</button>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+      const avatarFileInput = document.querySelector('.custom-file-input');
+      const customFileNameSpan = document.getElementById('customFileName');
+    const avatarPreview = document.querySelector('.avatar-preview img');
+    
+      if (avatarFileInput && customFileNameSpan && avatarPreview) {
+          avatarFileInput.addEventListener('change', function() {
+              if (this.files && this.files.length > 0) {
+                  customFileNameSpan.textContent = this.files[0].name;
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                      avatarPreview.src = e.target.result;
+                };
+                  reader.readAsDataURL(this.files[0]);
+            } else {
+                  customFileNameSpan.textContent = '{% trans %}Choose File{% endtrans %}';
+                avatarPreview.src = '{{ url_for("static", filename="assets/img/default-avatar.png") }}';
+            }
+        });
+    }
+async function sendPasswordReset() {
+    try {
+        const response = await fetch('/mail/reset_password/{{ current_user.email }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('input[name="csrf_token"]').value
+            }
+        });
+        
+        if (response.ok) {
+            alert('{% trans %}Password reset email has been sent to your inbox!{% endtrans %}');
+        } else {
+            const errorText = await response.text();
+            alert('{% trans %}Failed to send:{% endtrans %} ' + errorText);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('{% trans %}Failed to send, please try again later.{% endtrans %}');
+    }
+}
+  });
+</script>
+{% endblock %}

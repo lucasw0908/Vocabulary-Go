@@ -1,0 +1,856 @@
+# Japanese translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-13 23:01+0800\n"
+"PO-Revision-Date: 2025-09-11 19:24+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/templates/base.html:6
+msgid "Vocabulary Go"
+msgstr "Vocabulary Go"
+
+#: app/templates/base.html:7
+msgid "A website for learning vocabulary"
+msgstr "語彙を学習するためのウェブサイト"
+
+#: app/templates/base.html:8
+msgid "vocabulary, learning, English, Chinese, Japanese"
+msgstr "語彙、学習、英語、中国語、日本語"
+
+#: app/templates/base.html:46
+msgid "Admin"
+msgstr "管理"
+
+#: app/templates/base.html:48
+msgid "Flashcards"
+msgstr "フラッシュカード"
+
+#: app/templates/base.html:49
+msgid "Word Test"
+msgstr "単語テスト"
+
+#: app/templates/base.html:50
+msgid "Sentence Fill-in"
+msgstr "穴埋め問題"
+
+#: app/templates/base.html:51 app/templates/index.html:53
+msgid "Libraries"
+msgstr "ライブラリ"
+
+#: app/templates/base.html:55 app/templates/base.html:65
+#: app/templates/library_create.html:40 app/templates/library_create.html:41
+#: app/templates/library_create.html:66 app/templates/library_edit.html:31
+#: app/templates/library_edit.html:32 app/templates/library_edit.html:57
+msgid "English"
+msgstr "英語"
+
+#: app/templates/base.html:56 app/templates/base.html:69
+#: app/templates/library_create.html:44 app/templates/library_create.html:45
+#: app/templates/library_create.html:67 app/templates/library_edit.html:35
+#: app/templates/library_edit.html:36 app/templates/library_edit.html:58
+msgid "Chinese"
+msgstr "中国語"
+
+#: app/templates/base.html:57 app/templates/base.html:73
+msgid "Japanese"
+msgstr "日本語"
+
+#: app/templates/base.html:58
+msgid "Language"
+msgstr "言語"
+
+#: app/templates/base.html:91 app/templates/base.html:105
+msgid "Profile"
+msgstr "プロフィール"
+
+#: app/templates/base.html:92 app/templates/base.html:106
+msgid "Settings"
+msgstr "設定"
+
+#: app/templates/base.html:94 app/templates/base.html:107
+msgid "Logout"
+msgstr "ログアウト"
+
+#: app/templates/account_sys/login.html:11
+#: app/templates/account_sys/register.html:30
+#: app/templates/account_sys/reset_password.html:19 app/templates/base.html:99
+#: app/utils/forms.py:21
+msgid "Login"
+msgstr "ログイン"
+
+#: app/templates/base.html:120
+msgid "Join for more information"
+msgstr ""
+
+#: app/templates/base.html:125
+msgid "Join Group"
+msgstr "グループに参加"
+
+#: app/templates/base.html:144
+msgid "Privacy Policy & Terms of Service"
+msgstr "プライバシーポリシーと利用規約"
+
+#: app/templates/base.html:165
+msgid "Close"
+msgstr "閉じる"
+
+#: app/templates/base.html:256
+msgid "Success"
+msgstr "成功"
+
+#: app/templates/base.html:257
+msgid "Warning"
+msgstr "警告"
+
+#: app/templates/base.html:258
+msgid "Error"
+msgstr "エラー"
+
+#: app/templates/base.html:259
+msgid "Message"
+msgstr "メッセージ"
+
+#: app/templates/card.html:8 app/templates/sentence_test.html:9
+#: app/templates/word_test.html:8
+msgid "Reset Progress"
+msgstr "無限の進歩"
+
+#: app/templates/card.html:33
+msgid "Tap the card to flip👆"
+msgstr ""
+
+#: app/templates/card.html:41
+#, fuzzy
+msgid "Progress:"
+msgstr "無限の進歩"
+
+#: app/templates/index.html:11
+msgid "One word"
+msgstr "一つの単語"
+
+#: app/templates/index.html:11
+msgid "infinite progress"
+msgstr "無限の進歩"
+
+#: app/templates/index.html:12
+msgid "Easily review translation fill-in-the-blanks and vocabulary in context"
+msgstr "翻訳の穴埋め問題や文脈の中で語彙を簡単に復習できます"
+
+#: app/templates/index.html:16
+msgid "Start for Free"
+msgstr "無料で始める"
+
+#: app/templates/index.html:32
+msgid "Developers"
+msgstr "開発者"
+
+#: app/templates/index.html:39
+msgid "Users"
+msgstr "ユーザー"
+
+#: app/templates/index.html:46
+msgid "Words Included"
+msgstr "収録単語数"
+
+#: app/templates/index.html:78
+msgid "AI Question Generation"
+msgstr "AIによる問題生成"
+
+#: app/templates/index.html:80
+msgid ""
+"Utilize advanced generative AI technology to practice content highly "
+"similar to actual exams. Each test has different questions, helping you "
+"gradually strengthen your memory and test-taking abilities through "
+"repeated practice."
+msgstr "高度な生成AI技術を活用し、実際の試験に非常に近い内容で練習できます。テストごとに異なる問題が出題され、繰り返し練習することで記憶力と試験対応力を徐々に強化できます。"
+
+#: app/templates/index.html:93
+msgid "Library Features"
+msgstr "ライブラリ機能"
+
+#: app/templates/index.html:95
+msgid ""
+"Rich library features allow you to flexibly choose practice content. You "
+"can choose to use our officially provided diverse practice libraries, or "
+"you can create your own exclusive vocabulary libraries according to your "
+"needs and share them with other users to improve everyone's learning "
+"efficiency together."
+msgstr "充実したライブラリ機能により、練習内容を柔軟に選択できます。公式が提供する多様な練習用ライブラリを利用することも、自分専用の語彙ライブラリを作成して他のユーザーと共有し、全員の学習効率を高めることもできます。"
+
+#: app/templates/index.html:108
+msgid "Completely Free"
+msgstr "完全無料"
+
+#: app/templates/index.html:110
+msgid ""
+"Vocabulary GO is committed to providing efficient and convenient learning"
+" tools for every learner, and we will not charge any fees! Whether you "
+"are preparing for exams or want to improve your vocabulary, we hope every"
+" user can learn worry-free."
+msgstr ""
+"Vocabulary GO "
+"は、すべての学習者に効率的で便利な学習ツールを提供することを使命としています。料金は一切かかりません！試験対策をしている方も、語彙力を伸ばしたい方も、安心して学習していただけます。"
+
+#: app/templates/library.html:23
+msgid "Search for library..."
+msgstr ""
+
+#: app/templates/library.html:27
+msgid "Create"
+msgstr ""
+
+#: app/templates/library.html:28
+msgid "Edit"
+msgstr ""
+
+#: app/templates/library_create.html:8 app/utils/forms.py:114
+msgid "Create Library"
+msgstr ""
+
+#: app/templates/library_create.html:9 app/templates/library_edit.html:9
+msgid "You can upload CSV/JSON, or add words below visually."
+msgstr ""
+
+#: app/templates/library_create.html:15 app/templates/library_edit.html:15
+msgid "Upload CSV"
+msgstr ""
+
+#: app/templates/library_create.html:19 app/templates/library_create.html:121
+msgid "Choose CSV File"
+msgstr ""
+
+#: app/templates/library_create.html:24 app/templates/library_edit.html:19
+msgid "Upload JSON"
+msgstr ""
+
+#: app/templates/library_create.html:28 app/templates/library_create.html:133
+msgid "Choose JSON File"
+msgstr ""
+
+#: app/templates/library_create.html:33 app/templates/library_edit.html:23
+msgid ""
+"CSV requires two columns: English, Chinese. JSON must be a list of "
+"objects with English/Chinese keys."
+msgstr ""
+
+#: app/templates/library_create.html:48 app/templates/library_edit.html:39
+msgid "Add Word"
+msgstr "一つの単語"
+
+#: app/templates/library_create.html:57 app/templates/library_edit.html:48
+msgid "Word List"
+msgstr "単語テスト"
+
+#: app/templates/library_create.html:59 app/templates/library_edit.html:50
+msgid "Clear"
+msgstr "閉じる"
+
+#: app/templates/library_create.html:83 app/templates/library_edit.html:75
+#: app/utils/forms.py:101
+msgid "Library Name"
+msgstr "ライブラリ"
+
+#: app/templates/library_create.html:84
+msgid "Enter library name"
+msgstr "ライブラリ"
+
+#: app/templates/library_create.html:89 app/templates/library_edit.html:81
+#: app/utils/forms.py:109
+msgid "Public Library"
+msgstr ""
+
+#: app/templates/library_create.html:93 app/templates/library_edit.html:85
+msgid "Library Description"
+msgstr ""
+
+#: app/templates/library_create.html:94
+msgid "Optional, up to 200 characters"
+msgstr ""
+
+#: app/templates/library_create.html:102 app/templates/library_edit.html:94
+msgid "Back"
+msgstr ""
+
+#: app/templates/library_edit.html:8
+msgid "Edit Library"
+msgstr ""
+
+#: app/templates/library_edit.html:95
+msgid "Save"
+msgstr ""
+
+#: app/templates/sentence_test.html:18 app/templates/word_test.html:18
+msgid "Current:"
+msgstr ""
+
+#: app/templates/sentence_test.html:20 app/templates/word_test.html:20
+msgid "Correct:"
+msgstr ""
+
+#: app/templates/sentence_test.html:21 app/templates/word_test.html:21
+msgid "Wrong:"
+msgstr "警告"
+
+#: app/templates/sentence_test.html:22 app/templates/word_test.html:22
+msgid "Accuracy:"
+msgstr ""
+
+#: app/templates/sentence_test.html:23 app/templates/word_test.html:23
+msgid "Completed:"
+msgstr "完全無料"
+
+#: app/templates/sentence_test.html:31 app/templates/word_test.html:30
+msgid "Enter answer"
+msgstr ""
+
+#: app/templates/sentence_test.html:51 app/templates/word_test.html:50
+msgid "Check Answer"
+msgstr ""
+
+#: app/templates/sentence_test.html:56 app/templates/word_test.html:55
+msgid "Next"
+msgstr ""
+
+#: app/templates/word_test.html:9 app/templates/word_test.html:68
+msgid "Difficulty: Easy"
+msgstr ""
+
+#: app/templates/word_test.html:68
+msgid "Difficulty: Normal"
+msgstr ""
+
+#: app/templates/word_test.html:68
+msgid "Difficulty: Hard"
+msgstr ""
+
+#: app/templates/account_sys/forgot_password.html:11
+#: app/templates/account_sys/settings.html:110
+msgid "Forgot Password"
+msgstr ""
+
+#: app/templates/account_sys/forgot_password.html:12
+msgid "Please enter your email address and we will send you a reset link."
+msgstr ""
+
+#: app/templates/account_sys/forgot_password.html:16
+#: app/templates/account_sys/login.html:14
+#: app/templates/account_sys/register.html:19 app/utils/forms.py:11
+#: app/utils/forms.py:29 app/utils/forms.py:96
+msgid "Email"
+msgstr ""
+
+#: app/templates/account_sys/forgot_password.html:17
+msgid "Enter your email"
+msgstr ""
+
+#: app/templates/account_sys/forgot_password.html:23
+#: app/templates/account_sys/reset_password.html:19
+msgid "Remembered your password?"
+msgstr "現在のパスワードを入力してください。"
+
+#: app/templates/account_sys/forgot_password.html:23
+msgid "Back to Login"
+msgstr ""
+
+#: app/templates/account_sys/login.html:15
+#: app/templates/account_sys/register.html:22 app/utils/forms.py:15
+#: app/utils/forms.py:33
+msgid "Password"
+msgstr ""
+
+#: app/templates/account_sys/login.html:23
+msgid "Don't have an account?"
+msgstr ""
+
+#: app/templates/account_sys/login.html:23
+#: app/templates/account_sys/register.html:12 app/utils/forms.py:41
+msgid "Register"
+msgstr ""
+
+#: app/templates/account_sys/login.html:24
+msgid "Forgot your password?"
+msgstr ""
+
+#: app/templates/account_sys/login.html:32
+msgid "Log in with Discord"
+msgstr ""
+
+#: app/templates/account_sys/login.html:42
+msgid "Log in with Google"
+msgstr ""
+
+#: app/templates/account_sys/profile.html:16
+#: app/templates/account_sys/settings.html:15
+msgid "User Avatar"
+msgstr ""
+
+#: app/templates/account_sys/profile.html:21
+#: app/templates/account_sys/settings.html:19
+msgid "Default Avatar"
+msgstr ""
+
+#: app/templates/account_sys/profile.html:26
+#: app/templates/account_sys/settings.html:24
+msgid "Joined on:"
+msgstr "グループに参加"
+
+#: app/templates/account_sys/profile.html:28 app/views/account_sys.py:422
+#: app/views/account_sys.py:450
+msgid "User not found."
+msgstr "ユーザーが見つかりません。"
+
+#: app/templates/account_sys/profile.html:34
+msgid "About Me"
+msgstr ""
+
+#: app/templates/account_sys/profile.html:39
+msgid "This user hasn't written anything yet.~"
+msgstr ""
+
+#: app/templates/account_sys/profile.html:43
+msgid "Public Libraries"
+msgstr "ライブラリ"
+
+#: app/templates/account_sys/profile.html:49
+msgid "No description"
+msgstr ""
+
+#: app/templates/account_sys/profile.html:54
+msgid "No public libraries yet."
+msgstr ""
+
+#: app/templates/account_sys/register.html:16 app/utils/forms.py:25
+#: app/utils/forms.py:54
+msgid "Username"
+msgstr "ユーザー"
+
+#: app/templates/account_sys/register.html:25 app/utils/forms.py:38
+msgid "Confirm Password"
+msgstr ""
+
+#: app/templates/account_sys/register.html:30
+msgid "Already have an account?"
+msgstr ""
+
+#: app/templates/account_sys/reset_password.html:10
+msgid "Reset Password"
+msgstr ""
+
+#: app/templates/account_sys/reset_password.html:13 app/utils/forms.py:72
+#: app/utils/forms.py:84
+msgid "New Password"
+msgstr "一つの単語"
+
+#: app/templates/account_sys/reset_password.html:14 app/utils/forms.py:77
+#: app/utils/forms.py:89
+msgid "Confirm New Password"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:32 app/utils/forms.py:50
+msgid "Update Avatar"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:38
+msgid "Upload image..."
+msgstr ""
+
+#: app/templates/account_sys/settings.html:40
+#: app/templates/account_sys/settings.html:215
+msgid "Choose File"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:55 app/utils/forms.py:63
+msgid "Bio"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:60
+msgid "Write your bio... (max 75 characters)"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:66
+msgid "Up to 75 characters"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:75 app/utils/forms.py:80
+msgid "Change Password"
+msgstr "一つの単語"
+
+#: app/templates/account_sys/settings.html:80
+msgid "Enter current password"
+msgstr "現在のパスワードを入力してください。"
+
+#: app/templates/account_sys/settings.html:89
+msgid "Enter new password"
+msgstr "現在のパスワードを入力してください。"
+
+#: app/templates/account_sys/settings.html:98
+msgid "Confirm new password"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:117
+msgid "Third-Party Account Linking"
+msgstr "Discordアカウントは連携されていません。"
+
+#: app/templates/account_sys/settings.html:125
+#: app/templates/account_sys/settings.html:143
+#: app/templates/account_sys/settings.html:170
+#: app/templates/account_sys/settings.html:183
+msgid "Linked"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:128
+#: app/templates/account_sys/settings.html:147
+#: app/templates/account_sys/settings.html:172
+#: app/templates/account_sys/settings.html:185
+msgid "Unlink"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:131
+#: app/templates/account_sys/settings.html:150
+#: app/templates/account_sys/settings.html:174
+#: app/templates/account_sys/settings.html:187
+msgid "Not linked"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:135
+#: app/templates/account_sys/settings.html:176
+msgid "Link Google"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:154
+#: app/templates/account_sys/settings.html:189
+msgid "Link Discord"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:162
+msgid "Please set a password before linking/unlinking accounts"
+msgstr "Discordの連携を解除する前にパスワードを設定してください。"
+
+#: app/templates/account_sys/settings.html:163
+msgid "Go to set password"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:231
+msgid "Password reset email has been sent to your inbox!"
+msgstr "パスワードリセット用のメールを送信しました。"
+
+#: app/templates/account_sys/settings.html:234
+msgid "Failed to send:"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:238
+msgid "Failed to send, please try again later."
+msgstr ""
+
+#: app/utils/forms.py:13 app/utils/forms.py:31
+#, python-format
+msgid "Email is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:17 app/utils/forms.py:35 app/utils/forms.py:74
+#: app/utils/forms.py:86
+#, python-format
+msgid "Password is too short (min %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:18 app/utils/forms.py:36 app/utils/forms.py:75
+#: app/utils/forms.py:87
+#, python-format
+msgid "Password is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:20
+msgid "Remember Me"
+msgstr ""
+
+#: app/utils/forms.py:27 app/utils/forms.py:57
+#, python-format
+msgid "Username is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:39 app/utils/forms.py:78 app/utils/forms.py:90
+#, fuzzy
+msgid "Passwords must match"
+msgstr "パスワードが一致しません"
+
+#: app/utils/forms.py:45
+msgid "Avatar"
+msgstr ""
+
+#: app/utils/forms.py:47
+msgid "Images only!"
+msgstr ""
+
+#: app/utils/forms.py:48
+#, python-format
+msgid "Avatar file is too large (max %(limit)s MB)"
+msgstr ""
+
+#: app/utils/forms.py:56
+#, python-format
+msgid "Username is too short (min %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:59
+#, fuzzy
+msgid "Update Username"
+msgstr "ユーザー"
+
+#: app/utils/forms.py:65
+#, python-format
+msgid "Bio is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:67
+msgid "Update Bio"
+msgstr ""
+
+#: app/utils/forms.py:71
+#, fuzzy
+msgid "Current Password"
+msgstr "現在のパスワードを入力してください。"
+
+#: app/utils/forms.py:92
+#, fuzzy
+msgid "Request Password Reset"
+msgstr "パスワードリセットのリクエスト"
+
+#: app/utils/forms.py:97
+#, fuzzy
+msgid "Send Reset Password Mail"
+msgstr "現在のパスワードを入力してください。"
+
+#: app/utils/forms.py:103
+#, python-format
+msgid "Library name is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:105
+msgid "Description"
+msgstr ""
+
+#: app/utils/forms.py:107
+#, python-format
+msgid "Description is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/utils/forms.py:110
+msgid "Words (JSON format)"
+msgstr ""
+
+#: app/utils/forms.py:112
+#, python-format
+msgid "Words JSON is too long (max %(limit)s characters)"
+msgstr ""
+
+#: app/views/account_sys.py:39 app/views/account_sys.py:415
+msgid "Passwords do not match"
+msgstr "パスワードが一致しません"
+
+#: app/views/account_sys.py:47
+#, fuzzy
+msgid "Invalid email format"
+msgstr "メールアドレスまたはパスワードが無効です"
+
+#: app/views/account_sys.py:52
+msgid "Email already registered"
+msgstr "メールアドレスはすでに登録されています"
+
+#: app/views/account_sys.py:74 app/views/mail.py:81
+msgid "Email Verification"
+msgstr "メール認証"
+
+#: app/views/account_sys.py:80
+msgid ""
+"Registration successful. Please log in and check the verification mail in"
+" your email."
+msgstr ""
+
+#: app/views/account_sys.py:99 app/views/account_sys.py:116
+msgid "Invalid email or password"
+msgstr "メールアドレスまたはパスワードが無効です"
+
+#: app/views/account_sys.py:104
+msgid "This account uses OAuth for login. Please use the OAuth login method."
+msgstr ""
+
+#: app/views/account_sys.py:134
+msgid "No account associated with this email."
+msgstr "このメールアドレスに関連するアカウントは存在しません。"
+
+#: app/views/account_sys.py:145 app/views/mail.py:48
+msgid "Password Reset Request"
+msgstr "パスワードリセットのリクエスト"
+
+#: app/views/account_sys.py:173
+msgid "Discord account already linked."
+msgstr "Discordアカウントはすでに連携されています。"
+
+#: app/views/account_sys.py:178
+msgid "Set a password before linking Discord."
+msgstr "Discordを連携する前にパスワードを設定してください。"
+
+#: app/views/account_sys.py:189
+msgid "Google account already linked."
+msgstr "Googleアカウントはすでに連携されています。"
+
+#: app/views/account_sys.py:194
+msgid "Set a password before linking Google."
+msgstr "Googleを連携する前にパスワードを設定してください。"
+
+#: app/views/account_sys.py:217
+msgid "Invalid OAuth callback parameters."
+msgstr "無効なOAuthコールバックパラメータです。"
+
+#: app/views/account_sys.py:226
+msgid "OAuth authentication failed."
+msgstr "OAuth認証に失敗しました。"
+
+#: app/views/account_sys.py:280
+msgid "Set a password before unlinking Discord."
+msgstr "Discordの連携を解除する前にパスワードを設定してください。"
+
+#: app/views/account_sys.py:284
+msgid "No Discord account linked."
+msgstr "Discordアカウントは連携されていません。"
+
+#: app/views/account_sys.py:299
+msgid "Set a password before unlinking Google."
+msgstr "Googleの連携を解除する前にパスワードを設定してください。"
+
+#: app/views/account_sys.py:303
+msgid "No Google account linked."
+msgstr "Googleアカウントは連携されていません。"
+
+#: app/views/account_sys.py:365
+#, python-format
+msgid "Unknown settings submission type: %(submit_type)s"
+msgstr "不明な設定送信タイプ: %(submit_type)s"
+
+#: app/views/account_sys.py:368
+#, python-format
+msgid "Form validation failed for %(submit_type)s"
+msgstr "%(submit_type)s のフォーム検証に失敗しました"
+
+#: app/views/account_sys.py:382
+msgid "Please enter your current password."
+msgstr "現在のパスワードを入力してください。"
+
+#: app/views/account_sys.py:385
+msgid "Current password is incorrect."
+msgstr "現在のパスワードが正しくありません。"
+
+#: app/views/account_sys.py:388
+msgid "New password and confirmation do not match."
+msgstr "新しいパスワードと確認が一致しません。"
+
+#: app/views/account_sys.py:442
+msgid "Invalid or expired token."
+msgstr "無効または期限切れのトークンです。"
+
+#: app/views/account_sys.py:460
+#, fuzzy
+msgid "Email verified successfully."
+msgstr "メール認証を送信しました。"
+
+#: app/views/mail.py:37 app/views/mail.py:67
+msgid "Email not found."
+msgstr "メールアドレスが見つかりません。"
+
+#: app/views/mail.py:55
+msgid "Password reset email sent."
+msgstr "パスワードリセット用のメールを送信しました。"
+
+#: app/views/mail.py:70
+msgid "Email already verified."
+msgstr "メールアドレスはすでに認証済みです。"
+
+#: app/views/mail.py:88
+msgid "Email verification sent."
+msgstr "メール認証を送信しました。"
+
+#: app/views/main.py:78 app/views/main.py:103 app/views/main.py:405
+msgid "Please choose a library first."
+msgstr "まずライブラリを選択してください。"
+
+#: app/views/main.py:91 app/views/main.py:418
+msgid "No words found in the current library."
+msgstr "現在のライブラリに単語が見つかりません。"
+
+#: app/views/main.py:135
+msgid "No sentences found in the current library."
+msgstr "現在のライブラリに文が見つかりません。"
+
+#: app/views/main.py:197 app/views/main.py:328
+msgid "You must be logged in to edit a library."
+msgstr "ライブラリを編集するにはログインが必要です。"
+
+#: app/views/main.py:224 app/views/main.py:308
+msgid "You must be logged in to create a library."
+msgstr "ライブラリを作成するにはログインが必要です。"
+
+#: app/views/main.py:228
+msgid "Please verify your email before creating a library."
+msgstr ""
+
+#: app/views/main.py:237
+msgid ""
+"You have reached the maximum number of libraries (5). Please upgrade for "
+"unlimited access."
+msgstr "ライブラリ数の上限 (5) に達しました。無制限に利用するにはアップグレードしてください。"
+
+#: app/views/main.py:242 app/views/main.py:343
+msgid "Library name cannot be empty."
+msgstr "ライブラリ名を空にすることはできません。"
+
+#: app/views/main.py:247 app/views/main.py:347
+#, python-format
+msgid "Library '%(name)s' already exists."
+msgstr "ライブラリ '%(name)s' はすでに存在します。"
+
+#: app/views/main.py:258 app/views/main.py:358
+msgid ""
+"Library exceeds maximum word limit (500). Please upgrade for unlimited "
+"access."
+msgstr "ライブラリの単語数が上限 (500) を超えています。無制限に利用するにはアップグレードしてください。"
+
+#: app/views/main.py:263 app/views/main.py:363
+msgid "Invalid JSON format for words."
+msgstr "単語のJSON形式が無効です。"
+
+#: app/views/main.py:268 app/views/main.py:368
+msgid "Invalid words format. Please check your input."
+msgstr "単語の形式が無効です。入力を確認してください。"
+
+#: app/views/main.py:283
+msgid "Each word must have 'Chinese' and 'English' keys."
+msgstr "各単語には「Chinese」と「English」キーが必要です。"
+
+#: app/views/main.py:303
+msgid "Form validation failed. Please check your input."
+msgstr "フォームの検証に失敗しました。入力内容を確認してください。"
+
+#: app/views/main.py:332
+msgid "Please verify your email before editing a library."
+msgstr ""
+
+#: app/views/main.py:379
+msgid "Missing 'Chinese' or 'English' key in words JSON."
+msgstr "単語のJSONに「Chinese」または「English」キーがありません。"
+
+#~ msgid "Username %(username)s is already taken."
+#~ msgstr "ライブラリ '%(name)s' はすでに存在します。"
+

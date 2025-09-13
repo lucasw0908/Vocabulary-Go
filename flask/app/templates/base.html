@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="{{ g.locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{% trans %}Vocabulary Go{% endtrans %}</title>
+  <meta name="description" content="{% trans %}A website for learning vocabulary{% endtrans %}">
+  <meta name="keywords" content="{% trans %}vocabulary, learning, English, Chinese, Japanese{% endtrans %}">
+
+  <link href="{{ url_for('static', filename='assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.0.0/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@7.0.0/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/css/bg-anime.css') }}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename" style="color: aliceblue;">
+          Vocabulary <b style="color: #49a2e1;">GO</b>
+        </h1>
+      </a>
+
+      <!-- ======= Navigation ======= -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          {% if current_user.is_admin %}
+            <li><a href="{{ url_for('admin.index') }}"><b>{% trans %}Admin{% endtrans %}</b></a></li>
+          {% endif %}
+          <li><a href="{{ url_for('main.card') }}"><b>{% trans %}Flashcards{% endtrans %}</b></a></li>
+          <li><a href="{{ url_for('main.word_test') }}"><b>{% trans %}Word Test{% endtrans %}</b></a></li>
+          <li><a href="{{ url_for('main.sentence_test') }}"><b>{% trans %}Sentence Fill-in{% endtrans %}</b></a></li>
+          <li><a href="{{ url_for('main.library') }}"><b>{% trans %}Libraries{% endtrans %}</b></a></li>
+          <li class="lang-dropdown d-none d-xl-block">
+            <div class="lang-avatar-small" onclick="toggleLangDropdown()">
+              <i class="bi bi-globe"></i>
+              {% if g.locale == 'en' %}{% trans %}English{% endtrans %}
+              {% elif g.locale == 'zh' %}{% trans %}Chinese{% endtrans %}
+              {% elif g.locale == 'ja' %}{% trans %}Japanese{% endtrans %}
+              {% else %}{% trans %}Language{% endtrans %}
+              {% endif %}
+            </div>
+          
+            <div class="dropdown-menu" id="langDropdown">
+              <a class="dropdown-item {% if g.locale == 'en' %}active{% endif %}"
+                 href="{{ url_for('main.set_language', lang_code='en') }}">
+                 {% trans %}English{% endtrans %}
+              </a>
+              <a class="dropdown-item {% if g.locale == 'zh' %}active{% endif %}"
+                 href="{{ url_for('main.set_language', lang_code='zh') }}">
+                 {% trans %}Chinese{% endtrans %}
+              </a>
+              <a class="dropdown-item {% if g.locale == 'ja' %}active{% endif %}"
+                 href="{{ url_for('main.set_language', lang_code='ja') }}">
+                 {% trans %}Japanese{% endtrans %}
+              </a>
+            </div>
+          </li>
+          
+          
+          {% if current_user.is_authenticated %}
+            <!-- User dropdown -->
+            <li class="user-dropdown d-xl-block d-none">
+              <div class="user-avatar-small" onclick="toggleDropdown()">
+                {% if current_user.avatar_url %}
+                  <img src="{{ current_user.avatar_url }}" onerror="this.src='{{ url_for('static', filename='assets/img/default-avatar.png') }}';" style="width:100%;height:100%;border-radius:50%;">
+                {% else %}
+                  <img src="{{ url_for('static', filename='assets/img/default-avatar.png') }}" style="width:100%;height:100%;border-radius:50%;">
+                {% endif %}
+              </div>
+
+              <div class="dropdown-menu" id="userDropdown">
+                <a href="/profile/{{ current_user.id }}" class="dropdown-item"><i class="bi bi-person"></i> {% trans %}Profile{% endtrans %}</a>
+                <a href="{{ url_for('account_sys.settings') }}" class="dropdown-item"><i class="bi bi-gear"></i> {% trans %}Settings{% endtrans %}</a>
+                <div class="dropdown-divider"></div>
+                <a href="{{ url_for('account_sys.logout') }}" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right"></i> {% trans %}Logout{% endtrans %}</a>
+              </div>
+            </li>
+            
+          {% else %}
+            <li><a href="{{ url_for('account_sys.login') }}"><b>{% trans %}Login{% endtrans %}</b></a></li>
+          {% endif %}
+
+
+          <!-- 手機版用的使用者快速按鈕 -->
+          {% if current_user.is_authenticated %}
+          <li class="d-xl-none"><a href="/profile/{{ current_user.id }}"><b>{% trans %}Profile{% endtrans %}</b></a></li>
+          <li class="d-xl-none"><a href="{{ url_for('account_sys.settings') }}"><b>{% trans %}Settings{% endtrans %}</b></a></li>
+          <li class="d-xl-none"><a href="{{ url_for('account_sys.logout') }}" class="text-danger"><b>{% trans %}Logout{% endtrans %}</b></a></li>
+        {% endif %}
+        
+        <li class="d-xl-none quickmenu">
+          <div class="lang-quick">
+            <a class="lang-btn {% if g.locale == 'en' %}active{% endif %}" href="{{ url_for('main.set_language', lang_code='en') }}">EN</a>
+            <a class="lang-btn {% if g.locale == 'zh' %}active{% endif %}" href="{{ url_for('main.set_language', lang_code='zh') }}">中文</a>
+            <a class="lang-btn {% if g.locale == 'ja' %}active{% endif %}" href="{{ url_for('main.set_language', lang_code='ja') }}">日本語</a>
+          </div>
+        </li>
+        
+          <!-- Discord Button -->
+          <li id="dcjoin">
+            <span class="contact d-xl-none">{% trans %}Join for more information{% endtrans %}</span>
+            <a href="{{ url_for('main.discord') }}" class="playstore-button" aria-label="Discord">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.211.375-.445.865-.608 1.249a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.249a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              <span class="texts"><span class="text-1">{% trans %}Join Group{% endtrans %}</span><span class="text-2">Discord</span></span>
+            </a>
+          </li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">{% block main %}{% endblock main %}</main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer light-background">
+    <div class="container text-center">
+      <h5 class="sitename">
+        <span>Copyright © 2025</span>
+        <u class="px-1 sitename">Vocabulary GO Team</u>
+        <span>All Rights Reserved. | 
+          <u><a href="{{ url_for('main.tos_pdf') }}" target="_blank">{% trans %}Privacy Policy & Terms of Service{% endtrans %}</a></u>
+        </span>
+      </h5>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@7.0.0/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="{{ url_for('static', filename='assets/js/dist/main.bundle.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/dist/bg-anime.bundle.js') }}"></script>
+  <div class="modal fade" id="globalMessageModal" tabindex="-1" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="globalMessageTitle"> <span id="globalMessageIcon" class="bi"></span> <span id="globalMessageHeading" class="ms-2"></span> </h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <div id="globalMessageText"></div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans %}Close{% endtrans %}</button> </div> </div> </div> </div>
+  <script type="text/javascript">var csrf_token = "{{ csrf_token() }}";</script>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('userDropdown');
+      dropdown.classList.toggle('show');
+    }
+
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('userDropdown');
+      const avatar = document.querySelector('.user-avatar-small');
+      if (!avatar) {
+        if (dropdown && !dropdown.contains(event.target)) {
+          dropdown.classList.remove('show');
+        }
+        return;
+      }
+
+      if (!avatar.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const suppress = {{ 'true' if suppress_global_modal is defined and suppress_global_modal else 'false' }};
+      if (suppress) return;
+
+      const provided = {
+        code: {{ (code if code is defined else 'null') }},
+        message: {{ (message|tojson if message is defined else 'null') }}
+      };
+
+      const flashed = {% with msgs = get_flashed_messages(with_categories=true) %}{% if msgs %}{{ msgs|tojson }}{% else %}null{% endif %}{% endwith %};
+      const tmplError = {{ (error|tojson if error is defined else 'null') }};
+      const tmplWarning = {{ (warning|tojson if warning is defined else 'null') }};
+      const tmplSuccess = {{ (success|tojson if success is defined else 'null') }};
+
+      const params = new URLSearchParams(window.location.search);
+      const qpError = params.get('error');
+      const qpWarning = params.get('warning');
+      const qpSuccess = params.get('success');
+      const qpMessage = params.get('message');
+      const qpCode = params.get('code');
+
+      let finalCode = provided.code;
+      let finalMessage = provided.message;
+      let finalCategory = null;
+
+      if ((finalMessage == null) && flashed && flashed.length > 0) {
+        const [category, msg] = flashed[0];
+        finalMessage = msg;
+        finalCategory = category === 'success' ? 'success' :
+                        category === 'warning' ? 'warning' :
+                        (category === 'error' || category === 'danger') ? 'danger' : 'primary';
+      }
+
+      if (finalMessage == null) {
+        if (tmplError) { finalMessage = tmplError; finalCategory = 'danger'; }
+        else if (tmplWarning) { finalMessage = tmplWarning; finalCategory = 'warning'; }
+        else if (tmplSuccess) { finalMessage = tmplSuccess; finalCategory = 'success'; }
+      }
+
+      if (finalMessage == null) {
+        if (qpError) { finalMessage = qpError; finalCategory = 'danger'; }
+        else if (qpWarning) { finalMessage = qpWarning; finalCategory = 'warning'; }
+        else if (qpSuccess) { finalMessage = qpSuccess; finalCategory = 'success'; }
+        else if (qpMessage) { finalMessage = qpMessage; }
+        if (qpCode) {
+          const n = Number(qpCode);
+          if (!Number.isNaN(n)) finalCode = n;
+        }
+        ['error','warning','success','message','code'].forEach(k => params.delete(k));
+        const cleanUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+
+      if (finalMessage != null) {
+        if (!finalCategory) {
+          finalCategory = (typeof finalCode === 'number')
+            ? (finalCode >= 200 && finalCode < 300 ? 'success' :
+               finalCode >= 400 && finalCode < 500 ? 'warning' :
+               finalCode >= 500 ? 'danger' : 'primary')
+            : 'primary';
+        }
+
+        const iconEl = document.getElementById('globalMessageIcon');
+        const headingEl = document.getElementById('globalMessageHeading');
+        const textEl = document.getElementById('globalMessageText');
+
+        iconEl.className = 'bi me-1';
+        if (finalCategory === 'success') { iconEl.classList.add('bi-check-circle-fill','text-success'); headingEl.textContent = '{% trans %}Success{% endtrans %}'; }
+        else if (finalCategory === 'warning') { iconEl.classList.add('bi-exclamation-triangle-fill','text-warning'); headingEl.textContent = '{% trans %}Warning{% endtrans %}'; }
+        else if (finalCategory === 'danger') { iconEl.classList.add('bi-x-circle-fill','text-danger'); headingEl.textContent = '{% trans %}Error{% endtrans %}'; }
+        else { iconEl.classList.add('bi-info-circle-fill','text-primary'); headingEl.textContent = '{% trans %}Message{% endtrans %}'; }
+
+        textEl.textContent = finalMessage + (typeof finalCode === 'number' ? ` (code: ${finalCode})` : '');
+        new bootstrap.Modal(document.getElementById('globalMessageModal')).show();
+      }
+    });
+  </script>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('userDropdown');
+      dropdown.classList.toggle('show');
+    }
+  
+    function toggleLangDropdown() {
+      const dropdown = document.getElementById('langDropdown');
+      dropdown.classList.toggle('show');
+    }
+  
+    document.addEventListener('click', function(event) {
+      const userDropdown = document.getElementById('userDropdown');
+      const userAvatar = document.querySelector('.user-avatar-small');
+      if (userDropdown && !userAvatar.contains(event.target) && !userDropdown.contains(event.target)) {
+        userDropdown.classList.remove('show');
+      }
+  
+      const langDropdown = document.getElementById('langDropdown');
+      const langAvatar = document.querySelector('.lang-avatar-small');
+      if (langDropdown && !langAvatar.contains(event.target) && !langDropdown.contains(event.target)) {
+        langDropdown.classList.remove('show');
+      }
+    });
+  </script>
+  
+</body>
+</html>

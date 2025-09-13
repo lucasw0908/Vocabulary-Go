@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link href="{{ url_for('static', filename='assets/css/library.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='assets/css/library_create.css') }}" rel="stylesheet">
+
+<section class="section container" style="margin-top: 2rem;">
+  <h3 class="mb-3">{% trans %}Create Library{% endtrans %}</h3>
+  <p class="text-muted">{% trans %}You can upload CSV/JSON, or add words below visually.{% endtrans %}</p>
+
+  <div class="card mb-3 dark-card">
+    <div class="card-body">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-6">
+          <label class="form-label" for="csvInput">{% trans %}Upload CSV{% endtrans %}</label>
+          <div class="custom-file-upload">
+            <input id="csvInput" type="file" accept=".csv" class="form-control dark-input custom-file-input">
+            <label for="csvInput" class="custom-file-label">
+              <span id="csvFileName">{% trans %}Choose CSV File{% endtrans %}</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="jsonInput">{% trans %}Upload JSON{% endtrans %}</label>
+          <div class="custom-file-upload">
+            <input id="jsonInput" type="file" accept=".json" class="form-control dark-input custom-file-input">
+            <label for="jsonInput" class="custom-file-label">
+              <span id="jsonFileName">{% trans %}Choose JSON File{% endtrans %}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-text mt-2 muted-note">{% trans %}CSV requires two columns: English, Chinese. JSON must be a list of objects with English/Chinese keys.{% endtrans %}</div>
+    </div>
+  </div>
+  <div class="card mb-3 dark-card">
+    <div class="card-body">
+      <div class="row g-2 align-items-end">
+        <div class="col-md-4">
+          <label class="form-label">{% trans %}English{% endtrans %}</label>
+          <input id="englishInput" type="text" class="form-control dark-input" placeholder="{{_('English')}}">
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">{% trans %}Chinese{% endtrans %}</label>
+          <input id="chineseInput" type="text" class="form-control dark-input" placeholder="{{_('Chinese')}}">
+        </div>
+        <div class="col-md-4">
+          <button id="addWordBtn" class="btn btn-secondary w-100">{% trans %}Add Word{% endtrans %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4 dark-card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="m-0">{% trans %}Word List{% endtrans %}</h5>
+        <div>
+          <button id="clearWordsBtn" class="btn btn-outline-danger btn-sm">{% trans %}Clear{% endtrans %}</button>
+      </div>
+          </div>
+      <div class="table-responsive">
+        <table class="table table-sm align-middle dark-table">
+          <thead>
+            <tr>
+              <th style="width: 40%;">{% trans %}English{% endtrans %}</th>
+              <th style="width: 40%;">{% trans %}Chinese{% endtrans %}</th>
+              <th style="width: 20%;"></th>
+            </tr>
+          </thead>
+          <tbody id="wordsTableBody"></tbody>
+        </table>
+    </div>
+    </div>
+  </div>
+
+  <form id="createForm" method="POST" action="/library/create">
+    {{ form.csrf_token }}
+    <div class="card mb-3 dark-card">
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">{% trans %}Library Name{% endtrans %}</label>
+            {{ form.name(class="form-control dark-input", placeholder=_('Enter library name')) }}
+          </div>
+          <div class="col-md-6 d-flex align-items-center" style="gap: 1rem;">
+            <div class="form-check mt-3">
+              {{ form.public(class="form-check-input", id="publicSwitch") }}
+              <label class="form-check-label" for="publicSwitch">{% trans %}Public Library{% endtrans %}</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">{% trans %}Library Description{% endtrans %}</label>
+            {{ form.description(class="form-control dark-input", placeholder=_('Optional, up to 200 characters')) }}
+          </div>
+          {{ form.words(id="wordsField", class="form-control d-none dark-input") }}
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <a class="btn btn-outline-secondary" href="/library">{% trans %}Back{% endtrans %}</a>
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const csvInput = document.getElementById('csvInput');
+        const csvFileName = document.getElementById('csvFileName');
+        const jsonInput = document.getElementById('jsonInput');
+        const jsonFileName = document.getElementById('jsonFileName');
+
+        if (csvInput && csvFileName) {
+            csvInput.addEventListener('change', function() {
+                if (this.files && this.files.length > 0) {
+                    csvFileName.textContent = this.files[0].name;
+                    this.nextElementSibling.classList.add('has-file');
+                } else {
+                    csvFileName.textContent = '{% trans %}Choose CSV File{% endtrans %}';
+                    this.nextElementSibling.classList.remove('has-file');
+                }
+            });
+        }
+
+        if (jsonInput && jsonFileName) {
+            jsonInput.addEventListener('change', function() {
+                if (this.files && this.files.length > 0) {
+                    jsonFileName.textContent = this.files[0].name;
+                    this.nextElementSibling.classList.add('has-file');
+                } else {
+                    jsonFileName.textContent = '{% trans %}Choose JSON File{% endtrans %}';
+                    this.nextElementSibling.classList.remove('has-file');
+                }
+            });
+        }
+    });
+</script>
+<script src="{{ url_for('static', filename='assets/js/dist/library_create.bundle.js') }}"></script>
+{% endblock main %}

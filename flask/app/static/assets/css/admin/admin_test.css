@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #535353;
+    --secondary-color: #4dabee;
+    --text-color: #ffffff;
+}
+
+tr {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color);
+}
+
+.nav li.active a {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
+}
+
+.navbar-brand {
+    color: var(--secondary-color) !important;
+}
+
+.navbar-nav li.active a {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.nav li a {
+    color: var(--text-color) !important;
+    font-weight: bold;
+}
+
+.nav li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color) !important;
+}
+
+.collapse {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.dropdown-menu {
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+
+.form-control {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
+}
+
+.pagination li a {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}
+
+.pagination li a:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
+}
+
+.pagination li.active a {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
+}
+
+.glyphicon {
+    font-family: 'Glyphicons Halflings' !important;
+}
+
+.admin_index {
+    text-align: center;
+}
+
+.select2-search {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+}

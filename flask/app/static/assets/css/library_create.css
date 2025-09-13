@@ -1,0 +1,163 @@
+.dark-card {
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--default-color);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--default-color), transparent 92%);
+}
+
+.dark-card .form-label,
+.dark-card .form-text {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.dark-input.form-control,
+.dark-input.form-select {
+  background-color: color-mix(in srgb, var(--background-color), black 12%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--default-color);
+}
+
+.dark-input.form-control:focus {
+  background-color: color-mix(in srgb, var(--background-color), black 12%);
+  color: var(--default-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.dark-input.form-control[readonly] {
+  background-color: color-mix(in srgb, var(--background-color), black 12%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--default-color);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.dark-input::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 45%);
+}
+
+.form-check-input {
+  background-color: color-mix(in srgb, var(--background-color), black 8%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.form-check-label {
+  color: var(--default-color);
+}
+
+.dark-table.table {
+  color: var(--default-color);
+}
+
+.dark-table thead th {
+  background-color: color-mix(in srgb, var(--surface-color), black 6%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.dark-table tbody tr {
+  background-color: color-mix(in srgb, var(--background-color), black 10%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.dark-table tbody tr:hover {
+  background-color: color-mix(in srgb, var(--surface-color), black 6%);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.btn-outline-danger {
+  color: #df1529;
+  border-color: #df1529;
+}
+
+.btn-outline-danger:hover {
+  background-color: #df1529;
+  border-color: #df1529;
+  color: var(--contrast-color);
+}
+
+.muted-note {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+
+/* Custom File Upload Styles */
+.custom-file-upload {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.custom-file-label {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem; /* Bootstrap's default form-control padding */
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 0.25rem; /* Bootstrap's default border-radius */
+  background-color: color-mix(in srgb, var(--background-color), black 12%);
+  color: color-mix(in srgb, var(--default-color), transparent 45%); /* Placeholder color */
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-file-label:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+}
+
+.custom-file-label::after {
+  content: "Browse";
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 0.25rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+}
+
+.custom-file-input:focus + .custom-file-label {
+  outline: none;
+  border-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.custom-file-input:disabled + .custom-file-label {
+  background-color: color-mix(in srgb, var(--background-color), black 8%);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Make the label text color normal when a file is selected */
+.custom-file-label.has-file span {
+  color: var(--default-color);
+}

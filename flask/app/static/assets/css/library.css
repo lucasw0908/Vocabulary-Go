@@ -1,0 +1,319 @@
+.item {
+    padding: 7.5px;
+    border: none;
+    margin-bottom: 5px;
+    color: #dadadf;
+    max-width: 1000px;
+    justify-self: center !important;
+    width: 90vw;
+    max-width: 800px;
+    background-color: #494949;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.lib-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.lib-title {
+    text-align: center;
+    flex: 1;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    color: #6ac0ff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favorite-btn:hover {
+    background-color: rgba(106, 192, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.favorite-btn.favorited {
+    color: #6ac0ff;
+    text-shadow: 0 0 5px rgba(106, 192, 255, 0.5);
+}
+
+.favorite-count {
+    color: #6ac0ff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.item:hover {
+    background-color: #494949; 
+}
+
+.item-selected {
+    background-color: #4f7c52; 
+}
+
+.item-selected:hover {
+    background-color: #4f7c52; 
+}
+
+.item:active {
+    background-color: #595959;
+}
+#listContainer {
+    height: 45vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+}
+
+
+
+.pagination {
+    justify-self: center;
+    margin: 20px 0;
+    text-align: center;
+}
+.pagination button {
+    border-radius: 5px;
+    color:#dddddd;
+    margin: 0 5px;
+    background-color: #4d4d4d;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-width: 0;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;   
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #4596cf;
+  color: #353535;
+} 
+
+
+.search-bar {
+    
+    justify-self: center;
+    max-width: 800px;
+    width: 80vw;
+    margin-bottom: 20px;
+}
+
+.group {
+display: flex;
+line-height: 28px;
+align-items: center;
+position: relative;
+max-width: 800px;
+width: 80vw;
+justify-self: center;
+}
+
+.input {
+width: 100%;
+height: 45px;
+padding-left: 2.5rem;
+box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+border: 0;
+border-radius: 12px;
+background-color: #dadadf;
+outline: none;
+color: #181818;
+transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+cursor: text;
+z-index: 0;
+}
+
+.input::placeholder {
+color: #181818;
+}
+
+.input:hover {
+box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+
+.input:active {
+transform: scale(0.97);
+}
+
+.input:focus {
+box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.search-icon {
+position: absolute;
+left: 1rem;
+fill: #181818;
+width: 1rem;
+height: 1rem;
+pointer-events: none;
+z-index: 1;
+}
+
+/* Create Library button block under search bar */
+.search-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-actions .group {
+    flex: 1;
+    min-width: 200px;
+    max-width: 600px;
+}
+
+/* When no buttons are present, make search bar wider */
+.search-actions:not(:has(.d-flex)) .group {
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .search-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .search-actions .group {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .search-actions .d-flex {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.create-lib-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    height: 45px;
+    line-height: 25px;
+    border-radius: 12px;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 80%);
+    white-space: nowrap;
+    transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.create-lib-btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    color: var(--contrast-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.search-bar input {
+  border-radius: 50px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.lib-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.lib-count {
+    font-weight: normal;
+    color: #cccccc;
+}
+
+.privacy-badge {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+.privacy-badge.private {
+    background-color: rgba(7, 160, 255, 0.2);
+    color: #07a8ff;
+    border: 1px solid rgba(7, 168, 255, 0.3);
+}
+
+.lib-desc {
+    font-size: 0.95rem;
+    color: #dddddd;
+    margin-bottom: 4px;
+    word-break: break-word;
+    font-style: normal;
+}
+.lib-desc i {
+    color: #bbbbbb;
+}
+
+
+.lib-meta {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Dark theme for list group items */
+.list-group-item.dark-card {
+    background-color: #494949;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #dadadf;
+}
+
+.list-group-item.dark-card:hover {
+    background-color: #4f4f4f;
+}
+
+.list-group-item.dark-card strong {
+    color: #ffffff;
+}
+
+.list-group-item.dark-card .text-muted {
+    color: #aaaaaa !important;
+}
+
+.list-group-item.dark-card .badge.bg-secondary {
+    background-color: #6c757d !important;
+    color: #ffffff;
+}
+
+.list-group-item.dark-card .btn-outline-primary {
+    color: #6ac0ff;
+    border-color: #6ac0ff;
+}
+
+.list-group-item.dark-card .btn-outline-primary:hover {
+    background-color: #6ac0ff;
+    border-color: #6ac0ff;
+    color: #ffffff;
+}
+
+.list-group-item.dark-card .btn-outline-danger {
+    color: #df1529;
+    border-color: #df1529;
+}
+
+.list-group-item.dark-card .btn-outline-danger:hover {
+    background-color: #df1529;
+    border-color: #df1529;
+    color: #ffffff;
+}

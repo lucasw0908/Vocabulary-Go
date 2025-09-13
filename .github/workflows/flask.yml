@@ -1,0 +1,72 @@
+
+name: Flask CI
+ 
+on:
+  push:
+    branches: [ main, test ]
+  pull_request:
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.11]
+
+    env:
+      SQLALCHEMY_DATABASE_URI: ${{ secrets.SQLALCHEMY_DATABASE_URI }}
+      REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}
+      DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
+      GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
+ 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+ 
+    - name: Install Dependencies
+      run: |
+        apt-get update && apt-get install -y --no-install-recommends \
+            build-essential \
+            python3-dev \
+            libpcre3-dev \
+            nodejs \
+            npm \
+            && rm -rf /var/lib/apt/lists/*
+        pip install --no-cache-dir uwsgi uv
+
+        cd flask
+        uv sync
+        npm install
+        npm run build
+
+    - name: Create .env file
+      run: |
+        cat > .env <<EOF
+        SQLALCHEMY_DATABASE_URI=${SQLALCHEMY_DATABASE_URI}
+        REDIRECT_URI=${REDIRECT_URI}
+        DISCORD_TOKEN=${DISCORD_TOKEN}
+        DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+        DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET}
+        GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+        GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+        GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+        GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+        EOF
+
+    - name: Check .env file
+      run: cat .env | sed 's/\(.*\)=.*/\1=****/'
+ 
+    - name: Run Tests
+      run: |
+        cd flask
+        uv run ruff check .
+        uv run pytest

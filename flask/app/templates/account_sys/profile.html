@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link href="{{ url_for('static', filename='assets/css/profile.css') }}" rel="stylesheet">
+
+<div id="bg">
+</div>
+
+<div class="profile-container">
+
+  <aside class="profile-sidebar">
+    {% if user %}
+    <div class="avatar">
+      {% if user.avatar_url %}
+        <img src="{{ user.avatar_url }}" 
+             alt="{% trans %}User Avatar{% endtrans %}" 
+             style="width: 100%; height: 100%; border-radius: 50%;"
+             onerror="this.onerror=null;this.src='{{ url_for('static', filename='assets/img/default-avatar.png') }}';">
+      {% else %}
+        <img src="{{ url_for('static', filename='assets/img/default-avatar.png') }}" 
+             alt="{% trans %}Default Avatar{% endtrans %}" 
+             style="width: 100%; height: 100%; border-radius: 50%;">
+      {% endif %}
+    </div>
+    <h2 class="username">{{ user.username }}</h2>
+    <p class="join-date">{% trans %}Joined on:{% endtrans %} {{ user.created_at.strftime('%Y-%m-%d') }}</p>
+  {% else %}
+    <p>{% trans %}User not found.{% endtrans %}</p>
+  {% endif %}
+  
+  </aside>
+
+  <section class="profile-main">
+    <h3>{% trans %}About Me{% endtrans %}</h3>
+    {% if user %}
+      {% if user.bio and user.bio|trim != '' %}
+        <p class="bio">{{ user.bio }}</p>
+      {% else %}
+        <p class="bio">{% trans %}This user hasn't written anything yet.~{% endtrans %}</p>
+      {% endif %}
+    {% endif %}
+    
+    <h3>{% trans %}Public Libraries{% endtrans %}</h3>
+    {% if user and user.libraries %}
+      <ul class="library-list">
+        {% for library in user.libraries %}
+          <li class="library-item">
+            <strong class="library-name">{{ library.name }}</strong>
+            <p class="library-description">{{ library.description or _('No description') }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="no-libraries">{% trans %}No public libraries yet.{% endtrans %}</p>
+    {% endif %}
+  </section>
+
+</div>
+{% endblock %}

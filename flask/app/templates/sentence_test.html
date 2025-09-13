@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block main %}
+
+<link href="{{ url_for('static', filename='assets/css/word_test.css') }}" rel="stylesheet">
+
+<div id="big-container">
+
+  <div class="control-panel"> 
+    <button id="reset-button">{% trans %}Reset Progress{% endtrans %}</button>
+    <div class="slidecontainer">
+      <input type="range" id="resize-slider" class="slider" min="250" max="550" value="400" step="10" />
+    </div>
+  </div>
+  
+
+  <div id="question-container">
+    <div id="counter" style="display: none;">
+      {% trans %}Current:{% endtrans %} <span id="qcount">0</span>
+      <span id="current-question">0</span>
+      {% trans %}Correct:{% endtrans %} <span id="correct-count">0</span>
+      {% trans %}Wrong:{% endtrans %} <span id="wrong-count">0</span>
+      {% trans %}Accuracy:{% endtrans %} <span id="accuracy">0%</span>
+      {% trans %}Completed:{% endtrans %} <span id="progress">0%</span>
+    </div>
+
+    <h1 id="chinese-word"></h1>
+    <h1 id="english-word"></h1>
+
+    {% if questions %}
+    <div class="textInputWrapper">
+      <input placeholder="{{_('Enter answer')}}" type="text" id="user-input" class="textInput" />
+    </div>
+    {% endif %}
+
+    <div class="progress-wrapper">
+      <div id="completion-progress" class="completion-bar">
+        <span id="completion-text" class="progress-text">0%</span>
+      </div>
+    </div>
+
+    <div class="progress-wrapper2">
+      <div id="accuracy-progress" class="accuracy-bar">
+        <span id="accuracy-text" class="progress-text">0%</span>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button id="check-button" class="pushable">
+        <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front">{% trans %}Check Answer{% endtrans %}</span>
+      </button>
+      <button id="next-button" class="pushable" style="display: none;">
+        <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front">{% trans %}Next{% endtrans %}</span>
+      </button>
+    </div>
+
+    <h1 id="result"></h1>
+    <h1 id="result2"></h1>
+  </div>
+
+</div>
+
+{% if questions %}
+<script>
+var questions = {{ questions | tojson }};
+</script>
+<script src="{{ url_for('static', filename='assets/js/dist/sentence_test.bundle.js') }}"></script>
+{% endif %}
+
+{% endblock main %}

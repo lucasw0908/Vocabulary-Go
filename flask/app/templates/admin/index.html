@@ -1,0 +1,20 @@
+{% extends "admin/master.html" %}
+
+{% block body %}
+<body data-bs-theme="dark" class="admin_index">
+    {{ super() }}
+</body>
+<style>
+    .admin_index {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block page_body %}
+    {{ super() }}
+    <div class="admin_index">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome to the admin dashboard. Use the navigation menu to manage users, words, libraries, and sentences.</p>
+    </div>
+{% endblock %}

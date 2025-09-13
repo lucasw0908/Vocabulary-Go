@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block main %}
+<link href="{{ url_for('static', filename='assets/css/word_test.css') }}" rel="stylesheet">
+
+<div id="big-container">
+
+  <div class="control-panel"> 
+    <button id="reset-button">{% trans %}Reset Progress{% endtrans %}</button>
+  </div>
+  
+  <div id="question-container">
+
+
+
+    <div id="flashcard" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h1 id="word-front"></h1>
+        </div>
+        <div class="card-back">
+          <h1 id="word-back"></h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-wrapper" id="card-progress">
+      <div id="completion-progress" class="completion-bar">
+        <span id="completion-text" class="progress-text"></span>
+      </div>
+    </div>
+
+    <div id="flip-hint">
+      {% trans %}Tap the card to flip👆{% endtrans %}
+    </div>
+  
+    
+
+    <div class="button-container">
+      <button id="prev-button" class="circle-btn">&#8592;</button>
+      <div id="progress-info">
+        {% trans %}Progress:{% endtrans %} <span id="current-card">1</span> / <span id="total-card">0</span>
+      </div>
+      <button id="next-button" class="circle-btn">&#8594;</button>
+    </div>
+    
+
+  </div>
+
+</div>
+
+
+{% if words %}
+<script>
+var words = {{ words | tojson }};
+</script>
+<script src="{{ url_for('static', filename='assets/js/dist/card.bundle.js') }}"></script>
+{% endif %}
+
+{% endblock main %}

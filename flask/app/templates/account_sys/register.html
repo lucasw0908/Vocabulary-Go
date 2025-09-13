@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link href="{{ url_for('static', filename='assets/css/form.css') }}" rel="stylesheet">
+
+<section id="hero" class="hero section">
+
+  <div id="bg">
+  </div>
+
+  <div id="form">
+    <h2>{% trans %}Register{% endtrans %}</h2>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <label for="username">{% trans %}Username{% endtrans %}</label>
+      {{ form.username() }}<br>
+
+      <label for="email">{% trans %}Email{% endtrans %}</label>
+      {{ form.email() }}<br>
+
+      <label for="password">{% trans %}Password{% endtrans %}</label>
+      {{ form.password() }}<br>
+
+      <label for="confirm">{% trans %}Confirm Password{% endtrans %}</label>
+      {{ form.confirm() }}<br>
+      
+      {{ form.submit() }}
+    </form>
+    <p>{% trans %}Already have an account?{% endtrans %} <a href="{{ url_for('account_sys.login') }}">{% trans %}Login{% endtrans %}</a></p>
+  </div>
+  <script>
+    function autoScaleForm() {
+      const form = document.getElementById('form');
+      const designHeight = 800; 
+      const scale = Math.min(window.innerHeight / designHeight, 1);
+      form.style.transform = `scale(${scale})`;
+    }
+  
+    window.addEventListener('load', autoScaleForm);
+    window.addEventListener('resize', autoScaleForm);
+  </script>
+  
+</section>
+{% endblock main %}
