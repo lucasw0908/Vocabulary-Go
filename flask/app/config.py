@@ -96,9 +96,6 @@ except IOError:
 
 
 # Load environment variables from .env file
-if not os.path.exists(os.path.join(BASEDIR, ".env")):
-    raise FileNotFoundError("The .env file is missing. Please ensure it exists in the app directory.")
-
 load_dotenv(os.path.join(BASEDIR, ".env"), override=True)
 
 SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
@@ -130,10 +127,6 @@ GOOGLE_CONFIG = {
     }
 }
 
-# GitHub OAuth configuration
-GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID")
-GITHUB_CLIENT_SECRET = os.getenv("GITHUB_CLIENT_SECRET")
-
 # Gemini API keys
 GEMENI_APIKEYS = [key.strip() for key in os.getenv("GEMENI_APIKEYS").split(",")]
 
@@ -154,8 +147,6 @@ if not all([
     DISCORD_CLIENT_SECRET,
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
-    GITHUB_CLIENT_ID,
-    GITHUB_CLIENT_SECRET,
     GEMENI_APIKEYS,
     SMTP_USER,
     SMTP_PASSWORD,

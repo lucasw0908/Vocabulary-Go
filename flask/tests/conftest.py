@@ -5,8 +5,7 @@ import pytest
 from flask import Flask, testing
 
 from app import create_app
-from app.config import Config
-from app.settings import SYSTEM_EMAIL, SYSTEM_PASSWORD
+from app.config import Config, SYSTEM_EMAIL, SYSTEM_PASSWORD
 
 
 class TestConfig(Config):

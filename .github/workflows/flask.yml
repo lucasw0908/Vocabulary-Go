@@ -24,6 +24,12 @@ jobs:
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
       GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
+      GEMENI_APIKEYS: ${{ secrets.GEMENI_APIKEYS }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      SYSTEM_USERNAME: ${{ secrets.SYSTEM_USERNAME }}
+      SYSTEM_EMAIL: ${{ secrets.SYSTEM_EMAIL }}
+      SYSTEM_PASSWORD: ${{ secrets.SYSTEM_PASSWORD }}
  
     steps:
     - uses: actions/checkout@v2
@@ -60,6 +66,12 @@ jobs:
         GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
         GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
         GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+        GEMENI_APIKEYS=${GEMENI_APIKEYS}
+        SMTP_USER=${SMTP_USER}
+        SMTP_PASSWORD=${SMTP_PASSWORD}
+        SYSTEM_USERNAME=${SYSTEM_USERNAME}
+        SYSTEM_EMAIL=${SYSTEM_EMAIL}
+        SYSTEM_PASSWORD=${SYSTEM_PASSWORD}
         EOF
 
     - name: Check .env file

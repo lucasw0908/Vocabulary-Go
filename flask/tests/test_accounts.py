@@ -8,17 +8,17 @@ def test_register_and_login_flow(client: testing.FlaskClient):
         data={
             "username": "newuser",
             "email": "new@example.com",
-            "password": "pw123",
-            "confirm": "pw123",
+            "password": "pw12345",
+            "confirm": "pw12345",
         },
         follow_redirects=False,
     )
-    assert resp.status_code in (200, 302, 303)
+    assert resp.status_code in (302, 303)
 
     # Login with new user
     resp2: Response = client.post(
         "/login",
-        data={"email": "new@example.com", "password": "pw123", "remember": "on"},
+        data={"email": "new@example.com", "password": "pw12345", "remember": "on"},
         follow_redirects=False,
     )
     assert resp2.status_code in (302, 303)
