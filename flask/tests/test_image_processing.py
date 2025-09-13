@@ -2,7 +2,7 @@ import io
 import requests
 import os
 
-from app.settings import BASEDIR, DEFAULT_AVATAR_FOLDER
+from app.config import BASEDIR, DEFAULT_AVATAR_FOLDER
 from app.utils.image_processing import process_image
 
 
