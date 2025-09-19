@@ -27,7 +27,7 @@ RUN npm install
 RUN npm run build
 
 # Compile translations
-RUN uv run pybabel compile -d translations
+RUN uv run pybabel compile -d app/translations
 
 # Start the app
 CMD ["uv", "run", "uwsgi", "--ini", "uwsgi.ini"]
