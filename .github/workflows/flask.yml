@@ -1,11 +1,11 @@
-
 name: Flask CI
- 
+
 on:
-  push:
-    branches: [ main, test ]
+  push: 
+    branches: ["main", "dev"]
   pull_request:
- 
+    branches: ["main", "dev"]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,14 +30,14 @@ jobs:
       SYSTEM_USERNAME: ${{ secrets.SYSTEM_USERNAME }}
       SYSTEM_EMAIL: ${{ secrets.SYSTEM_EMAIL }}
       SYSTEM_PASSWORD: ${{ secrets.SYSTEM_PASSWORD }}
- 
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
- 
+
     - name: Install Dependencies
       run: |
         apt-get update && apt-get install -y --no-install-recommends \
@@ -76,7 +76,7 @@ jobs:
 
     - name: Check .env file
       run: cat .env | sed 's/\(.*\)=.*/\1=****/'
- 
+
     - name: Run Tests
       run: |
         cd flask
