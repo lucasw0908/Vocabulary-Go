@@ -18,15 +18,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     npm \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python packages
-RUN pip install --no-cache-dir uwsgi
-
-# Sync dependencies with uv
+# Install uv and uwsgi
 RUN uv sync
+RUN uv pip install --no-cache-dir uwsgi
 
 # Build frontend
 RUN npm install
 RUN npm run build
 
+# Compile translations
+RUN uv run pybabel compile -d translations
+
 # Start the app
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+CMD ["uv", "run", "uwsgi", "--ini", "uwsgi.ini"]

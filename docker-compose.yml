@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.3"
 
 services:
   flask:
@@ -6,11 +6,13 @@ services:
     container_name: flask
     environment:
       - APP_NAME=FlaskApp
+    ports:
+      - "8080:8080"
     expose:
       - 8080
     depends_on:
       - db
- 
+
   db:
     image: postgres
     container_name: postgres
@@ -29,6 +31,5 @@ services:
     ports:
       - "80:80"
       - "443:443"
- 
     depends_on:
       - flask
