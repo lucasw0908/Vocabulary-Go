@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /path/to/your/project
+            cd /vocabulary-go
             docker compose pull
             docker compose up -d --remove-orphans
             docker image prune -f
