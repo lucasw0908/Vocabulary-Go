@@ -168,3 +168,9 @@ node_modules/
 
 # MACOS
 .DS_Store
+
+# SSL keys
+*.pem
+*.key
+*.csr
+*.crt
