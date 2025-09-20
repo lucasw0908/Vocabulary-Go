@@ -35,6 +35,7 @@ async def generate() -> None:
         random.shuffle(words)
 
         for word in words:
+            ai_helper.retry_attempts = 0
             question = await ai_helper.question(word.english)
             
             if question is None:
