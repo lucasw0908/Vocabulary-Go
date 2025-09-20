@@ -109,7 +109,7 @@ REDIRECT_URI = os.getenv("REDIRECT_URI")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 DISCORD_CLIENT_ID = os.getenv("DISCORD_CLIENT_ID")
 DISCORD_CLIENT_SECRET = os.getenv("DISCORD_CLIENT_SECRET")
-DISCORD_OAUTH_URL = "https://discord.com/oauth2/authorize?client_id=" + DISCORD_CLIENT_ID + "&redirect_uri=" + REDIRECT_URI + "&response_type=code&scope=identify+email" 
+DISCORD_OAUTH_URL = f"https://discord.com/oauth2/authorize?client_id={DISCORD_CLIENT_ID}&redirect_uri={REDIRECT_URI}&response_type=code&scope=identify+email" 
 
 # Google OAuth configuration
 GOOGLE_SCOPES = ["openid", "https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"]
