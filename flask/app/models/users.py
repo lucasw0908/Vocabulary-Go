@@ -51,11 +51,11 @@ class Users(db.Model, UserMixin):
     email_verified: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     # Discord fields
-    discord_token: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
+    discord_token: Mapped[Optional[str]] = mapped_column(String(256), unique=True, nullable=True)
     discord_id: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
 
     # Google fields
-    google_token: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
+    google_token: Mapped[Optional[str]] = mapped_column(String(256), unique=True, nullable=True)
     google_id: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
     
     
