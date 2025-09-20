@@ -26,6 +26,7 @@ try:
     SERVER_HOST = SETTINGS["server"]["host"]
     SERVER_PORT = SETTINGS["server"]["port"]
     DEBUG_MODE = SETTINGS["server"]["debug"]
+    SESSION_SQLALCHEMY_DB = SETTINGS["server"]["session_sqlalchemy_db"]
 
     # Database Settings
     DATABASE_SQLITE = SETTINGS["database"]["sqlite"]
@@ -161,6 +162,7 @@ class Config(object):
     JSON_AS_ASCII = False
     SECRET_KEY = SECRET_KEY
     
+    # Database Settings
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ENGINE_OPTIONS = {
         "echo": DATABASE_ECHO,
@@ -168,15 +170,17 @@ class Config(object):
         "pool_recycle": DATABASE_POOL_RECYCLE,
     }
     
-    SESSION_TYPE = "sqlalchemy"
+    # Session Settings
     SESSION_PERMANENT = False
     PERMANENT_SESSION_LIFETIME = timedelta(days=31)
-    SESSION_KEY_PREFIX = "session:"
     
+    # Cookie Settings
     REMEMBER_COOKIE_DURATION = timedelta(days=31)
     
+    # File Upload Settings
     MAX_CONTENT_LENGTH = MAX_CONTENT_LENGTH
     
+    # Babel Settings
     BABEL_DEFAULT_LOCALE = DEFAULT_LOCALE
     BABEL_TRANSLATION_DIRECTORIES = os.path.join(BASEDIR, "translations")
 
