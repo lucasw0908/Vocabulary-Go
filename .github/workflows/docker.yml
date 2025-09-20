@@ -8,39 +8,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    env:
-      SQLALCHEMY_DATABASE_URI: ${{ secrets.SQLALCHEMY_DATABASE_URI }}
-      REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
-      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-      DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}
-      DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET }}
-      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-      GEMENI_APIKEYS: ${{ secrets.GEMENI_APIKEYS }}
-      SMTP_USER: ${{ secrets.SMTP_USER }}
-      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      SYSTEM_USERNAME: ${{ secrets.SYSTEM_USERNAME }}
-      SYSTEM_EMAIL: ${{ secrets.SYSTEM_EMAIL }}
-      SYSTEM_PASSWORD: ${{ secrets.SYSTEM_PASSWORD }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and Push Docker Compose services
-        run: |
-          docker compose -f docker-compose.yml build
-          docker compose -f docker-compose.yml push
 
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.2.0
@@ -51,6 +21,5 @@ jobs:
           script: |
             cd Vocabulary-Go
             git pull origin main
-            docker compose pull
-            docker compose up -d --remove-orphans
+            docker compose up -d --remove-orphans --build
             docker image prune -f
