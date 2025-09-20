@@ -124,7 +124,9 @@ def forgot_password():
     form = ForgotPasswordForm()
     
     def render(error: Optional[str] = None):
-        log.warning(f"Forgot password error: {error}")
+        if error is not None:
+            log.warning(f"Forgot password error: {error}")
+            
         return render_template("account_sys/forgot_password.html", form=form, error=error)
     
     if form.validate_on_submit():
