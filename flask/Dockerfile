@@ -29,5 +29,8 @@ RUN npm run build
 # Compile translations
 RUN uv run pybabel compile -d app/translations
 
+# Migrate database
+RUN uv run flask db upgrade
+
 # Start the app
 CMD ["uv", "run", "uwsgi", "--ini", "uwsgi.ini"]
