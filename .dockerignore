@@ -2,8 +2,8 @@
 .github
 .dockerignore
 .gitignore
+.vscode
 *.yml
 Dockerfile*
-Makefile
 README.md
 tests
