@@ -171,6 +171,5 @@ node_modules/
 
 # SSL keys
 *.pem
-*.key
-*.csr
 *.crt
+*.key
