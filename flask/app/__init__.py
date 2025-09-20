@@ -179,9 +179,9 @@ def create_app(config=None) -> Flask:
         if not IS_MIGRATING:
             init_models()
     
-        # Initialize the questions generator
-        if INIT_GENERATOR:
-            init_generator()
+            # Initialize the questions generator
+            if INIT_GENERATOR:
+                init_generator()
     
     log.info("App initialized")
 

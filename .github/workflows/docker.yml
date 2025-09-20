@@ -8,6 +8,21 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      SQLALCHEMY_DATABASE_URI: ${{ secrets.SQLALCHEMY_DATABASE_URI }}
+      REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      DISCORD_CLIENT_ID: ${{ secrets.DISCORD_CLIENT_ID }}
+      DISCORD_CLIENT_SECRET: ${{ secrets.DISCORD_CLIENT_SECRET }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GEMENI_APIKEYS: ${{ secrets.GEMENI_APIKEYS }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      SYSTEM_USERNAME: ${{ secrets.SYSTEM_USERNAME }}
+      SYSTEM_EMAIL: ${{ secrets.SYSTEM_EMAIL }}
+      SYSTEM_PASSWORD: ${{ secrets.SYSTEM_PASSWORD }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,6 +50,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd Vocabulary-Go
+            git pull origin main
             docker compose pull
             docker compose up -d --remove-orphans
             docker image prune -f
