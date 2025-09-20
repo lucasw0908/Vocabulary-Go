@@ -6,5 +6,5 @@ COPY vocabulary_go.conf /etc/nginx/conf.d/
 
 RUN mkdir -p /etc/nginx/ssl
 
-COPY ssl/ssl.crt /etc/nginx/ssl/vocabulary_go.crt
-COPY ssl/ssl.key /etc/nginx/ssl/vocabulary_go.key
+COPY ssl.crt /etc/nginx/ssl/vocabulary_go.crt
+COPY ssl.key /etc/nginx/ssl/vocabulary_go.key
