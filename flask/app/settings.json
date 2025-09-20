@@ -25,7 +25,7 @@
         }
     },
     "logging": {
-        "level": "DEBUG",
+        "level": "INFO",
         "format": "[{asctime}] {levelname} {name}: {message}",
         "file": "app.log",
         "max_bytes": 10485760,
