@@ -9,7 +9,8 @@ from flask_wtf import CSRFProtect
 
 from .config import (
     ProdConfig, DevConfig,
-    BASEDIR, DEBUG_MODE,
+    BASEDIR, 
+    DEBUG_MODE, SESSION_SQLALCHEMY_DB,
     LOG_LEVEL, LOG_FORMAT, LOG_FILE, LOG_MAX_BYTES, LOG_BACKUP_COUNT,
     CSRF_PROTECTION,
     DATETIME_FORMAT,
@@ -138,8 +139,12 @@ def create_app(config=None) -> Flask:
     migrate.init_app(app, db)
     
     # Initialize the sqlalchemy session
-    app.config['SESSION_SQLALCHEMY'] = db
-    Session(app)
+    if SESSION_SQLALCHEMY_DB:
+        app.config["SESSION_TYPE"] = "sqlalchemy"
+        app.config["SESSION_SQLALCHEMY"] = db
+        app.config["SESSION_KEY_PREFIX"] = "session:"
+        Session(app)
+        log.info("Using SQLAlchemy for session storage")
     
     # Initialize the login manager
     login_manager.init_app(app)
