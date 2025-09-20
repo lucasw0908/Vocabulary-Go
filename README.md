@@ -17,7 +17,7 @@ Vocabulary Go is a web application designed to help users enhance their vocabula
 
 An intuitive way to memorize vocabulary with definitions, pronunciation, and examples, helping you retain words through repetition.
 
-### Word Tese
+### Word Test
 
 Quick tests designed in exam style to check your word knowledge and strengthen mastery with multiple formats.
 
