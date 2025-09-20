@@ -1,13 +1,8 @@
-import base64
 import hashlib
 import logging
-import os
 from datetime import datetime, timezone, timedelta
 
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.backends import default_backend
-from cryptography.fernet import Fernet
+import jwt
 from flask_bcrypt import Bcrypt
 
 from ..config import PASSWORD_HASHING_ALGORITHM, PASSWORD_HASHING_ROUNDS, SECRET_KEY
@@ -65,104 +60,58 @@ def check_password(hashed_password: str, password: str) -> bool:
     
     else:
         raise ValueError(f"Unsupported hashing algorithm: {PASSWORD_HASHING_ALGORITHM}")  
-    
-    
-class Token:
-    
-    def __init__(self, value: bytes, lifetime: timedelta):
-        self.value = value
-        self.lifetime = lifetime
-        self.created_at = datetime.now(timezone.utc)
-    
-
-class TokenManager:
-    """
-    A class to manage token generation and validation.
-    """
-    default_lifetime = timedelta(minutes=10)
-    available_tokens: list[Token] = []
+        
+        
+class JWTManager:
     
     @staticmethod
-    def derive_key(password: str, salt: bytes) -> bytes:
-        kdf = PBKDF2HMAC(
-            algorithm=hashes.SHA256(),
-            length=32,
-            salt=salt,
-            iterations=PASSWORD_HASHING_ROUNDS,
-            backend=default_backend()
-        )
-        return base64.urlsafe_b64encode(kdf.derive(password.encode()))
-    
-    @staticmethod
-    def generate_token(message: str, lifetime: timedelta = None) -> Token:
+    def generate_jwt(payload: dict, lifetime: timedelta = None) -> str:
         """
-        Generate a new token and store it in the available tokens list.
-        """
-        salt = os.urandom(16)
-        key = TokenManager.derive_key(SECRET_KEY, salt)
-        f = Fernet(key)
-
-        token = f.encrypt(message.encode())
-
-        combined = base64.urlsafe_b64encode(salt + token)
-        token = Token(combined, lifetime or TokenManager.default_lifetime)
-        TokenManager.available_tokens.append(token)
-        return token
-    
-
-    @staticmethod
-    def get_data_from_token(token_value: bytes) -> str | None:
-        """
-        Decode the data from a base64-encoded token.
-        """
-        try:
-            decoded = base64.urlsafe_b64decode(token_value)
-            salt, real_token = decoded[:16], decoded[16:]
-
-            key = TokenManager.derive_key(SECRET_KEY, salt)
-            f = Fernet(key)
-
-            return f.decrypt(real_token).decode()
-        except Exception as e:
-            log.error(f"Failed to decrypt token: {e}")
-            return None
-    
-    
-    @staticmethod
-    def validate_token(token_value: bytes) -> bool:
-        """
-        Validate a token and remove it from the available tokens list if valid.
+        Generate a JWT token with the given payload and lifetime.
 
         Parameters
         ----------
-        token_value : bytes
-            The token to validate.
+        payload : dict
+            The payload to include in the JWT.
+        lifetime : timedelta, optional
+            The lifetime of the token. Defaults to 1 hour.
 
         Returns
         -------
-        bool
-            True if the token is valid, False otherwise.
+        str
+            The generated JWT token.
         """
-        current_time = datetime.now(timezone.utc)
+        exp = datetime.now(timezone.utc) + (lifetime or timedelta(hours=1))
+        payload.update({"exp": exp})
         
-        # Remove expired tokens
-        TokenManager.available_tokens = [
-            token for token in TokenManager.available_tokens 
-            if current_time - token.created_at < token.lifetime
-        ]
-        
-        for token in TokenManager.available_tokens:
-            if token.value == token_value:
-                return True
-        
-        log.debug(f"Token {token_value} is invalid or expired.")
-        return False
+        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+        return token
     
     
     @staticmethod
-    def clear_tokens() -> None:
+    def validate_jwt(token: str) -> dict | None:
         """
-        Clear all available tokens.
+        Validate a JWT token and return its payload if valid.
+
+        Parameters
+        ----------
+        token : str
+            The JWT token to validate.
+
+        Returns
+        -------
+        dict | None
+            The payload if the token is valid, None otherwise.
         """
-        TokenManager.available_tokens.clear()
-        log.info("Cleared all available tokens.")
+        try:
+            payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+            return payload
+        
+        except jwt.ExpiredSignatureError:
+            log.warning("JWT token has expired.")
+            return None
+        
+        except jwt.InvalidTokenError as e:
+            log.error(f"Invalid JWT token: {e}")
+            return None
+        

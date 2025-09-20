@@ -11,11 +11,10 @@ authors = [
 requires-python = ">=3.11"
 dependencies = [
     "beartype==0.21.0",
-    "cryptography>=45.0.7",
     "Flask==3.1.2",
     "Flask-Admin==1.6.1",
     "Flask-Bcrypt==1.0.1",
-    "Flask-Babel>=4.0.0",
+    "Flask-Babel==4.0.0",
     "Flask-Migrate==4.0.5",
     "Flask-SQLAlchemy==3.1.1",
     "Flask-Login==0.6.3",
@@ -23,11 +22,12 @@ dependencies = [
     "Flask-WTF==1.2.1",
     "google-auth-oauthlib==1.2.2",
     "google-generativeai==0.8.5",
+    "pillow==11.3.0",
     "psycopg2-binary==2.9.10",
+    "pyjwt==2.10.1",
     "python-dotenv==1.0.0",
     "wtforms==3.1.2",
     "Zenora==0.0.3.post1",
-    "pillow>=11.3.0",
 ]
 
 [dependency-groups]
