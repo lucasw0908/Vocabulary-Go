@@ -2,8 +2,7 @@
     "server": {
         "host": "localhost",
         "port": 8080,
-        "debug": false,
-        "session_sqlalchemy_db": true
+        "debug": false
     },
     "database": {
         "sqlite": "db.sqlite3",
