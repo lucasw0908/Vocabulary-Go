@@ -401,7 +401,7 @@ def reset_password(token_value: str):
     payload = JWTManager.validate_jwt(token_value)
     
     if payload is None or "email" not in payload:
-        log.warning(f"Invalid or expired password reset token")
+        log.warning("Invalid or expired password reset token")
         return abort(400, description="Invalid or expired token.")
     
     email = payload["email"]
