@@ -4,8 +4,6 @@ services:
     container_name: flask
     environment:
       - APP_NAME=FlaskApp
-    ports:
-      - "8080:8080"
     expose:
       - 8080
     depends_on:
