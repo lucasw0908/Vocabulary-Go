@@ -16,7 +16,7 @@ class ApiKeyManager:
         self.available = {key: True for key in api_keys}
         
 
-    async def get_available_api_key(self):
+    async def get_available_api_key(self) -> str:
         
         for _ in range(len(self.api_keys)):
             
@@ -33,6 +33,11 @@ class ApiKeyManager:
             await asyncio.sleep(3)
         
         return await self.get_available_api_key()
+    
+    
+    def wait_for_any_key(self):
+        while not any(self.available.values()):
+            time.sleep(3)
     
     
     @staticmethod

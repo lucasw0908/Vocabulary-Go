@@ -1,27 +1,23 @@
+import time
 from datetime import timedelta
 
-from app.utils.secret import TokenManager, Token
+from app.utils.secret import JWTManager
 
 
-def test_token_manager():
-    data = "test_data"
-    token = TokenManager.generate_token(data)
-    assert isinstance(token, Token), "Token should be a Token object"
+def test_jwt_manager():
+    data = {"user_id": 123, "role": "admin"}
+    token = JWTManager.generate_jwt(data)
+
+    assert isinstance(token, str), "Token should be a string"
     
-    assert TokenManager.validate_token(token.value) is True, "Token should be valid"
-    
-    assert TokenManager.get_data_from_token(token.value) == data, "Data retrieved from token should match original data"
-    assert TokenManager.get_data_from_token("invalid_token") is None, "Invalid token should return None"
+    assert JWTManager.validate_jwt(token) == data, "Data retrieved from token should match original data"
+    assert JWTManager.validate_jwt("invalid_token") is None, "Invalid token should return None"
     
     
-def test_token_expiry():
-    data = "expiring_data"
-    token = TokenManager.generate_token(data, lifetime=timedelta(seconds=1))
+def test_jwt_expiry():
+    data = {"user_id": 456, "role": "user"}
+    token = JWTManager.generate_jwt(data, lifetime=timedelta(seconds=1))
     
-    assert TokenManager.validate_token(token.value) is True, "Token should be valid immediately after creation"
-    
-    import time
     time.sleep(2)  # Wait for token to expire
     
-    assert TokenManager.validate_token(token.value) is False, "Token should be invalid after expiry"
-    
+    assert JWTManager.validate_jwt(token) is None, "Token should be invalid after expiry"

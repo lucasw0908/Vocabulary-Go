@@ -171,6 +171,9 @@ class Config(object):
     }
     
     # Session Settings
+    SESSION_TYPE = "sqlalchemy"
+    SESSION_KEY_PREFIX = "session:"
+    SESSION_USE_SIGNER = True
     SESSION_PERMANENT = False
     PERMANENT_SESSION_LIFETIME = timedelta(days=31)
     

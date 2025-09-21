@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-09-13 23:01+0800\n"
+"POT-Creation-Date: 2025-09-21 23:18+0800\n"
 "PO-Revision-Date: 2025-09-11 19:24+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -87,7 +87,6 @@ msgstr "登出"
 #: app/templates/account_sys/login.html:11
 #: app/templates/account_sys/register.html:30
 #: app/templates/account_sys/reset_password.html:19 app/templates/base.html:99
-#: app/utils/forms.py:21
 msgid "Login"
 msgstr "登入"
 
@@ -215,7 +214,7 @@ msgstr "創建"
 msgid "Edit"
 msgstr "編輯"
 
-#: app/templates/library_create.html:8 app/utils/forms.py:114
+#: app/templates/library_create.html:8
 msgid "Create Library"
 msgstr "創建題庫"
 
@@ -258,7 +257,6 @@ msgid "Clear"
 msgstr "關閉"
 
 #: app/templates/library_create.html:83 app/templates/library_edit.html:75
-#: app/utils/forms.py:101
 msgid "Library Name"
 msgstr "題庫名稱"
 
@@ -267,7 +265,6 @@ msgid "Enter library name"
 msgstr "請輸入題庫名稱"
 
 #: app/templates/library_create.html:89 app/templates/library_edit.html:81
-#: app/utils/forms.py:109
 msgid "Public Library"
 msgstr "公開題庫"
 
@@ -336,7 +333,7 @@ msgid "Difficulty: Hard"
 msgstr "難度：難"
 
 #: app/templates/account_sys/forgot_password.html:11
-#: app/templates/account_sys/settings.html:110
+#: app/templates/account_sys/settings.html:112
 msgid "Forgot Password"
 msgstr "忘記密碼"
 
@@ -346,8 +343,7 @@ msgstr "請輸入您的電子郵件信箱，該信箱將會收到密碼重置信
 
 #: app/templates/account_sys/forgot_password.html:16
 #: app/templates/account_sys/login.html:14
-#: app/templates/account_sys/register.html:19 app/utils/forms.py:11
-#: app/utils/forms.py:29 app/utils/forms.py:96
+#: app/templates/account_sys/register.html:19
 msgid "Email"
 msgstr "電子郵件信箱"
 
@@ -358,15 +354,14 @@ msgstr "請輸入你的電子郵件信箱"
 #: app/templates/account_sys/forgot_password.html:23
 #: app/templates/account_sys/reset_password.html:19
 msgid "Remembered your password?"
-msgstr "請輸入目前的密碼。"
+msgstr "想起密碼了？"
 
 #: app/templates/account_sys/forgot_password.html:23
 msgid "Back to Login"
 msgstr "返回登入頁"
 
 #: app/templates/account_sys/login.html:15
-#: app/templates/account_sys/register.html:22 app/utils/forms.py:15
-#: app/utils/forms.py:33
+#: app/templates/account_sys/register.html:22
 msgid "Password"
 msgstr "密碼"
 
@@ -375,7 +370,7 @@ msgid "Don't have an account?"
 msgstr "尚未創建帳號?"
 
 #: app/templates/account_sys/login.html:23
-#: app/templates/account_sys/register.html:12 app/utils/forms.py:41
+#: app/templates/account_sys/register.html:12
 msgid "Register"
 msgstr "註冊"
 
@@ -406,8 +401,8 @@ msgstr "預設頭貼"
 msgid "Joined on:"
 msgstr "加入於:"
 
-#: app/templates/account_sys/profile.html:28 app/views/account_sys.py:422
-#: app/views/account_sys.py:450
+#: app/templates/account_sys/profile.html:28 app/views/account_sys.py:424
+#: app/views/account_sys.py:451
 msgid "User not found."
 msgstr "找不到使用者。"
 
@@ -431,12 +426,11 @@ msgstr "無敘述"
 msgid "No public libraries yet."
 msgstr "未創建任何公開題庫"
 
-#: app/templates/account_sys/register.html:16 app/utils/forms.py:25
-#: app/utils/forms.py:54
+#: app/templates/account_sys/register.html:16
 msgid "Username"
 msgstr "使用者"
 
-#: app/templates/account_sys/register.html:25 app/utils/forms.py:38
+#: app/templates/account_sys/register.html:25
 msgid "Confirm Password"
 msgstr "確認密碼"
 
@@ -448,17 +442,15 @@ msgstr "已經註冊帳號了?"
 msgid "Reset Password"
 msgstr "重置密碼"
 
-#: app/templates/account_sys/reset_password.html:13 app/utils/forms.py:72
-#: app/utils/forms.py:84
+#: app/templates/account_sys/reset_password.html:13
 msgid "New Password"
 msgstr "新密碼"
 
-#: app/templates/account_sys/reset_password.html:14 app/utils/forms.py:77
-#: app/utils/forms.py:89
+#: app/templates/account_sys/reset_password.html:14
 msgid "Confirm New Password"
 msgstr "確認新密碼"
 
-#: app/templates/account_sys/settings.html:32 app/utils/forms.py:50
+#: app/templates/account_sys/settings.html:32
 msgid "Update Avatar"
 msgstr "更新頭貼"
 
@@ -467,379 +459,375 @@ msgid "Upload image..."
 msgstr "上傳圖片"
 
 #: app/templates/account_sys/settings.html:40
-#: app/templates/account_sys/settings.html:215
 msgid "Choose File"
 msgstr "選擇檔案"
 
-#: app/templates/account_sys/settings.html:55 app/utils/forms.py:63
+#: app/templates/account_sys/settings.html:56
 msgid "Bio"
 msgstr "自我介紹"
 
-#: app/templates/account_sys/settings.html:60
+#: app/templates/account_sys/settings.html:61
 msgid "Write your bio... (max 75 characters)"
 msgstr "寫下你的自我介紹... (最多 75 個字)"
 
-#: app/templates/account_sys/settings.html:66
+#: app/templates/account_sys/settings.html:67
 msgid "Up to 75 characters"
 msgstr "最多 75 個字"
 
-#: app/templates/account_sys/settings.html:75 app/utils/forms.py:80
+#: app/templates/account_sys/settings.html:77
 msgid "Change Password"
 msgstr "變更密碼"
 
-#: app/templates/account_sys/settings.html:80
+#: app/templates/account_sys/settings.html:82
 msgid "Enter current password"
 msgstr "請輸入目前的密碼"
 
-#: app/templates/account_sys/settings.html:89
+#: app/templates/account_sys/settings.html:91
+#: app/templates/account_sys/settings.html:131
 msgid "Enter new password"
 msgstr "請輸入新密碼"
 
-#: app/templates/account_sys/settings.html:98
+#: app/templates/account_sys/settings.html:100
+#: app/templates/account_sys/settings.html:140
 msgid "Confirm new password"
 msgstr "確認新密碼"
 
-#: app/templates/account_sys/settings.html:117
-msgid "Third-Party Account Linking"
-msgstr "第三方帳號綁訂"
+#: app/templates/account_sys/settings.html:119
+#: app/templates/account_sys/settings.html:149
+msgid "Create Password"
+msgstr "創建新密碼"
 
-#: app/templates/account_sys/settings.html:125
-#: app/templates/account_sys/settings.html:143
-#: app/templates/account_sys/settings.html:170
-#: app/templates/account_sys/settings.html:183
-msgid "Linked"
-msgstr "已綁訂"
-
-#: app/templates/account_sys/settings.html:128
-#: app/templates/account_sys/settings.html:147
-#: app/templates/account_sys/settings.html:172
-#: app/templates/account_sys/settings.html:185
-msgid "Unlink"
-msgstr "解除綁訂"
-
-#: app/templates/account_sys/settings.html:131
-#: app/templates/account_sys/settings.html:150
-#: app/templates/account_sys/settings.html:174
-#: app/templates/account_sys/settings.html:187
-msgid "Not linked"
-msgstr "尚未綁訂"
-
-#: app/templates/account_sys/settings.html:135
-#: app/templates/account_sys/settings.html:176
-msgid "Link Google"
-msgstr "綁訂 Google"
-
-#: app/templates/account_sys/settings.html:154
-#: app/templates/account_sys/settings.html:189
-msgid "Link Discord"
-msgstr "綁訂 Discord"
-
-#: app/templates/account_sys/settings.html:162
-msgid "Please set a password before linking/unlinking accounts"
-msgstr "請先設定密碼再解除綁定。"
-
-#: app/templates/account_sys/settings.html:163
-msgid "Go to set password"
-msgstr "前往設置密碼"
-
-#: app/templates/account_sys/settings.html:231
-msgid "Password reset email has been sent to your inbox!"
-msgstr "密碼重設信件已寄出。"
-
-#: app/templates/account_sys/settings.html:234
-msgid "Failed to send:"
-msgstr "寄送失敗:"
-
-#: app/templates/account_sys/settings.html:238
-msgid "Failed to send, please try again later."
-msgstr "寄送失敗，請稍後再試"
-
-#: app/utils/forms.py:13 app/utils/forms.py:31
-#, python-format
-msgid "Email is too long (max %(limit)s characters)"
-msgstr "電子郵件信箱過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:17 app/utils/forms.py:35 app/utils/forms.py:74
-#: app/utils/forms.py:86
-#, python-format
-msgid "Password is too short (min %(limit)s characters)"
-msgstr "密碼過短 (至少 %(limit)s 個字元)"
-
-#: app/utils/forms.py:18 app/utils/forms.py:36 app/utils/forms.py:75
-#: app/utils/forms.py:87
-#, python-format
-msgid "Password is too long (max %(limit)s characters)"
-msgstr "密碼過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:20
-msgid "Remember Me"
-msgstr "保持登入"
-
-#: app/utils/forms.py:27 app/utils/forms.py:57
-#, python-format
-msgid "Username is too long (max %(limit)s characters)"
-msgstr "用戶名稱過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:39 app/utils/forms.py:78 app/utils/forms.py:90
-msgid "Passwords must match"
-msgstr "密碼不一致"
-
-#: app/utils/forms.py:45
-msgid "Avatar"
-msgstr "使用者頭貼"
-
-#: app/utils/forms.py:47
-msgid "Images only!"
-msgstr "僅能上傳圖片檔案!"
-
-#: app/utils/forms.py:48
-#, python-format
-msgid "Avatar file is too large (max %(limit)s MB)"
-msgstr "頭貼檔案過大 (上限 %(limit)s MB)"
-
-#: app/utils/forms.py:56
-#, python-format
-msgid "Username is too short (min %(limit)s characters)"
-msgstr "用戶名稱過短 (至少 %(limit)s 個字元)"
-
-#: app/utils/forms.py:59
-msgid "Update Username"
-msgstr "更新使用者名稱"
-
-#: app/utils/forms.py:65
-#, python-format
-msgid "Bio is too long (max %(limit)s characters)"
-msgstr "自我介紹過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:67
-msgid "Update Bio"
-msgstr "更新自我介紹"
-
-#: app/utils/forms.py:71
-msgid "Current Password"
-msgstr "目前的密碼"
-
-#: app/utils/forms.py:92
-msgid "Request Password Reset"
-msgstr "申請重置密碼"
-
-#: app/utils/forms.py:97
-msgid "Send Reset Password Mail"
-msgstr "傳送重置密碼連結"
-
-#: app/utils/forms.py:103
-#, python-format
-msgid "Library name is too long (max %(limit)s characters)"
-msgstr "題庫名稱過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:105
-msgid "Description"
-msgstr "說明"
-
-#: app/utils/forms.py:107
-#, python-format
-msgid "Description is too long (max %(limit)s characters)"
-msgstr "說明過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:110
-msgid "Words (JSON format)"
-msgstr "單字 (JSON 格式)"
-
-#: app/utils/forms.py:112
-#, python-format
-msgid "Words JSON is too long (max %(limit)s characters)"
-msgstr "單字的 JSON 檔案過大 (上限 %(limit)s 個字元)"
-
-#: app/views/account_sys.py:39 app/views/account_sys.py:415
-msgid "Passwords do not match"
-msgstr "密碼不一致"
-
-#: app/views/account_sys.py:47
-msgid "Invalid email format"
-msgstr "無效的電子郵件信箱"
-
-#: app/views/account_sys.py:52
-msgid "Email already registered"
-msgstr "電子郵件已被註冊"
-
-#: app/views/account_sys.py:74 app/views/mail.py:81
+#: app/templates/account_sys/settings.html:158 app/views/account_sys.py:73
+#: app/views/mail.py:75
 msgid "Email Verification"
 msgstr "電子郵件驗證"
 
-#: app/views/account_sys.py:80
+#: app/templates/account_sys/settings.html:162
+msgid "Verified"
+msgstr "已驗證"
+
+#: app/templates/account_sys/settings.html:168
+msgid "Not Verified"
+msgstr "尚未驗證"
+
+#: app/templates/account_sys/settings.html:173
+msgid "Resend Verification Email"
+msgstr "重新發送驗證信"
+
+#: app/templates/account_sys/settings.html:181
+msgid "Third-Party Account Linking"
+msgstr "第三方帳號綁訂"
+
+#: app/templates/account_sys/settings.html:188
+#: app/templates/account_sys/settings.html:205
+#: app/templates/account_sys/settings.html:230
+#: app/templates/account_sys/settings.html:243
+msgid "Linked"
+msgstr "已綁訂"
+
+#: app/templates/account_sys/settings.html:191
+#: app/templates/account_sys/settings.html:208
+#: app/templates/account_sys/settings.html:232
+#: app/templates/account_sys/settings.html:245
+msgid "Unlink"
+msgstr "解除綁訂"
+
+#: app/templates/account_sys/settings.html:194
+#: app/templates/account_sys/settings.html:211
+#: app/templates/account_sys/settings.html:234
+#: app/templates/account_sys/settings.html:247
+msgid "Not linked"
+msgstr "尚未綁訂"
+
+#: app/templates/account_sys/settings.html:197
+#: app/templates/account_sys/settings.html:236
+msgid "Link Google"
+msgstr "綁訂 Google"
+
+#: app/templates/account_sys/settings.html:214
+#: app/templates/account_sys/settings.html:249
+msgid "Link Discord"
+msgstr "綁訂 Discord"
+
+#: app/templates/account_sys/settings.html:222
+msgid "Please set a password before linking/unlinking accounts"
+msgstr "請先設定密碼再解除綁定。"
+
+#: app/templates/account_sys/settings.html:223
+msgid "Go to set password"
+msgstr "前往設置密碼"
+
+#: app/templates/account_sys/settings.html:283
+msgid "Password reset email has been sent to your inbox!"
+msgstr "密碼重設信件已寄出。"
+
+#: app/templates/account_sys/settings.html:286
+#: app/templates/account_sys/settings.html:310
+msgid "Failed to send:"
+msgstr "寄送失敗:"
+
+#: app/templates/account_sys/settings.html:290
+#: app/templates/account_sys/settings.html:314
+msgid "Failed to send, please try again later."
+msgstr "寄送失敗，請稍後再試"
+
+#: app/templates/account_sys/settings.html:307
+msgid "Verification email has been sent to your inbox!"
+msgstr "驗證信件已寄出。"
+
+#: app/views/account_sys.py:40 app/views/account_sys.py:417
+msgid "Passwords do not match"
+msgstr "密碼不一致"
+
+#: app/views/account_sys.py:48
+msgid "Invalid email format"
+msgstr "無效的電子郵件信箱"
+
+#: app/views/account_sys.py:53
+msgid "Email already registered"
+msgstr "電子郵件已被註冊"
+
+#: app/views/account_sys.py:79
 msgid ""
 "Registration successful. Please log in and check the verification mail in"
 " your email."
 msgstr "註冊完成，請登入帳號並查看您的信箱中的驗證信"
 
-#: app/views/account_sys.py:99 app/views/account_sys.py:116
+#: app/views/account_sys.py:98 app/views/account_sys.py:115
 msgid "Invalid email or password"
 msgstr "電子郵件或密碼錯誤"
 
-#: app/views/account_sys.py:104
+#: app/views/account_sys.py:103
 msgid "This account uses OAuth for login. Please use the OAuth login method."
 msgstr "此帳號尚未設定密碼，請使用其他第三方平台登入方式"
 
-#: app/views/account_sys.py:134
+#: app/views/account_sys.py:135
 msgid "No account associated with this email."
 msgstr "此電子郵件未註冊任何帳號。"
 
-#: app/views/account_sys.py:145 app/views/mail.py:48
+#: app/views/account_sys.py:143 app/views/mail.py:45
 msgid "Password Reset Request"
 msgstr "密碼重設請求"
 
-#: app/views/account_sys.py:173
+#: app/views/account_sys.py:147
+msgid "Password reset link sent. Please check your email."
+msgstr "密碼重設信件已寄出，請查看你的電子郵件信箱。"
+
+#: app/views/account_sys.py:172
 msgid "Discord account already linked."
 msgstr "Discord 帳號已綁定。"
 
-#: app/views/account_sys.py:178
+#: app/views/account_sys.py:177
 msgid "Set a password before linking Discord."
 msgstr "請先設定密碼再綁定 Discord。"
 
-#: app/views/account_sys.py:189
+#: app/views/account_sys.py:188
 msgid "Google account already linked."
 msgstr "Google 帳號已綁定。"
 
-#: app/views/account_sys.py:194
+#: app/views/account_sys.py:193
 msgid "Set a password before linking Google."
 msgstr "請先設定密碼再綁定 Google。"
 
-#: app/views/account_sys.py:217
+#: app/views/account_sys.py:216
 msgid "Invalid OAuth callback parameters."
 msgstr "OAuth 回呼參數無效。"
 
-#: app/views/account_sys.py:226
+#: app/views/account_sys.py:225
 msgid "OAuth authentication failed."
 msgstr "OAuth 驗證失敗。"
 
-#: app/views/account_sys.py:280
+#: app/views/account_sys.py:279
 msgid "Set a password before unlinking Discord."
 msgstr "請先設定密碼再解除 Discord 綁定。"
 
-#: app/views/account_sys.py:284
+#: app/views/account_sys.py:283
 msgid "No Discord account linked."
 msgstr "未綁定 Discord 帳號。"
 
-#: app/views/account_sys.py:299
+#: app/views/account_sys.py:298
 msgid "Set a password before unlinking Google."
 msgstr "請先設定密碼再解除 Google 綁定。"
 
-#: app/views/account_sys.py:303
+#: app/views/account_sys.py:302
 msgid "No Google account linked."
 msgstr "未綁定 Google 帳號。"
 
-#: app/views/account_sys.py:365
+#: app/views/account_sys.py:364
 #, python-format
 msgid "Unknown settings submission type: %(submit_type)s"
 msgstr "未知的設定提交類型：%(submit_type)s"
 
-#: app/views/account_sys.py:368
+#: app/views/account_sys.py:367
 #, python-format
 msgid "Form validation failed for %(submit_type)s"
 msgstr "%(submit_type)s 表單驗證失敗"
 
-#: app/views/account_sys.py:382
+#: app/views/account_sys.py:381
 msgid "Please enter your current password."
 msgstr "請輸入目前的密碼。"
 
-#: app/views/account_sys.py:385
+#: app/views/account_sys.py:384
 msgid "Current password is incorrect."
 msgstr "目前密碼錯誤。"
 
-#: app/views/account_sys.py:388
+#: app/views/account_sys.py:387
 msgid "New password and confirmation do not match."
 msgstr "新密碼與確認密碼不一致。"
 
-#: app/views/account_sys.py:442
+#: app/views/account_sys.py:405 app/views/account_sys.py:443
 msgid "Invalid or expired token."
-msgstr "驗證連結無效或已過期。"
+msgstr "無效或過期的金鑰"
 
-#: app/views/account_sys.py:460
+#: app/views/account_sys.py:457
 msgid "Email verified successfully."
 msgstr "已完成電子郵件驗證。 🥳"
 
-#: app/views/mail.py:37 app/views/mail.py:67
+#: app/views/mail.py:37 app/views/mail.py:64
 msgid "Email not found."
 msgstr "找不到電子郵件。"
 
-#: app/views/mail.py:55
+#: app/views/mail.py:52
 msgid "Password reset email sent."
 msgstr "密碼重設信件已寄出。"
 
-#: app/views/mail.py:70
+#: app/views/mail.py:67
 msgid "Email already verified."
 msgstr "電子郵件已驗證。"
 
-#: app/views/mail.py:88
+#: app/views/mail.py:82
 msgid "Email verification sent."
 msgstr "驗證信件已寄出。"
 
-#: app/views/main.py:78 app/views/main.py:103 app/views/main.py:405
+#: app/views/main.py:77 app/views/main.py:102 app/views/main.py:404
 msgid "Please choose a library first."
 msgstr "請先選擇一個題庫。"
 
-#: app/views/main.py:91 app/views/main.py:418
+#: app/views/main.py:90 app/views/main.py:417
 msgid "No words found in the current library."
 msgstr "目前題庫中沒有單字。"
 
-#: app/views/main.py:135
+#: app/views/main.py:134
 msgid "No sentences found in the current library."
 msgstr "目前題庫中沒有句子。"
 
-#: app/views/main.py:197 app/views/main.py:328
+#: app/views/main.py:196 app/views/main.py:327
 msgid "You must be logged in to edit a library."
 msgstr "必須登入才能編輯題庫。"
 
-#: app/views/main.py:224 app/views/main.py:308
+#: app/views/main.py:223 app/views/main.py:307
 msgid "You must be logged in to create a library."
 msgstr "必須登入才能建立題庫。"
 
-#: app/views/main.py:228
+#: app/views/main.py:227
 msgid "Please verify your email before creating a library."
 msgstr "請先完成電子郵件驗證再創建題庫。"
 
-#: app/views/main.py:237
+#: app/views/main.py:236
 msgid ""
 "You have reached the maximum number of libraries (5). Please upgrade for "
 "unlimited access."
 msgstr "你已達到最大題庫題庫數量: 5。"
 
-#: app/views/main.py:242 app/views/main.py:343
+#: app/views/main.py:241 app/views/main.py:342
 msgid "Library name cannot be empty."
 msgstr "題庫名稱不能為空。"
 
-#: app/views/main.py:247 app/views/main.py:347
+#: app/views/main.py:246 app/views/main.py:346
 #, python-format
 msgid "Library '%(name)s' already exists."
 msgstr "題庫「%(name)s」已存在。"
 
-#: app/views/main.py:258 app/views/main.py:358
+#: app/views/main.py:257 app/views/main.py:357
 msgid ""
 "Library exceeds maximum word limit (500). Please upgrade for unlimited "
 "access."
 msgstr "題庫已超過最大單字數限制 (500)。"
 
-#: app/views/main.py:263 app/views/main.py:363
+#: app/views/main.py:262 app/views/main.py:362
 msgid "Invalid JSON format for words."
 msgstr "單字 JSON 格式無效。"
 
-#: app/views/main.py:268 app/views/main.py:368
+#: app/views/main.py:267 app/views/main.py:367
 msgid "Invalid words format. Please check your input."
 msgstr "單字格式錯誤，請檢查輸入內容。"
 
-#: app/views/main.py:283
+#: app/views/main.py:282
 msgid "Each word must have 'Chinese' and 'English' keys."
 msgstr "每個單字必須包含 'Chinese' 與 'English' 欄位。"
 
-#: app/views/main.py:303
+#: app/views/main.py:302
 msgid "Form validation failed. Please check your input."
 msgstr "表單驗證失敗，請檢查輸入內容。"
 
-#: app/views/main.py:332
+#: app/views/main.py:331
 msgid "Please verify your email before editing a library."
 msgstr "請先完成電子郵件驗證再編輯題庫。"
 
-#: app/views/main.py:379
+#: app/views/main.py:378
 msgid "Missing 'Chinese' or 'English' key in words JSON."
 msgstr "單字 JSON 缺少 'English' 或 'Chinese' 欄位。"
+
+msgid "Email is too long (max %(limit)s characters)"
+msgstr "電子郵件信箱過長 (上限 %(limit)s 個字元)"
+
+msgid "Password is too short (min %(limit)s characters)"
+msgstr "密碼過短 (至少 %(limit)s 個字元)"
+
+msgid "Password is too long (max %(limit)s characters)"
+msgstr "密碼過長 (上限 %(limit)s 個字元)"
+
+msgid "Remember Me"
+msgstr "保持登入"
+
+msgid "Username is too long (max %(limit)s characters)"
+msgstr "用戶名稱過長 (上限 %(limit)s 個字元)"
+
+msgid "Passwords must match"
+msgstr "密碼不一致"
+
+msgid "Avatar"
+msgstr "使用者頭貼"
+
+msgid "Images only!"
+msgstr "僅能上傳圖片檔案!"
+
+msgid "Avatar file is too large (max %(limit)s MB)"
+msgstr "頭貼檔案過大 (上限 %(limit)s MB)"
+
+msgid "Username is too short (min %(limit)s characters)"
+msgstr "用戶名稱過短 (至少 %(limit)s 個字元)"
+
+msgid "Update Username"
+msgstr "更新使用者名稱"
+
+msgid "Bio is too long (max %(limit)s characters)"
+msgstr "自我介紹過長 (上限 %(limit)s 個字元)"
+
+msgid "Update Bio"
+msgstr "更新自我介紹"
+
+msgid "Request Password Reset"
+msgstr "申請重置密碼"
+
+msgid "Send Reset Password Mail"
+msgstr "傳送重置密碼連結"
+
+msgid "Library name is too long (max %(limit)s characters)"
+msgstr "題庫名稱過長 (上限 %(limit)s 個字元)"
+
+msgid "Description"
+msgstr "說明"
+
+msgid "Description is too long (max %(limit)s characters)"
+msgstr "說明過長 (上限 %(limit)s 個字元)"
+
+msgid "Words (JSON format)"
+msgstr "單字 (JSON 格式)"
+
+msgid "Words JSON is too long (max %(limit)s characters)"
+msgstr "單字的 JSON 檔案過大 (上限 %(limit)s 個字元)"
+
+msgid "Invalid or expired token."
+msgstr "驗證連結無效或已過期。"
 

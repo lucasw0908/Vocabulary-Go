@@ -1,7 +1,8 @@
 import asyncio
 import logging
 from difflib import SequenceMatcher
-from typing import Optional
+from functools import wraps
+from typing import Callable, Optional
 
 import google.generativeai as genai
 from google.api_core import exceptions
@@ -12,6 +13,10 @@ from .config import GENERATION_CONFIG, SAFETY_SETTINGS
 
 
 log = logging.getLogger(__name__)
+
+
+class GenerationError(Exception):
+    pass
 
 
 class GeminiEnglishHelper:
@@ -56,9 +61,29 @@ class GeminiEnglishHelper:
     def trim_empty_lines(text: str) -> str:
         return "\n".join([line for line in text.splitlines() if line.strip() != ""])
     
+    def retry(func: Callable):
+        @wraps(func)
+        async def wrapper(self: "GeminiEnglishHelper", *args, **kwargs):
+            self.retry_attempts += 1
+            if self.retry_attempts <= self.max_retry_attempts:
+                try:
+                    return await func(self, *args, **kwargs)
+                except Exception as e:
+                    log.debug(f"Error in {func.__name__}: {e}")
+                    self.api_key_manager.wait_for_any_key()
+                    await asyncio.sleep(self.retry_delay)
+                    return await wrapper(self, *args, **kwargs)
+            else:
+                log.debug(f"Max retry attempts reached for {func.__name__}")
+                return None
+        return wrapper
+    
 
+    @retry
     async def get_sentence(self, phrase: str) -> str:
+
         genai.configure(api_key=await self.api_key_manager.get_available_api_key())
+        
         try:
             response = await self.gemini_model.generate_content_async(
                 f"You are a sentence-making tool. Make *1* short sentence. The sentence must use `{phrase}`."
@@ -67,67 +92,49 @@ class GeminiEnglishHelper:
                 generation_config=GENERATION_CONFIG
             )
             return self.trim_empty_lines(response.text)
+        
         except exceptions.TooManyRequests as e:
+            
             for detail in e.details:
                 if isinstance(detail, RetryInfo):
                     retry_delay = detail.retry_delay.seconds
-                    log.debug("Phrase: '%s' - Rate limit exceeded, retrying: %ss", phrase, retry_delay)
                     await self.api_key_manager.update_retry_delay(retry_delay)
-            return await self.get_sentence(phrase)
-        except Exception as e:
-            log.error("Phrase: '%s' - Error details: %s", phrase, e)
-            return await self.get_sentence(phrase)
+                    
+            raise GenerationError(f"Phrase: '{phrase}' - Rate limit exceeded, retrying: {retry_delay} seconds")
         
 
+    @retry
     async def check(self, sentence: str, phrase: str, similarity: float) -> Optional[dict[str, str]]:
-        retry = False
 
         if similarity < 0.5:
-            log.debug("Sentence: '%s' - Similarity too low: %f", sentence, similarity)
-            retry = True
+            raise GenerationError(f"Sentence: '{sentence}' - Similarity too low: {similarity:.2f}")
 
-        elif "|" not in sentence:
-            log.debug("Sentence: '%s' - No '|' found in response, retrying...", sentence)
-            retry = True
+        if "|" not in sentence:
+            raise GenerationError(f"Sentence: '{sentence}' - No '|' found in response")
 
-        else:
-            try:
-                english, chinese = sentence.split("|", 1)
-                english = english.strip()
-                chinese = chinese.strip()
+        english, chinese = sentence.split("|", 1)
+        english = english.strip()
+        chinese = chinese.strip()
 
-                if not english.isascii():
-                    log.debug("English part is not ASCII: '%s'", english)
-                    retry = True
+        if not english.isascii():
+            raise GenerationError(f"Sentence: '{sentence}' - English part contains non-ASCII characters: '{english}'")
 
-                elif "_" in chinese:
-                    log.debug("Chinese part contains underscore: '%s'", chinese)
-                    retry = True
-                    
-            except (AttributeError, IndexError, ValueError) as e:
-                log.debug("Sentence: '%s' - Error splitting sentence: %s", sentence, e)
-                retry = True
+        elif "_" in chinese:
+            raise GenerationError(f"Sentence: '{sentence}' - Chinese part contains underscores: '{chinese}'")   
 
-        if retry:
-            self.retry_attempts += 1
-            if self.retry_attempts <= self.max_retry_attempts:
-                log.debug("Phrase: '%s' - Retrying... Attempt %d/%d", phrase, self.retry_attempts, self.max_retry_attempts)
-                await asyncio.sleep(self.retry_delay)
-                return await self.question(phrase)
-            else:
-                self.retry_attempts = 0
-                log.error("Max retry attempts reached for phrase: '%s'", phrase)
-                return None
-        else:
-            self.retry_attempts = 0
-            return {
-                "sentence": sentence,
-                "appear": phrase.lower()
-            }
+        return {
+            "sentence": sentence,
+            "appear": phrase.lower()
+        }
             
 
     async def question(self, phrase: str) -> Optional[dict[str, str]]:
-        text = await self.get_sentence(phrase)
+        text: Optional[str] = await self.get_sentence(phrase)
+        
+        if text is None:
+            log.debug(f"Failed to get sentence from API. phrase: '{phrase}'")
+            return None
+        
         sentence_words = text.split()
         best_phrase, similarity, best_match_positions = self.best_match(text, phrase)
 
@@ -136,7 +143,6 @@ class GeminiEnglishHelper:
                 sentence_words[i] = self.blankify(best_word)
             else:
                 log.warning("Index %d out of range for sentence: '%s'", i, text)
-
 
         sentence_with_blank = " ".join(sentence_words).strip()
         return await self.check(sentence_with_blank, phrase, similarity)

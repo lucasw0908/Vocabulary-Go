@@ -7,7 +7,7 @@ from flask_babel import _
 from ..models import Users
 from ..utils.rate_limiter import RateLimiter, rate_limit_middleware
 from ..utils.smtp import send_email
-from ..utils.secret import TokenManager
+from ..utils.secret import JWTManager
 
 
 log = logging.getLogger(__name__)
@@ -36,17 +36,14 @@ def reset_password(email: str):
     if Users.query.filter_by(email=email).first() is None:
         return _("Email not found."), 404
     
-    for available_token in TokenManager.available_tokens:
-        if TokenManager.get_data_from_token(available_token.value) == email:
-            TokenManager.available_tokens.remove(available_token)
-    
-    token = TokenManager.generate_token(email)
-    reset_link = url_for("account_sys.reset_password", token_value=token.value.decode("utf-8"), _external=True)
+    lifetime = timedelta(minutes=30)
+    token = JWTManager.generate_jwt(payload={"email": email}, lifetime=lifetime)
+    reset_link = url_for("account_sys.reset_password", token_value=token, _external=True)
     
     send_email(
         to_address=email,
         subject=_("Password Reset Request"),
-        body=render_template("smtp/reset_password.html", reset_link=reset_link, expires_in=int(token.lifetime.total_seconds() // 60)),
+        body=render_template("smtp/reset_password.html", reset_link=reset_link, expires_in=int(lifetime.total_seconds() // 60)),
         subtype="html",
     )
     
@@ -69,17 +66,14 @@ def verify_email(email: str):
     if user.email_verified:
         return _("Email already verified."), 400
     
-    for available_token in TokenManager.available_tokens:
-        if TokenManager.get_data_from_token(available_token.value) == email:
-            TokenManager.available_tokens.remove(available_token)
-    
-    token = TokenManager.generate_token(email, lifetime=timedelta(minutes=30))
-    verify_link = url_for("account_sys.verify_email", token_value=token.value.decode("utf-8"), _external=True)
+    lifetime = timedelta(hours=1)
+    token = JWTManager.generate_jwt(payload={"email": email}, lifetime=lifetime)
+    verify_link = url_for("account_sys.verify_email", token_value=token, _external=True)
     
     send_email(
         to_address=email,
         subject=_("Email Verification"),
-        body=render_template("smtp/verify_email.html", verify_link=verify_link, expire_in=int(token.lifetime.total_seconds() // 60)),
+        body=render_template("smtp/verify_email.html", verify_link=verify_link, expire_in=int(lifetime.total_seconds() // 60)),
         subtype="html",
     )
     
