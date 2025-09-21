@@ -26,7 +26,6 @@ try:
     SERVER_HOST = SETTINGS["server"]["host"]
     SERVER_PORT = SETTINGS["server"]["port"]
     DEBUG_MODE = SETTINGS["server"]["debug"]
-    SESSION_SQLALCHEMY_DB = SETTINGS["server"]["session_sqlalchemy_db"]
 
     # Database Settings
     DATABASE_SQLITE = SETTINGS["database"]["sqlite"]
