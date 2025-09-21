@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 from typing import Optional
 
 from flask import Blueprint, abort, render_template, redirect, url_for, request, session, flash
@@ -15,7 +16,7 @@ from ..utils.forms import (
 )
 from ..utils.oauth import FlaskOAuth, google_flow
 from ..utils.login_manager import current_user
-from ..utils.secret import TokenManager
+from ..utils.secret import JWTManager
 from ..utils.smtp import send_email
 from ..utils.checker import email_checker
 
@@ -64,15 +65,13 @@ def register():
         db.session.commit()
         
         # Send verification email
-        for available_token in TokenManager.available_tokens:
-            if TokenManager.get_data_from_token(available_token.value) == email:
-                TokenManager.available_tokens.remove(available_token)
-        token = TokenManager.generate_token(email)
-        verify_link = url_for("account_sys.verify_email", token_value=token.value.decode("utf-8"), _external=True)
+        lifetime = timedelta(hours=24)
+        token = JWTManager.generate_jwt({"email": email}, lifetime=lifetime)
+        verify_link = url_for("account_sys.verify_email", token_value=token, _external=True)
         send_email(
             to_address=email,
             subject=_("Email Verification"),
-            body=render_template("smtp/verify_email.html", verify_link=verify_link, expire_in=int(token.lifetime.total_seconds() // 60)),
+            body=render_template("smtp/verify_email.html", verify_link=verify_link, expire_in=int(lifetime.total_seconds() // 60)),
             subtype="html",
         )
         
@@ -124,7 +123,9 @@ def forgot_password():
     form = ForgotPasswordForm()
     
     def render(error: Optional[str] = None):
-        log.warning(f"Forgot password error: {error}")
+        if error is not None:
+            log.warning(f"Forgot password error: {error}")
+            
         return render_template("account_sys/forgot_password.html", form=form, error=error)
     
     if form.validate_on_submit():
@@ -133,19 +134,17 @@ def forgot_password():
         if Users.query.filter_by(email=email).first() is None:
             return render(_("No account associated with this email."))
         
-        for available_token in TokenManager.available_tokens:
-            if TokenManager.get_data_from_token(available_token.value) == email:
-                TokenManager.available_tokens.remove(available_token)
-        
-        token = TokenManager.generate_token(email)
-        reset_link = url_for("account_sys.reset_password", token_value=token.value.decode("utf-8"), _external=True)
+        lifetime = timedelta(hours=1)
+        token = JWTManager.generate_jwt({"email": email}, lifetime=lifetime)
+        reset_link = url_for("account_sys.reset_password", token_value=token, _external=True)
         
         send_email(
             to_address=email,
             subject=_("Password Reset Request"),
-            body=render_template("smtp/reset_password.html", reset_link=reset_link, expires_in=int(token.lifetime.total_seconds() // 60)),
+            body=render_template("smtp/reset_password.html", reset_link=reset_link, expires_in=int(lifetime.total_seconds() // 60)),
             subtype="html",
         )
+        flash(_("Password reset link sent. Please check your email."), "success")
         return redirect("/login")
     
     return render()
@@ -398,11 +397,14 @@ def settings():
 @account_sys.route("/reset_password/<string:token_value>", methods=["GET", "POST"])
 def reset_password(token_value: str):
     
-    if not TokenManager.validate_token(token_value.encode("utf-8")):
-        log.warning("Invalid or expired password reset token")
+    token_value = token_value.strip()
+    payload = JWTManager.validate_jwt(token_value)
+    
+    if payload is None or "email" not in payload:
+        log.warning(f"Invalid or expired password reset token")
         return abort(400, description="Invalid or expired token.")
     
-    email = TokenManager.get_data_from_token(token_value.encode("utf-8"))
+    email = payload["email"]
     
     form = PasswordResetRequestForm()
     
@@ -424,10 +426,6 @@ def reset_password(token_value: str):
         user.set_password(new_password)
         db.session.commit()
         
-        for available_token in TokenManager.available_tokens:
-            if TokenManager.get_data_from_token(available_token.value) == email:
-                TokenManager.available_tokens.remove(available_token)
-        
         log.debug(f"Password reset successfully for user {email}")
         return redirect("/login")
     
@@ -437,11 +435,14 @@ def reset_password(token_value: str):
 @account_sys.route("/verify_email/<string:token_value>")
 def verify_email(token_value: str):
     
-    if not TokenManager.validate_token(token_value.encode("utf-8")):
-        log.warning("Invalid or expired email verification token")
-        return abort(400, description=_("Invalid or expired token."))
+    token_value = token_value.strip()
+    payload = JWTManager.validate_jwt(token_value)
     
-    email = TokenManager.get_data_from_token(token_value.encode("utf-8"))
+    if payload is None or "email" not in payload:
+        log.warning("Invalid or expired email verification token")
+        return abort(400, description="Invalid or expired token.")
+    
+    email = payload["email"]
     
     user: Users = Users.query.filter_by(email=email).first()
     
@@ -451,10 +452,6 @@ def verify_email(token_value: str):
     
     user.email_verified = True
     db.session.commit()
-    
-    for available_token in TokenManager.available_tokens:
-        if TokenManager.get_data_from_token(available_token.value) == email:
-            TokenManager.available_tokens.remove(available_token)
     
     log.debug(f"Email {email} verified successfully")
     flash(_("Email verified successfully."), "success")
