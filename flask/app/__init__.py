@@ -140,9 +140,7 @@ def create_app(config=None) -> Flask:
     
     # Initialize the sqlalchemy session
     if SESSION_SQLALCHEMY_DB:
-        app.config["SESSION_TYPE"] = "sqlalchemy"
         app.config["SESSION_SQLALCHEMY"] = db
-        app.config["SESSION_KEY_PREFIX"] = "session:"
         Session(app)
         log.info("Using SQLAlchemy for session storage")
     

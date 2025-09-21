@@ -402,7 +402,7 @@ def reset_password(token_value: str):
     
     if payload is None or "email" not in payload:
         log.warning(f"Invalid or expired password reset token")
-        return abort(400, description="Invalid or expired token.")
+        return abort(400, description=_("Invalid or expired token."))
     
     email = payload["email"]
     
@@ -440,7 +440,7 @@ def verify_email(token_value: str):
     
     if payload is None or "email" not in payload:
         log.warning("Invalid or expired email verification token")
-        return abort(400, description="Invalid or expired token.")
+        return abort(400, description=_("Invalid or expired token."))
     
     email = payload["email"]
     

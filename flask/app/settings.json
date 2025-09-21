@@ -3,7 +3,7 @@
         "host": "localhost",
         "port": 8080,
         "debug": false,
-        "session_sqlalchemy_db": false
+        "session_sqlalchemy_db": true
     },
     "database": {
         "sqlite": "db.sqlite3",

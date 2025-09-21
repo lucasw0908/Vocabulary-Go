@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-09-13 23:01+0800\n"
+"POT-Creation-Date: 2025-09-21 23:14+0800\n"
 "PO-Revision-Date: 2025-09-11 19:24+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -87,7 +87,6 @@ msgstr "ログアウト"
 #: app/templates/account_sys/login.html:11
 #: app/templates/account_sys/register.html:30
 #: app/templates/account_sys/reset_password.html:19 app/templates/base.html:99
-#: app/utils/forms.py:21
 msgid "Login"
 msgstr "ログイン"
 
@@ -216,7 +215,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: app/templates/library_create.html:8 app/utils/forms.py:114
+#: app/templates/library_create.html:8
 msgid "Create Library"
 msgstr ""
 
@@ -259,7 +258,6 @@ msgid "Clear"
 msgstr "閉じる"
 
 #: app/templates/library_create.html:83 app/templates/library_edit.html:75
-#: app/utils/forms.py:101
 msgid "Library Name"
 msgstr "ライブラリ"
 
@@ -268,7 +266,6 @@ msgid "Enter library name"
 msgstr "ライブラリ"
 
 #: app/templates/library_create.html:89 app/templates/library_edit.html:81
-#: app/utils/forms.py:109
 msgid "Public Library"
 msgstr ""
 
@@ -337,7 +334,7 @@ msgid "Difficulty: Hard"
 msgstr ""
 
 #: app/templates/account_sys/forgot_password.html:11
-#: app/templates/account_sys/settings.html:110
+#: app/templates/account_sys/settings.html:112
 msgid "Forgot Password"
 msgstr ""
 
@@ -347,8 +344,7 @@ msgstr ""
 
 #: app/templates/account_sys/forgot_password.html:16
 #: app/templates/account_sys/login.html:14
-#: app/templates/account_sys/register.html:19 app/utils/forms.py:11
-#: app/utils/forms.py:29 app/utils/forms.py:96
+#: app/templates/account_sys/register.html:19
 msgid "Email"
 msgstr ""
 
@@ -366,8 +362,7 @@ msgid "Back to Login"
 msgstr ""
 
 #: app/templates/account_sys/login.html:15
-#: app/templates/account_sys/register.html:22 app/utils/forms.py:15
-#: app/utils/forms.py:33
+#: app/templates/account_sys/register.html:22
 msgid "Password"
 msgstr ""
 
@@ -376,7 +371,7 @@ msgid "Don't have an account?"
 msgstr ""
 
 #: app/templates/account_sys/login.html:23
-#: app/templates/account_sys/register.html:12 app/utils/forms.py:41
+#: app/templates/account_sys/register.html:12
 msgid "Register"
 msgstr ""
 
@@ -407,8 +402,8 @@ msgstr ""
 msgid "Joined on:"
 msgstr "グループに参加"
 
-#: app/templates/account_sys/profile.html:28 app/views/account_sys.py:422
-#: app/views/account_sys.py:450
+#: app/templates/account_sys/profile.html:28 app/views/account_sys.py:424
+#: app/views/account_sys.py:451
 msgid "User not found."
 msgstr "ユーザーが見つかりません。"
 
@@ -432,12 +427,11 @@ msgstr ""
 msgid "No public libraries yet."
 msgstr ""
 
-#: app/templates/account_sys/register.html:16 app/utils/forms.py:25
-#: app/utils/forms.py:54
+#: app/templates/account_sys/register.html:16
 msgid "Username"
 msgstr "ユーザー"
 
-#: app/templates/account_sys/register.html:25 app/utils/forms.py:38
+#: app/templates/account_sys/register.html:25
 msgid "Confirm Password"
 msgstr ""
 
@@ -449,17 +443,15 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: app/templates/account_sys/reset_password.html:13 app/utils/forms.py:72
-#: app/utils/forms.py:84
+#: app/templates/account_sys/reset_password.html:13
 msgid "New Password"
 msgstr "一つの単語"
 
-#: app/templates/account_sys/reset_password.html:14 app/utils/forms.py:77
-#: app/utils/forms.py:89
+#: app/templates/account_sys/reset_password.html:14
 msgid "Confirm New Password"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:32 app/utils/forms.py:50
+#: app/templates/account_sys/settings.html:32
 msgid "Update Avatar"
 msgstr ""
 
@@ -468,389 +460,384 @@ msgid "Upload image..."
 msgstr ""
 
 #: app/templates/account_sys/settings.html:40
-#: app/templates/account_sys/settings.html:215
 msgid "Choose File"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:55 app/utils/forms.py:63
+#: app/templates/account_sys/settings.html:56
 msgid "Bio"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:60
+#: app/templates/account_sys/settings.html:61
 msgid "Write your bio... (max 75 characters)"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:66
+#: app/templates/account_sys/settings.html:67
 msgid "Up to 75 characters"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:75 app/utils/forms.py:80
+#: app/templates/account_sys/settings.html:77
 msgid "Change Password"
 msgstr "一つの単語"
 
-#: app/templates/account_sys/settings.html:80
+#: app/templates/account_sys/settings.html:82
 msgid "Enter current password"
 msgstr "現在のパスワードを入力してください。"
 
-#: app/templates/account_sys/settings.html:89
+#: app/templates/account_sys/settings.html:91
+#: app/templates/account_sys/settings.html:131
 msgid "Enter new password"
 msgstr "現在のパスワードを入力してください。"
 
-#: app/templates/account_sys/settings.html:98
+#: app/templates/account_sys/settings.html:100
+#: app/templates/account_sys/settings.html:140
 msgid "Confirm new password"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:117
+#: app/templates/account_sys/settings.html:119
+#: app/templates/account_sys/settings.html:149
+#, fuzzy
+msgid "Create Password"
+msgstr "現在のパスワードを入力してください。"
+
+#: app/templates/account_sys/settings.html:158 app/views/account_sys.py:73
+#: app/views/mail.py:75
+msgid "Email Verification"
+msgstr "メール認証"
+
+#: app/templates/account_sys/settings.html:162
+msgid "Verified"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:168
+msgid "Not Verified"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:173
+#, fuzzy
+msgid "Resend Verification Email"
+msgstr "メール認証を送信しました。"
+
+#: app/templates/account_sys/settings.html:181
 msgid "Third-Party Account Linking"
 msgstr "Discordアカウントは連携されていません。"
 
-#: app/templates/account_sys/settings.html:125
-#: app/templates/account_sys/settings.html:143
-#: app/templates/account_sys/settings.html:170
-#: app/templates/account_sys/settings.html:183
+#: app/templates/account_sys/settings.html:188
+#: app/templates/account_sys/settings.html:205
+#: app/templates/account_sys/settings.html:230
+#: app/templates/account_sys/settings.html:243
 msgid "Linked"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:128
-#: app/templates/account_sys/settings.html:147
-#: app/templates/account_sys/settings.html:172
-#: app/templates/account_sys/settings.html:185
+#: app/templates/account_sys/settings.html:191
+#: app/templates/account_sys/settings.html:208
+#: app/templates/account_sys/settings.html:232
+#: app/templates/account_sys/settings.html:245
 msgid "Unlink"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:131
-#: app/templates/account_sys/settings.html:150
-#: app/templates/account_sys/settings.html:174
-#: app/templates/account_sys/settings.html:187
+#: app/templates/account_sys/settings.html:194
+#: app/templates/account_sys/settings.html:211
+#: app/templates/account_sys/settings.html:234
+#: app/templates/account_sys/settings.html:247
 msgid "Not linked"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:135
-#: app/templates/account_sys/settings.html:176
+#: app/templates/account_sys/settings.html:197
+#: app/templates/account_sys/settings.html:236
 msgid "Link Google"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:154
-#: app/templates/account_sys/settings.html:189
+#: app/templates/account_sys/settings.html:214
+#: app/templates/account_sys/settings.html:249
 msgid "Link Discord"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:162
+#: app/templates/account_sys/settings.html:222
 msgid "Please set a password before linking/unlinking accounts"
 msgstr "Discordの連携を解除する前にパスワードを設定してください。"
 
-#: app/templates/account_sys/settings.html:163
+#: app/templates/account_sys/settings.html:223
 msgid "Go to set password"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:231
+#: app/templates/account_sys/settings.html:283
 msgid "Password reset email has been sent to your inbox!"
 msgstr "パスワードリセット用のメールを送信しました。"
 
-#: app/templates/account_sys/settings.html:234
+#: app/templates/account_sys/settings.html:286
+#: app/templates/account_sys/settings.html:310
 msgid "Failed to send:"
 msgstr ""
 
-#: app/templates/account_sys/settings.html:238
+#: app/templates/account_sys/settings.html:290
+#: app/templates/account_sys/settings.html:314
 msgid "Failed to send, please try again later."
 msgstr ""
 
-#: app/utils/forms.py:13 app/utils/forms.py:31
-#, python-format
-msgid "Email is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:17 app/utils/forms.py:35 app/utils/forms.py:74
-#: app/utils/forms.py:86
-#, python-format
-msgid "Password is too short (min %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:18 app/utils/forms.py:36 app/utils/forms.py:75
-#: app/utils/forms.py:87
-#, python-format
-msgid "Password is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:20
-msgid "Remember Me"
-msgstr ""
-
-#: app/utils/forms.py:27 app/utils/forms.py:57
-#, python-format
-msgid "Username is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:39 app/utils/forms.py:78 app/utils/forms.py:90
+#: app/templates/account_sys/settings.html:307
 #, fuzzy
-msgid "Passwords must match"
-msgstr "パスワードが一致しません"
+msgid "Verification email has been sent to your inbox!"
+msgstr "パスワードリセット用のメールを送信しました。"
 
-#: app/utils/forms.py:45
-msgid "Avatar"
-msgstr ""
-
-#: app/utils/forms.py:47
-msgid "Images only!"
-msgstr ""
-
-#: app/utils/forms.py:48
-#, python-format
-msgid "Avatar file is too large (max %(limit)s MB)"
-msgstr ""
-
-#: app/utils/forms.py:56
-#, python-format
-msgid "Username is too short (min %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:59
-#, fuzzy
-msgid "Update Username"
-msgstr "ユーザー"
-
-#: app/utils/forms.py:65
-#, python-format
-msgid "Bio is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:67
-msgid "Update Bio"
-msgstr ""
-
-#: app/utils/forms.py:71
-#, fuzzy
-msgid "Current Password"
-msgstr "現在のパスワードを入力してください。"
-
-#: app/utils/forms.py:92
-#, fuzzy
-msgid "Request Password Reset"
-msgstr "パスワードリセットのリクエスト"
-
-#: app/utils/forms.py:97
-#, fuzzy
-msgid "Send Reset Password Mail"
-msgstr "現在のパスワードを入力してください。"
-
-#: app/utils/forms.py:103
-#, python-format
-msgid "Library name is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:105
-msgid "Description"
-msgstr ""
-
-#: app/utils/forms.py:107
-#, python-format
-msgid "Description is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/utils/forms.py:110
-msgid "Words (JSON format)"
-msgstr ""
-
-#: app/utils/forms.py:112
-#, python-format
-msgid "Words JSON is too long (max %(limit)s characters)"
-msgstr ""
-
-#: app/views/account_sys.py:39 app/views/account_sys.py:415
+#: app/views/account_sys.py:40 app/views/account_sys.py:417
 msgid "Passwords do not match"
 msgstr "パスワードが一致しません"
 
-#: app/views/account_sys.py:47
+#: app/views/account_sys.py:48
 #, fuzzy
 msgid "Invalid email format"
 msgstr "メールアドレスまたはパスワードが無効です"
 
-#: app/views/account_sys.py:52
+#: app/views/account_sys.py:53
 msgid "Email already registered"
 msgstr "メールアドレスはすでに登録されています"
 
-#: app/views/account_sys.py:74 app/views/mail.py:81
-msgid "Email Verification"
-msgstr "メール認証"
-
-#: app/views/account_sys.py:80
+#: app/views/account_sys.py:79
 msgid ""
 "Registration successful. Please log in and check the verification mail in"
 " your email."
 msgstr ""
 
-#: app/views/account_sys.py:99 app/views/account_sys.py:116
+#: app/views/account_sys.py:98 app/views/account_sys.py:115
 msgid "Invalid email or password"
 msgstr "メールアドレスまたはパスワードが無効です"
 
-#: app/views/account_sys.py:104
+#: app/views/account_sys.py:103
 msgid "This account uses OAuth for login. Please use the OAuth login method."
 msgstr ""
 
-#: app/views/account_sys.py:134
+#: app/views/account_sys.py:135
 msgid "No account associated with this email."
 msgstr "このメールアドレスに関連するアカウントは存在しません。"
 
-#: app/views/account_sys.py:145 app/views/mail.py:48
+#: app/views/account_sys.py:143 app/views/mail.py:45
 msgid "Password Reset Request"
 msgstr "パスワードリセットのリクエスト"
 
-#: app/views/account_sys.py:173
+#: app/views/account_sys.py:147
+#, fuzzy
+msgid "Password reset link sent. Please check your email."
+msgstr "単語の形式が無効です。入力を確認してください。"
+
+#: app/views/account_sys.py:172
 msgid "Discord account already linked."
 msgstr "Discordアカウントはすでに連携されています。"
 
-#: app/views/account_sys.py:178
+#: app/views/account_sys.py:177
 msgid "Set a password before linking Discord."
 msgstr "Discordを連携する前にパスワードを設定してください。"
 
-#: app/views/account_sys.py:189
+#: app/views/account_sys.py:188
 msgid "Google account already linked."
 msgstr "Googleアカウントはすでに連携されています。"
 
-#: app/views/account_sys.py:194
+#: app/views/account_sys.py:193
 msgid "Set a password before linking Google."
 msgstr "Googleを連携する前にパスワードを設定してください。"
 
-#: app/views/account_sys.py:217
+#: app/views/account_sys.py:216
 msgid "Invalid OAuth callback parameters."
 msgstr "無効なOAuthコールバックパラメータです。"
 
-#: app/views/account_sys.py:226
+#: app/views/account_sys.py:225
 msgid "OAuth authentication failed."
 msgstr "OAuth認証に失敗しました。"
 
-#: app/views/account_sys.py:280
+#: app/views/account_sys.py:279
 msgid "Set a password before unlinking Discord."
 msgstr "Discordの連携を解除する前にパスワードを設定してください。"
 
-#: app/views/account_sys.py:284
+#: app/views/account_sys.py:283
 msgid "No Discord account linked."
 msgstr "Discordアカウントは連携されていません。"
 
-#: app/views/account_sys.py:299
+#: app/views/account_sys.py:298
 msgid "Set a password before unlinking Google."
 msgstr "Googleの連携を解除する前にパスワードを設定してください。"
 
-#: app/views/account_sys.py:303
+#: app/views/account_sys.py:302
 msgid "No Google account linked."
 msgstr "Googleアカウントは連携されていません。"
 
-#: app/views/account_sys.py:365
+#: app/views/account_sys.py:364
 #, python-format
 msgid "Unknown settings submission type: %(submit_type)s"
 msgstr "不明な設定送信タイプ: %(submit_type)s"
 
-#: app/views/account_sys.py:368
+#: app/views/account_sys.py:367
 #, python-format
 msgid "Form validation failed for %(submit_type)s"
 msgstr "%(submit_type)s のフォーム検証に失敗しました"
 
-#: app/views/account_sys.py:382
+#: app/views/account_sys.py:381
 msgid "Please enter your current password."
 msgstr "現在のパスワードを入力してください。"
 
-#: app/views/account_sys.py:385
+#: app/views/account_sys.py:384
 msgid "Current password is incorrect."
 msgstr "現在のパスワードが正しくありません。"
 
-#: app/views/account_sys.py:388
+#: app/views/account_sys.py:387
 msgid "New password and confirmation do not match."
 msgstr "新しいパスワードと確認が一致しません。"
 
-#: app/views/account_sys.py:442
+#: app/views/account_sys.py:405 app/views/account_sys.py:443
 msgid "Invalid or expired token."
-msgstr "無効または期限切れのトークンです。"
+msgstr ""
 
-#: app/views/account_sys.py:460
+#: app/views/account_sys.py:457
 #, fuzzy
 msgid "Email verified successfully."
 msgstr "メール認証を送信しました。"
 
-#: app/views/mail.py:37 app/views/mail.py:67
+#: app/views/mail.py:37 app/views/mail.py:64
 msgid "Email not found."
 msgstr "メールアドレスが見つかりません。"
 
-#: app/views/mail.py:55
+#: app/views/mail.py:52
 msgid "Password reset email sent."
 msgstr "パスワードリセット用のメールを送信しました。"
 
-#: app/views/mail.py:70
+#: app/views/mail.py:67
 msgid "Email already verified."
 msgstr "メールアドレスはすでに認証済みです。"
 
-#: app/views/mail.py:88
+#: app/views/mail.py:82
 msgid "Email verification sent."
 msgstr "メール認証を送信しました。"
 
-#: app/views/main.py:78 app/views/main.py:103 app/views/main.py:405
+#: app/views/main.py:77 app/views/main.py:102 app/views/main.py:404
 msgid "Please choose a library first."
 msgstr "まずライブラリを選択してください。"
 
-#: app/views/main.py:91 app/views/main.py:418
+#: app/views/main.py:90 app/views/main.py:417
 msgid "No words found in the current library."
 msgstr "現在のライブラリに単語が見つかりません。"
 
-#: app/views/main.py:135
+#: app/views/main.py:134
 msgid "No sentences found in the current library."
 msgstr "現在のライブラリに文が見つかりません。"
 
-#: app/views/main.py:197 app/views/main.py:328
+#: app/views/main.py:196 app/views/main.py:327
 msgid "You must be logged in to edit a library."
 msgstr "ライブラリを編集するにはログインが必要です。"
 
-#: app/views/main.py:224 app/views/main.py:308
+#: app/views/main.py:223 app/views/main.py:307
 msgid "You must be logged in to create a library."
 msgstr "ライブラリを作成するにはログインが必要です。"
 
-#: app/views/main.py:228
+#: app/views/main.py:227
 msgid "Please verify your email before creating a library."
 msgstr ""
 
-#: app/views/main.py:237
+#: app/views/main.py:236
 msgid ""
 "You have reached the maximum number of libraries (5). Please upgrade for "
 "unlimited access."
 msgstr "ライブラリ数の上限 (5) に達しました。無制限に利用するにはアップグレードしてください。"
 
-#: app/views/main.py:242 app/views/main.py:343
+#: app/views/main.py:241 app/views/main.py:342
 msgid "Library name cannot be empty."
 msgstr "ライブラリ名を空にすることはできません。"
 
-#: app/views/main.py:247 app/views/main.py:347
+#: app/views/main.py:246 app/views/main.py:346
 #, python-format
 msgid "Library '%(name)s' already exists."
 msgstr "ライブラリ '%(name)s' はすでに存在します。"
 
-#: app/views/main.py:258 app/views/main.py:358
+#: app/views/main.py:257 app/views/main.py:357
 msgid ""
 "Library exceeds maximum word limit (500). Please upgrade for unlimited "
 "access."
 msgstr "ライブラリの単語数が上限 (500) を超えています。無制限に利用するにはアップグレードしてください。"
 
-#: app/views/main.py:263 app/views/main.py:363
+#: app/views/main.py:262 app/views/main.py:362
 msgid "Invalid JSON format for words."
 msgstr "単語のJSON形式が無効です。"
 
-#: app/views/main.py:268 app/views/main.py:368
+#: app/views/main.py:267 app/views/main.py:367
 msgid "Invalid words format. Please check your input."
 msgstr "単語の形式が無効です。入力を確認してください。"
 
-#: app/views/main.py:283
+#: app/views/main.py:282
 msgid "Each word must have 'Chinese' and 'English' keys."
 msgstr "各単語には「Chinese」と「English」キーが必要です。"
 
-#: app/views/main.py:303
+#: app/views/main.py:302
 msgid "Form validation failed. Please check your input."
 msgstr "フォームの検証に失敗しました。入力内容を確認してください。"
 
-#: app/views/main.py:332
+#: app/views/main.py:331
 msgid "Please verify your email before editing a library."
 msgstr ""
 
-#: app/views/main.py:379
+#: app/views/main.py:378
 msgid "Missing 'Chinese' or 'English' key in words JSON."
 msgstr "単語のJSONに「Chinese」または「English」キーがありません。"
 
 #~ msgid "Username %(username)s is already taken."
 #~ msgstr "ライブラリ '%(name)s' はすでに存在します。"
+
+#~ msgid "Email is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Password is too short (min %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Password is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Remember Me"
+#~ msgstr ""
+
+#~ msgid "Username is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Passwords must match"
+#~ msgstr "パスワードが一致しません"
+
+#~ msgid "Avatar"
+#~ msgstr ""
+
+#~ msgid "Images only!"
+#~ msgstr ""
+
+#~ msgid "Avatar file is too large (max %(limit)s MB)"
+#~ msgstr ""
+
+#~ msgid "Username is too short (min %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Update Username"
+#~ msgstr "ユーザー"
+
+#~ msgid "Bio is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Update Bio"
+#~ msgstr ""
+
+#~ msgid "Request Password Reset"
+#~ msgstr "パスワードリセットのリクエスト"
+
+#~ msgid "Send Reset Password Mail"
+#~ msgstr "現在のパスワードを入力してください。"
+
+#~ msgid "Library name is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Description"
+#~ msgstr ""
+
+#~ msgid "Description is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Words (JSON format)"
+#~ msgstr ""
+
+#~ msgid "Words JSON is too long (max %(limit)s characters)"
+#~ msgstr ""
+
+#~ msgid "Invalid or expired token."
+#~ msgstr "無効または期限切れのトークンです。"
 
