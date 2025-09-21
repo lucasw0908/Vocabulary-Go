@@ -446,6 +446,14 @@ textarea.form-control {
   }
 }
 
+.status span {
+  color: white;
+}
+
+.status .btn {
+  margin-top: 10px;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {

@@ -2,6 +2,7 @@ import logging
 import json
 import os
 import random
+from  typing import Literal
 
 from flask import Blueprint, Response, abort, render_template, redirect, make_response, url_for, flash, request, session, g
 from flask_babel import _, refresh

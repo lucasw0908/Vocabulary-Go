@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-09-13 23:01+0800\n"
+"POT-Creation-Date: 2025-09-21 22:43+0800\n"
 "PO-Revision-Date: 2025-09-11 19:24+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -87,7 +87,6 @@ msgstr "登出"
 #: app/templates/account_sys/login.html:11
 #: app/templates/account_sys/register.html:30
 #: app/templates/account_sys/reset_password.html:19 app/templates/base.html:99
-#: app/utils/forms.py:21
 msgid "Login"
 msgstr "登入"
 
@@ -215,7 +214,7 @@ msgstr "創建"
 msgid "Edit"
 msgstr "編輯"
 
-#: app/templates/library_create.html:8 app/utils/forms.py:114
+#: app/templates/library_create.html:8
 msgid "Create Library"
 msgstr "創建題庫"
 
@@ -258,7 +257,6 @@ msgid "Clear"
 msgstr "關閉"
 
 #: app/templates/library_create.html:83 app/templates/library_edit.html:75
-#: app/utils/forms.py:101
 msgid "Library Name"
 msgstr "題庫名稱"
 
@@ -267,7 +265,6 @@ msgid "Enter library name"
 msgstr "請輸入題庫名稱"
 
 #: app/templates/library_create.html:89 app/templates/library_edit.html:81
-#: app/utils/forms.py:109
 msgid "Public Library"
 msgstr "公開題庫"
 
@@ -336,7 +333,7 @@ msgid "Difficulty: Hard"
 msgstr "難度：難"
 
 #: app/templates/account_sys/forgot_password.html:11
-#: app/templates/account_sys/settings.html:110
+#: app/templates/account_sys/settings.html:112
 msgid "Forgot Password"
 msgstr "忘記密碼"
 
@@ -346,8 +343,7 @@ msgstr "請輸入您的電子郵件信箱，該信箱將會收到密碼重置信
 
 #: app/templates/account_sys/forgot_password.html:16
 #: app/templates/account_sys/login.html:14
-#: app/templates/account_sys/register.html:19 app/utils/forms.py:11
-#: app/utils/forms.py:29 app/utils/forms.py:96
+#: app/templates/account_sys/register.html:19
 msgid "Email"
 msgstr "電子郵件信箱"
 
@@ -358,15 +354,14 @@ msgstr "請輸入你的電子郵件信箱"
 #: app/templates/account_sys/forgot_password.html:23
 #: app/templates/account_sys/reset_password.html:19
 msgid "Remembered your password?"
-msgstr "請輸入目前的密碼。"
+msgstr "想起密碼了？"
 
 #: app/templates/account_sys/forgot_password.html:23
 msgid "Back to Login"
 msgstr "返回登入頁"
 
 #: app/templates/account_sys/login.html:15
-#: app/templates/account_sys/register.html:22 app/utils/forms.py:15
-#: app/utils/forms.py:33
+#: app/templates/account_sys/register.html:22
 msgid "Password"
 msgstr "密碼"
 
@@ -375,7 +370,7 @@ msgid "Don't have an account?"
 msgstr "尚未創建帳號?"
 
 #: app/templates/account_sys/login.html:23
-#: app/templates/account_sys/register.html:12 app/utils/forms.py:41
+#: app/templates/account_sys/register.html:12
 msgid "Register"
 msgstr "註冊"
 
@@ -431,12 +426,11 @@ msgstr "無敘述"
 msgid "No public libraries yet."
 msgstr "未創建任何公開題庫"
 
-#: app/templates/account_sys/register.html:16 app/utils/forms.py:25
-#: app/utils/forms.py:54
+#: app/templates/account_sys/register.html:16
 msgid "Username"
 msgstr "使用者"
 
-#: app/templates/account_sys/register.html:25 app/utils/forms.py:38
+#: app/templates/account_sys/register.html:25
 msgid "Confirm Password"
 msgstr "確認密碼"
 
@@ -448,17 +442,15 @@ msgstr "已經註冊帳號了?"
 msgid "Reset Password"
 msgstr "重置密碼"
 
-#: app/templates/account_sys/reset_password.html:13 app/utils/forms.py:72
-#: app/utils/forms.py:84
+#: app/templates/account_sys/reset_password.html:13
 msgid "New Password"
 msgstr "新密碼"
 
-#: app/templates/account_sys/reset_password.html:14 app/utils/forms.py:77
-#: app/utils/forms.py:89
+#: app/templates/account_sys/reset_password.html:14
 msgid "Confirm New Password"
 msgstr "確認新密碼"
 
-#: app/templates/account_sys/settings.html:32 app/utils/forms.py:50
+#: app/templates/account_sys/settings.html:32
 msgid "Update Avatar"
 msgstr "更新頭貼"
 
@@ -467,188 +459,121 @@ msgid "Upload image..."
 msgstr "上傳圖片"
 
 #: app/templates/account_sys/settings.html:40
-#: app/templates/account_sys/settings.html:215
 msgid "Choose File"
 msgstr "選擇檔案"
 
-#: app/templates/account_sys/settings.html:55 app/utils/forms.py:63
+#: app/templates/account_sys/settings.html:56
 msgid "Bio"
 msgstr "自我介紹"
 
-#: app/templates/account_sys/settings.html:60
+#: app/templates/account_sys/settings.html:61
 msgid "Write your bio... (max 75 characters)"
 msgstr "寫下你的自我介紹... (最多 75 個字)"
 
-#: app/templates/account_sys/settings.html:66
+#: app/templates/account_sys/settings.html:67
 msgid "Up to 75 characters"
 msgstr "最多 75 個字"
 
-#: app/templates/account_sys/settings.html:75 app/utils/forms.py:80
+#: app/templates/account_sys/settings.html:77
 msgid "Change Password"
 msgstr "變更密碼"
 
-#: app/templates/account_sys/settings.html:80
+#: app/templates/account_sys/settings.html:82
 msgid "Enter current password"
 msgstr "請輸入目前的密碼"
 
-#: app/templates/account_sys/settings.html:89
+#: app/templates/account_sys/settings.html:91
+#: app/templates/account_sys/settings.html:131
 msgid "Enter new password"
 msgstr "請輸入新密碼"
 
-#: app/templates/account_sys/settings.html:98
+#: app/templates/account_sys/settings.html:100
+#: app/templates/account_sys/settings.html:140
 msgid "Confirm new password"
 msgstr "確認新密碼"
 
-#: app/templates/account_sys/settings.html:117
+#: app/templates/account_sys/settings.html:119
+#: app/templates/account_sys/settings.html:149
+msgid "Create Password"
+msgstr "創建新密碼"
+
+#: app/templates/account_sys/settings.html:158 app/views/account_sys.py:74
+#: app/views/mail.py:81
+msgid "Email Verification"
+msgstr "電子郵件驗證"
+
+#: app/templates/account_sys/settings.html:162
+msgid "Verified"
+msgstr ""
+
+#: app/templates/account_sys/settings.html:168
+msgid "Not Verified"
+msgstr "尚未驗證"
+
+#: app/templates/account_sys/settings.html:173
+msgid "Resend Verification Email"
+msgstr "重新發送驗證信"
+
+#: app/templates/account_sys/settings.html:181
 msgid "Third-Party Account Linking"
 msgstr "第三方帳號綁訂"
 
-#: app/templates/account_sys/settings.html:125
-#: app/templates/account_sys/settings.html:143
-#: app/templates/account_sys/settings.html:170
-#: app/templates/account_sys/settings.html:183
+#: app/templates/account_sys/settings.html:188
+#: app/templates/account_sys/settings.html:205
+#: app/templates/account_sys/settings.html:230
+#: app/templates/account_sys/settings.html:243
 msgid "Linked"
 msgstr "已綁訂"
 
-#: app/templates/account_sys/settings.html:128
-#: app/templates/account_sys/settings.html:147
-#: app/templates/account_sys/settings.html:172
-#: app/templates/account_sys/settings.html:185
+#: app/templates/account_sys/settings.html:191
+#: app/templates/account_sys/settings.html:208
+#: app/templates/account_sys/settings.html:232
+#: app/templates/account_sys/settings.html:245
 msgid "Unlink"
 msgstr "解除綁訂"
 
-#: app/templates/account_sys/settings.html:131
-#: app/templates/account_sys/settings.html:150
-#: app/templates/account_sys/settings.html:174
-#: app/templates/account_sys/settings.html:187
+#: app/templates/account_sys/settings.html:194
+#: app/templates/account_sys/settings.html:211
+#: app/templates/account_sys/settings.html:234
+#: app/templates/account_sys/settings.html:247
 msgid "Not linked"
 msgstr "尚未綁訂"
 
-#: app/templates/account_sys/settings.html:135
-#: app/templates/account_sys/settings.html:176
+#: app/templates/account_sys/settings.html:197
+#: app/templates/account_sys/settings.html:236
 msgid "Link Google"
 msgstr "綁訂 Google"
 
-#: app/templates/account_sys/settings.html:154
-#: app/templates/account_sys/settings.html:189
+#: app/templates/account_sys/settings.html:214
+#: app/templates/account_sys/settings.html:249
 msgid "Link Discord"
 msgstr "綁訂 Discord"
 
-#: app/templates/account_sys/settings.html:162
+#: app/templates/account_sys/settings.html:222
 msgid "Please set a password before linking/unlinking accounts"
 msgstr "請先設定密碼再解除綁定。"
 
-#: app/templates/account_sys/settings.html:163
+#: app/templates/account_sys/settings.html:223
 msgid "Go to set password"
 msgstr "前往設置密碼"
 
-#: app/templates/account_sys/settings.html:231
+#: app/templates/account_sys/settings.html:283
 msgid "Password reset email has been sent to your inbox!"
 msgstr "密碼重設信件已寄出。"
 
-#: app/templates/account_sys/settings.html:234
+#: app/templates/account_sys/settings.html:286
+#: app/templates/account_sys/settings.html:310
 msgid "Failed to send:"
 msgstr "寄送失敗:"
 
-#: app/templates/account_sys/settings.html:238
+#: app/templates/account_sys/settings.html:290
+#: app/templates/account_sys/settings.html:314
 msgid "Failed to send, please try again later."
 msgstr "寄送失敗，請稍後再試"
 
-#: app/utils/forms.py:13 app/utils/forms.py:31
-#, python-format
-msgid "Email is too long (max %(limit)s characters)"
-msgstr "電子郵件信箱過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:17 app/utils/forms.py:35 app/utils/forms.py:74
-#: app/utils/forms.py:86
-#, python-format
-msgid "Password is too short (min %(limit)s characters)"
-msgstr "密碼過短 (至少 %(limit)s 個字元)"
-
-#: app/utils/forms.py:18 app/utils/forms.py:36 app/utils/forms.py:75
-#: app/utils/forms.py:87
-#, python-format
-msgid "Password is too long (max %(limit)s characters)"
-msgstr "密碼過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:20
-msgid "Remember Me"
-msgstr "保持登入"
-
-#: app/utils/forms.py:27 app/utils/forms.py:57
-#, python-format
-msgid "Username is too long (max %(limit)s characters)"
-msgstr "用戶名稱過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:39 app/utils/forms.py:78 app/utils/forms.py:90
-msgid "Passwords must match"
-msgstr "密碼不一致"
-
-#: app/utils/forms.py:45
-msgid "Avatar"
-msgstr "使用者頭貼"
-
-#: app/utils/forms.py:47
-msgid "Images only!"
-msgstr "僅能上傳圖片檔案!"
-
-#: app/utils/forms.py:48
-#, python-format
-msgid "Avatar file is too large (max %(limit)s MB)"
-msgstr "頭貼檔案過大 (上限 %(limit)s MB)"
-
-#: app/utils/forms.py:56
-#, python-format
-msgid "Username is too short (min %(limit)s characters)"
-msgstr "用戶名稱過短 (至少 %(limit)s 個字元)"
-
-#: app/utils/forms.py:59
-msgid "Update Username"
-msgstr "更新使用者名稱"
-
-#: app/utils/forms.py:65
-#, python-format
-msgid "Bio is too long (max %(limit)s characters)"
-msgstr "自我介紹過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:67
-msgid "Update Bio"
-msgstr "更新自我介紹"
-
-#: app/utils/forms.py:71
-msgid "Current Password"
-msgstr "目前的密碼"
-
-#: app/utils/forms.py:92
-msgid "Request Password Reset"
-msgstr "申請重置密碼"
-
-#: app/utils/forms.py:97
-msgid "Send Reset Password Mail"
-msgstr "傳送重置密碼連結"
-
-#: app/utils/forms.py:103
-#, python-format
-msgid "Library name is too long (max %(limit)s characters)"
-msgstr "題庫名稱過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:105
-msgid "Description"
-msgstr "說明"
-
-#: app/utils/forms.py:107
-#, python-format
-msgid "Description is too long (max %(limit)s characters)"
-msgstr "說明過長 (上限 %(limit)s 個字元)"
-
-#: app/utils/forms.py:110
-msgid "Words (JSON format)"
-msgstr "單字 (JSON 格式)"
-
-#: app/utils/forms.py:112
-#, python-format
-msgid "Words JSON is too long (max %(limit)s characters)"
-msgstr "單字的 JSON 檔案過大 (上限 %(limit)s 個字元)"
+#: app/templates/account_sys/settings.html:307
+msgid "Verification email has been sent to your inbox!"
+msgstr "驗證信件已寄出。"
 
 #: app/views/account_sys.py:39 app/views/account_sys.py:415
 msgid "Passwords do not match"
@@ -661,10 +586,6 @@ msgstr "無效的電子郵件信箱"
 #: app/views/account_sys.py:52
 msgid "Email already registered"
 msgstr "電子郵件已被註冊"
-
-#: app/views/account_sys.py:74 app/views/mail.py:81
-msgid "Email Verification"
-msgstr "電子郵件驗證"
 
 #: app/views/account_sys.py:80
 msgid ""
@@ -842,4 +763,64 @@ msgstr "請先完成電子郵件驗證再編輯題庫。"
 #: app/views/main.py:379
 msgid "Missing 'Chinese' or 'English' key in words JSON."
 msgstr "單字 JSON 缺少 'English' 或 'Chinese' 欄位。"
+
+#~ msgid "Email is too long (max %(limit)s characters)"
+#~ msgstr "電子郵件信箱過長 (上限 %(limit)s 個字元)"
+
+#~ msgid "Password is too short (min %(limit)s characters)"
+#~ msgstr "密碼過短 (至少 %(limit)s 個字元)"
+
+#~ msgid "Password is too long (max %(limit)s characters)"
+#~ msgstr "密碼過長 (上限 %(limit)s 個字元)"
+
+#~ msgid "Remember Me"
+#~ msgstr "保持登入"
+
+#~ msgid "Username is too long (max %(limit)s characters)"
+#~ msgstr "用戶名稱過長 (上限 %(limit)s 個字元)"
+
+#~ msgid "Passwords must match"
+#~ msgstr "密碼不一致"
+
+#~ msgid "Avatar"
+#~ msgstr "使用者頭貼"
+
+#~ msgid "Images only!"
+#~ msgstr "僅能上傳圖片檔案!"
+
+#~ msgid "Avatar file is too large (max %(limit)s MB)"
+#~ msgstr "頭貼檔案過大 (上限 %(limit)s MB)"
+
+#~ msgid "Username is too short (min %(limit)s characters)"
+#~ msgstr "用戶名稱過短 (至少 %(limit)s 個字元)"
+
+#~ msgid "Update Username"
+#~ msgstr "更新使用者名稱"
+
+#~ msgid "Bio is too long (max %(limit)s characters)"
+#~ msgstr "自我介紹過長 (上限 %(limit)s 個字元)"
+
+#~ msgid "Update Bio"
+#~ msgstr "更新自我介紹"
+
+#~ msgid "Request Password Reset"
+#~ msgstr "申請重置密碼"
+
+#~ msgid "Send Reset Password Mail"
+#~ msgstr "傳送重置密碼連結"
+
+#~ msgid "Library name is too long (max %(limit)s characters)"
+#~ msgstr "題庫名稱過長 (上限 %(limit)s 個字元)"
+
+#~ msgid "Description"
+#~ msgstr "說明"
+
+#~ msgid "Description is too long (max %(limit)s characters)"
+#~ msgstr "說明過長 (上限 %(limit)s 個字元)"
+
+#~ msgid "Words (JSON format)"
+#~ msgstr "單字 (JSON 格式)"
+
+#~ msgid "Words JSON is too long (max %(limit)s characters)"
+#~ msgstr "單字的 JSON 檔案過大 (上限 %(limit)s 個字元)"
 

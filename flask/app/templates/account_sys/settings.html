@@ -51,6 +51,7 @@
         </button>
       </form>
     </div>
+
     <div class="settings-section">
       <h3>{% trans %}Bio{% endtrans %}</h3>
       <form method="POST" action="{{ url_for('account_sys.settings') }}">
@@ -71,6 +72,7 @@
       </form>
     </div>
 
+    {% if current_user.password %}
     <div class="settings-section">
       <h3>{% trans %}Change Password{% endtrans %}</h3>
       <form method="POST" action="{{ url_for('account_sys.settings') }}">
@@ -82,8 +84,8 @@
             {% for error in password_form.current_password.errors %}
               <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
             {% endfor %}
-            {% endif %}
-          </div>
+          {% endif %}
+        </div>
         <div class="form-group">
           {{ password_form.new_password.label }}
           {{ password_form.new_password(class="form-control", placeholder=_('Enter new password')) }}
@@ -91,8 +93,8 @@
             {% for error in password_form.new_password.errors %}
               <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
             {% endfor %}
-            {% endif %}
-          </div>
+          {% endif %}
+        </div>
         <div class="form-group">
           {{ password_form.confirm_password.label }}
           {{ password_form.confirm_password(class="form-control", placeholder=_('Confirm new password')) }}
@@ -106,11 +108,73 @@
           <button type="submit" name="submit" value="password" class="btn btn-primary">
             {{ password_form.submit.label }}
           </button>
-          <button type="button" class="btn btn-secondary" onclick="sendPasswordReset()">
+          <button type="button" class="btn btn-secondary" id="forgotPasswordBtn">
             {% trans %}Forgot Password{% endtrans %}
           </button>
         </div>
       </form>
+    </div>
+    {% else %}
+      <div class="settings-section" id="createpass">
+      <h3>{% trans %}Create Password{% endtrans %}</h3>
+      <form method="POST" action="{{ url_for('account_sys.settings') }}">
+        {{ password_form.hidden_tag() }}
+        <div class="form-group">
+          {% if password_form.current_password.errors %}
+            {% for error in password_form.current_password.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ password_form.new_password.label }}
+          {{ password_form.new_password(class="form-control", placeholder=_('Enter new password')) }}
+          {% if password_form.new_password.errors %}
+            {% for error in password_form.new_password.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{ password_form.confirm_password.label }}
+          {{ password_form.confirm_password(class="form-control", placeholder=_('Confirm new password')) }}
+          {% if password_form.confirm_password.errors %}
+            {% for error in password_form.confirm_password.errors %}
+              <small style="color: #dc3545; font-size: 0.85rem;">{{ error }}</small>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button type="submit" name="submit" value="password" class="btn btn-primary">
+            {% trans %}Create Password{% endtrans %}
+          </button>
+        </div>
+      </form>
+    </div>
+    {% endif %}
+
+    <!-- Email Verification Section -->
+    <div class="settings-section">
+      <h3>{% trans %}Email Verification{% endtrans %}</h3>
+      <div>
+        {% if current_user.email_verified %}
+          <div class="status connected">
+            <span>{% trans %}Verified{% endtrans %} ✔️</span>
+            <br>
+            <span>{{ current_user.email }}</span>
+          </div>
+        {% else %}
+          <div class="status disconnected">
+            <span>{% trans %}Not Verified{% endtrans %} ❌</span>
+            <br>
+            <span>{{ current_user.email }}</span>
+            <br>
+            <button type="submit" class="btn btn-primary" id="resendVerifyBtn">
+                {% trans %}Resend Verification Email{% endtrans %}
+              </button>
+          </div>
+        {% endif %}
+      </div>
     </div>
 
     <div class="settings-section">
@@ -120,7 +184,6 @@
           <!-- Google OAuth -->
           <div class="oauth-card">
             <h4>Google</h4>
-            
             {% if current_user.google_id %}
               <div class="status connected">{% trans %}Linked{% endtrans %}</div>
               <br>
@@ -130,26 +193,23 @@
             {% else %}
               <div class="status disconnected">{% trans %}Not linked{% endtrans %}</div>
               <br>
-
               <a href="{{ url_for('account_sys.google_oauth') }}" class="btn btn-success">
                 {% trans %}Link Google{% endtrans %}
               </a>
-      {% endif %}
-    </div>
+            {% endif %}
+          </div>
 
           <div class="oauth-card">
             <h4>Discord</h4>
             {% if current_user.discord_id %}
               <div class="status connected">{% trans %}Linked{% endtrans %}</div>
               <br>
-
               <a href="{{ url_for('account_sys.discord_unlink') }}" class="btn btn-danger">
                 {% trans %}Unlink{% endtrans %}
               </a>
             {% else %}
               <div class="status disconnected">{% trans %}Not linked{% endtrans %}</div>
               <br>
-
               <a href="{{ url_for('account_sys.discord_oauth') }}" class="btn btn-success">
                 {% trans %}Link Discord{% endtrans %}
               </a>
@@ -160,7 +220,7 @@
         <div class="oauth-section-disabled">
           <div class="disabled-overlay">
             <p class="disabled-message">{% trans %}Please set a password before linking/unlinking accounts{% endtrans %}</p>
-            <a href="#password" class="btn btn-primary">{% trans %}Go to set password{% endtrans %}</a>
+            <a href="#createpass" class="btn btn-primary">{% trans %}Go to set password{% endtrans %}</a>
           </div>
           <div class="oauth-section" style="opacity: 0.5; pointer-events: none;">
             <!-- Google OAuth -->
@@ -197,47 +257,73 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-      const avatarFileInput = document.querySelector('.custom-file-input');
-      const customFileNameSpan = document.getElementById('customFileName');
-    const avatarPreview = document.querySelector('.avatar-preview img');
-    
-      if (avatarFileInput && customFileNameSpan && avatarPreview) {
-          avatarFileInput.addEventListener('change', function() {
-              if (this.files && this.files.length > 0) {
-                  customFileNameSpan.textContent = this.files[0].name;
-                  const reader = new FileReader();
-                  reader.onload = function(e) {
-                      avatarPreview.src = e.target.result;
-                };
-                  reader.readAsDataURL(this.files[0]);
-            } else {
-                  customFileNameSpan.textContent = '{% trans %}Choose File{% endtrans %}';
-                avatarPreview.src = '{{ url_for("static", filename="assets/img/default-avatar.png") }}';
-            }
-        });
-    }
-async function sendPasswordReset() {
+document.addEventListener('DOMContentLoaded', function () {
+  // Forgot Password Button
+  const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
+  if (forgotPasswordBtn) {
+    forgotPasswordBtn.addEventListener('click', sendPasswordReset);
+  }
+
+  const resendVerifyBtn = document.getElementById('resendVerifyBtn');
+  if (resendVerifyBtn) {
+    resendVerifyBtn.addEventListener('click', sendVerifyMail);
+  }
+
+  async function sendPasswordReset() {
     try {
-        const response = await fetch('/mail/reset_password/{{ current_user.email }}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': document.querySelector('input[name="csrf_token"]').value
-            }
-        });
-        
-        if (response.ok) {
-            alert('{% trans %}Password reset email has been sent to your inbox!{% endtrans %}');
-        } else {
-            const errorText = await response.text();
-            alert('{% trans %}Failed to send:{% endtrans %} ' + errorText);
+      const response = await fetch('/mail/reset_password/{{ current_user.email }}', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': document.querySelector('input[name="csrf_token"]').value
         }
+      });
+
+      if (response.ok) {
+        alert('{% trans %}Password reset email has been sent to your inbox!{% endtrans %}');
+      } else {
+        const errorText = await response.text();
+        alert('{% trans %}Failed to send:{% endtrans %} ' + errorText);
+      }
     } catch (error) {
-        console.error('Error:', error);
-        alert('{% trans %}Failed to send, please try again later.{% endtrans %}');
+      console.error('Error:', error);
+      alert('{% trans %}Failed to send, please try again later.{% endtrans %}');
     }
-}
-  });
+  }
+
+
+  
+  async function sendVerifyMail() {
+    try {
+      const response = await fetch('/mail/verify_email/{{ current_user.email }}', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': document.querySelector('input[name="csrf_token"]').value
+        }
+      });
+
+      if (response.ok) {
+        alert('{% trans %}Verification email has been sent to your inbox!{% endtrans %}');
+      } else {
+        const errorText = await response.text();
+        alert('{% trans %}Failed to send:{% endtrans %} ' + errorText);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('{% trans %}Failed to send, please try again later.{% endtrans %}');
+    }
+  }
+
+  // Auto scroll if URL has hash
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
 </script>
+
 {% endblock %}
