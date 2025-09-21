@@ -82,6 +82,7 @@ class JWTManager:
             The generated JWT token.
         """
         exp = datetime.now(timezone.utc) + (lifetime or timedelta(hours=1))
+        payload = payload.copy()  # Avoid modifying the original payload
         payload.update({"exp": exp})
         
         token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
@@ -104,7 +105,8 @@ class JWTManager:
             The payload if the token is valid, None otherwise.
         """
         try:
-            payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+            payload: dict = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+            payload.pop("exp")
             return payload
         
         except jwt.ExpiredSignatureError:
