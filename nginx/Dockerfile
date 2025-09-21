@@ -1,9 +1,9 @@
-FROM nginx 
+FROM nginx:alpine
 
 RUN rm /etc/nginx/conf.d/default.conf
 
-COPY nginx.conf /etc/nginx/conf.d/
+COPY site.conf /etc/nginx/conf.d/
 
-COPY nginx.conf /etc/nginx/conf.d/
-COPY ssl.csr /etc/nginx/ssl.csr
-COPY ssl.key /etc/nginx/ssl.key
+RUN mkdir -p /etc/nginx/ssl
+COPY ssl/ssl.crt /etc/nginx/ssl/ssl.crt
+COPY ssl/ssl.key /etc/nginx/ssl/ssl.key
