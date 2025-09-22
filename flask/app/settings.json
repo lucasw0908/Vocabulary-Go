@@ -33,7 +33,7 @@
     "api": {
         "model_name": "llama-3.3-70b-versatile",
         "retry_attempts": 5,
-        "retry_delay": 2.5,
+        "retry_delay": 1,
         "generation_duration": 3600,
         "max_sentences_per_word": 5
     },

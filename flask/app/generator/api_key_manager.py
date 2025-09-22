@@ -22,10 +22,11 @@ class ApiKeyManager:
             
             key = self.api_keys[0]
             
+            
             if self.available[key]:
+                self.api_keys.rotate(1)
                 return key
             
-            self.api_keys.rotate(1)
             
         log.debug("No available API keys found. Retrying...")
         
