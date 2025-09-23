@@ -5,28 +5,34 @@ import threading
 from collections import deque
 from typing import Callable
 
+from ..config import API_MODEL_TYPE
+
 
 log = logging.getLogger(__name__)
 
 
 class ApiKeyManager:
     
-    def __init__(self, api_keys):
-        self.api_keys = deque(api_keys)
+    def __init__(self, api_keys: list[str]):
+        self.api_keys = deque(self.key_filter(api_keys))
         self.available = {key: True for key in api_keys}
         
 
-    async def get_available_api_key(self) -> str:
+    def key_filter(self, api_keys: list[str]) -> list[str]:
+        if API_MODEL_TYPE == "gemini":
+            return [key for key in api_keys if key.startswith("AIzaSy")]
         
+        if API_MODEL_TYPE == "groq":
+            return [key for key in api_keys if key.startswith("gsk_")]
+            
+
+    async def get_available_api_key(self) -> str:
         for _ in range(len(self.api_keys)):
-            
             key = self.api_keys[0]
-            
             
             if self.available[key]:
                 self.api_keys.rotate(1)
                 return key
-            
             
         log.debug("No available API keys found. Retrying...")
         
