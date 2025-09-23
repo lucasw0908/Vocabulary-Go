@@ -5,8 +5,6 @@ import threading
 from collections import deque
 from typing import Callable
 
-from ..config import API_MODEL_TYPE
-
 
 log = logging.getLogger(__name__)
 
