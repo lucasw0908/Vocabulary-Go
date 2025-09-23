@@ -16,17 +16,16 @@ from .api_key_manager import ApiKeyManager
 
 log = logging.getLogger(__name__)
 Config = {
-    "api_key_manager": ApiKeyManager(APIKEYS),
     "model_name": API_MODEL_NAME,
     "max_retry_attempts": API_RETRY_ATTEMPTS,
     "retry_delay": API_RETRY_DELAY
 }
 
 if API_MODEL_TYPE.lower() == "groq":
-    ai_helper = GroqEnglishHelper(**Config)
+    ai_helper = GroqEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "gsk_"), **Config)
     
 elif API_MODEL_TYPE.lower() == "gemini":
-    ai_helper = GeminiEnglishHelper(**Config)
+    ai_helper = GeminiEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "AIzaSy"), **Config)
     
 else:
     raise ValueError(f"Unsupported API model type: {API_MODEL_TYPE}")

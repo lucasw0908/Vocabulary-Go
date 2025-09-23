@@ -48,7 +48,7 @@
             "lucasw0",
             "ianwen_is_a_sheep"
         ],
-        "always_update_dist": true,
+        "always_update_dist": false,
         "init_generator": true
     },
     "defaults": {

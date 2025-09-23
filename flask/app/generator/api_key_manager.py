@@ -13,17 +13,9 @@ log = logging.getLogger(__name__)
 
 class ApiKeyManager:
     
-    def __init__(self, api_keys: list[str]):
-        self.api_keys = deque(self.key_filter(api_keys))
+    def __init__(self, api_keys: list[str], prefix: str=""):
+        self.api_keys = deque([key for key in api_keys if key.startswith(prefix)])
         self.available = {key: True for key in api_keys}
-        
-
-    def key_filter(self, api_keys: list[str]) -> list[str]:
-        if API_MODEL_TYPE == "gemini":
-            return [key for key in api_keys if key.startswith("AIzaSy")]
-        
-        if API_MODEL_TYPE == "groq":
-            return [key for key in api_keys if key.startswith("gsk_")]
             
 
     async def get_available_api_key(self) -> str:
