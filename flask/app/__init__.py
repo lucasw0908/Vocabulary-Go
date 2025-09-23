@@ -139,9 +139,10 @@ def create_app(config=None) -> Flask:
     migrate.init_app(app, db)
     
     # Initialize the sqlalchemy session
-    app.config["SESSION_SQLALCHEMY"] = db
-    Session(app)
-    log.info("Using SQLAlchemy for session storage")
+    if not app.config["TESTING"]:
+        app.config["SESSION_SQLALCHEMY"] = db
+        Session(app)
+        log.info("Using SQLAlchemy for session storage")
     
     # Initialize the login manager
     login_manager.init_app(app)
