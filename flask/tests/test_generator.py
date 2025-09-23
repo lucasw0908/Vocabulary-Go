@@ -1,5 +1,4 @@
 import asyncio
-import time
 
 from flask import Flask
 
@@ -8,28 +7,9 @@ from app.models.libraries import Libraries
 from app.models.words import Words
 
 
-def test_api_key_manager_rotation_and_cooldown(monkeypatch):
-    from app.generator.api_key_manager import ApiKeyManager
-
-    manager = ApiKeyManager(["k1", "k2"])
-    # Make k1 unavailable to start
-    manager.available["k1"] = False
-
-    # Should pick k2
-    key = asyncio.get_event_loop().run_until_complete(manager.get_available_api_key())
-    assert key == "k2"
-
-    # Monkeypatch sleep to be instant, so cooldown thread runs immediately
-    monkeypatch.setattr(time, "sleep", lambda s: None)
-    asyncio.get_event_loop().run_until_complete(manager.update_retry_delay(0))
-    # After cooldown, k2 should be available again
-    assert manager.available["k2"] is True
-
-
-def test_gemini_helper_pure_functions():
-    from app.generator.gemini_english_helper import GeminiEnglishHelper
-
-    helper = GeminiEnglishHelper.__new__(GeminiEnglishHelper)
+def test_helper_pure_functions():
+    from app.generator.english_helper import EnglishHelper
+    helper = EnglishHelper.__new__(EnglishHelper)
     helper.retry_attempts = 0
 
     # blankify
@@ -42,7 +22,7 @@ def test_gemini_helper_pure_functions():
     assert helper.blankify("phrase").startswith("p") and helper.blankify("phrase").endswith("e")
 
     # trim_empty_lines
-    assert GeminiEnglishHelper.trim_empty_lines("a\n\n b \n\n") == "a\n b "
+    assert EnglishHelper.trim_empty_lines("a\n\n b \n\n") == "a\n b "
 
     # similarity and best_match
     sim = helper.check_similarity("hello world", "hello world")

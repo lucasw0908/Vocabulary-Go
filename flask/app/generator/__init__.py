@@ -5,22 +5,31 @@ import logging
 
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-from ..config import GEMENI_APIKEYS, API_GENERATION_DURATION, API_MODEL_NAME, API_RETRY_ATTEMPTS, API_RETRY_DELAY
+from ..config import APIKEYS, API_MODEL_TYPE, API_MODEL_NAME, API_GENERATION_DURATION, API_RETRY_ATTEMPTS, API_RETRY_DELAY
 from ..models import db
 from ..models.words import Words
 from ..models.sentences import Sentences
 from ..models.libraries import Libraries
-from .gemini_english_helper import GeminiEnglishHelper
+from .english_helper import GroqEnglishHelper, GeminiEnglishHelper
 from .api_key_manager import ApiKeyManager
 
 
 log = logging.getLogger(__name__)
-ai_helper = GeminiEnglishHelper(
-    ApiKeyManager(GEMENI_APIKEYS),
-    model_name=API_MODEL_NAME,
-    max_retry_attempts=API_RETRY_ATTEMPTS,
-    retry_delay=API_RETRY_DELAY
-)
+Config = {
+    "api_key_manager": ApiKeyManager(APIKEYS),
+    "model_name": API_MODEL_NAME,
+    "max_retry_attempts": API_RETRY_ATTEMPTS,
+    "retry_delay": API_RETRY_DELAY
+}
+
+if API_MODEL_TYPE.lower() == "groq":
+    ai_helper = GroqEnglishHelper(**Config)
+    
+elif API_MODEL_TYPE.lower() == "gemini":
+    ai_helper = GeminiEnglishHelper(**Config)
+    
+else:
+    raise ValueError(f"Unsupported API model type: {API_MODEL_TYPE}")
 
 
 async def generate() -> None:
