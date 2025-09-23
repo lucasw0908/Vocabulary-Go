@@ -10,6 +10,7 @@ authors = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "aiohttp>=3.12.15",
     "beartype==0.21.0",
     "Flask==3.1.2",
     "Flask-Admin==1.6.1",
@@ -22,14 +23,13 @@ dependencies = [
     "Flask-WTF==1.2.1",
     "google-auth-oauthlib==1.2.2",
     "google-generativeai==0.8.5",
+    "opencc-python-reimplemented==0.1.7",
     "pillow==11.3.0",
     "psycopg2-binary==2.9.10",
     "pyjwt==2.10.1",
     "python-dotenv==1.0.0",
     "wtforms==3.1.2",
     "Zenora==0.0.3.post1",
-    "aiohttp>=3.12.15",
-    "opencc-python-reimplemented==0.1.7",
 ]
 
 [dependency-groups]

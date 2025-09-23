@@ -195,7 +195,7 @@ class EnglishHelper:
 
 
 class GroqEnglishHelper(EnglishHelper):
-    API_URL = "https://api.groq.ai/v1/chat/completions"
+    API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
     async def request_api(self, prompt) -> str:
         

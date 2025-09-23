@@ -11,22 +11,18 @@ log = logging.getLogger(__name__)
 
 class ApiKeyManager:
     
-    def __init__(self, api_keys):
-        self.api_keys = deque(api_keys)
+    def __init__(self, api_keys: list[str], prefix: str=""):
+        self.api_keys = deque([key for key in api_keys if key.startswith(prefix)])
         self.available = {key: True for key in api_keys}
-        
+            
 
     async def get_available_api_key(self) -> str:
-        
         for _ in range(len(self.api_keys)):
-            
             key = self.api_keys[0]
-            
             
             if self.available[key]:
                 self.api_keys.rotate(1)
                 return key
-            
             
         log.debug("No available API keys found. Retrying...")
         
