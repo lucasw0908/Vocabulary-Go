@@ -28,6 +28,8 @@ dependencies = [
     "python-dotenv==1.0.0",
     "wtforms==3.1.2",
     "Zenora==0.0.3.post1",
+    "aiohttp>=3.12.15",
+    "opencc-python-reimplemented==0.1.7",
 ]
 
 [dependency-groups]

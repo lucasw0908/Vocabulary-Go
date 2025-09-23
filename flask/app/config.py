@@ -47,6 +47,7 @@ try:
     LOG_BACKUP_COUNT = SETTINGS["logging"]["backup_count"]
 
     # API Settings
+    API_MODEL_TYPE = SETTINGS["api"]["model_type"] # "groq" or "gemini"
     API_MODEL_NAME = SETTINGS["api"]["model_name"]
     API_RETRY_ATTEMPTS = SETTINGS["api"]["retry_attempts"]
     API_RETRY_DELAY = SETTINGS["api"]["retry_delay"]
@@ -65,7 +66,7 @@ try:
 
     # Defaults
     SUPPORTED_LANGUAGES = SETTINGS["defaults"]["supported_languages"]
-    DEFAULT_THEME = SETTINGS["defaults"]["theme"] #It is useless now
+    DEFAULT_THEME = SETTINGS["defaults"]["theme"] # It is useless now
     DEFAULT_ITEMS_PER_PAGE = SETTINGS["defaults"]["items_per_page"]
     MAX_CONTENT_LENGTH = SETTINGS["defaults"]["max_content_length"]
     MAX_AVATAR_SIZE = SETTINGS["defaults"]["max_avatar_size"]
@@ -127,8 +128,8 @@ GOOGLE_CONFIG = {
     }
 }
 
-# Gemini API keys
-GEMENI_APIKEYS = [key.strip() for key in os.getenv("GEMENI_APIKEYS").split(",")]
+# API keys
+APIKEYS = [key.strip() for key in os.getenv("APIKEYS").split(",")]
 
 # SMTP configuration
 SMTP_USER = os.getenv("SMTP_USER")
@@ -147,7 +148,7 @@ if not all([
     DISCORD_CLIENT_SECRET,
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
-    GEMENI_APIKEYS,
+    APIKEYS,
     SMTP_USER,
     SMTP_PASSWORD,
     SYSTEM_USERNAME,

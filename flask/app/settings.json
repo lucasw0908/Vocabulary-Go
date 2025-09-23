@@ -31,7 +31,8 @@
         "backup_count": 5
     },
     "api": {
-        "model_name": "gemini-2.0-flash",
+        "model_type": "groq",
+        "model_name": "llama-3.3-70b-versatile",
         "retry_attempts": 5,
         "retry_delay": 1,
         "generation_duration": 3600,
@@ -47,7 +48,7 @@
             "lucasw0",
             "ianwen_is_a_sheep"
         ],
-        "always_update_dist": false,
+        "always_update_dist": true,
         "init_generator": true
     },
     "defaults": {
