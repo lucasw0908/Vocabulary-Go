@@ -11,6 +11,7 @@ $(function () {
     });
 
     let currentPage = 1;
+    let itemsPerPage = 3;
 
     function setCookie(name, value, days) {
         const d = new Date();
