@@ -6,6 +6,7 @@ import sys
 from flask import Flask
 from flask_session import Session
 from flask_wtf import CSRFProtect
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from .config import (
     ProdConfig, DevConfig,
@@ -128,6 +129,11 @@ def create_app(config=None) -> Flask:
     # Initialize the app
     app = Flask(__name__)
     app.config.from_object(config or (DevConfig if DEBUG_MODE else ProdConfig))
+    
+    # Apply ProxyFix middleware to handle reverse proxy setups
+    if not DEBUG_MODE and not IS_MIGRATING:
+        app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1, x_prefix=1)
+        log.info("ProxyFix middleware applied")
     
     # Initialize the bcrypt
     bcrypt.init_app(app)
