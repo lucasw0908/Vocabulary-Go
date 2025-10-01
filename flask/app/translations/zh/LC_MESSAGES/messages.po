@@ -161,7 +161,7 @@ msgstr "使用者"
 
 #: app/templates/index.html:46
 msgid "Words Included"
-msgstr "收錄單字"
+msgstr "單字已收錄"
 
 #: app/templates/index.html:78
 msgid "AI Question Generation"
@@ -833,3 +833,6 @@ msgstr "驗證連結無效或已過期。"
 
 msgid "Current Password"
 msgstr "目前密碼"
+
+msgid "Sentences Generated"
+msgstr "題目已生成"
