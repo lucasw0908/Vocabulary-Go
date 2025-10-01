@@ -67,6 +67,7 @@ def index():
     stastistics["users"] = len(Users.query.all())
     stastistics["words"] = len(Words.query.all())
     stastistics["libraries"] = len(Libraries.query.all())
+    stastistics["sentences"] = len(Sentences.query.all())
     return render_template("index.html", current_user=current_user, statistics=stastistics)
 
 
