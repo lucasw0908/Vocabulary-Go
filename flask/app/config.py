@@ -168,6 +168,8 @@ class Config(object):
         "echo": DATABASE_ECHO,
         "pool_size": DATABASE_POOL_SIZE,
         "pool_recycle": DATABASE_POOL_RECYCLE,
+        "pool_pre_ping": True,
+        "pool_use_lifo": True
     }
     
     # Session Settings
