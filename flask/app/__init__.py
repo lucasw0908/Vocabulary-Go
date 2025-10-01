@@ -170,14 +170,16 @@ def create_app(config=None) -> Flask:
     app_load_blueprints(app)
 
     # Initialize rate limiting middleware
-    @app.before_request
-    def before_request():
-        """Rate limiting middleware"""
-        response = rate_limit_middleware()
-        if response:
-            return response
+    app.before_request(lambda: rate_limit_middleware())
     
     with app.app_context(): 
+        # Ensure database connections are not shared across forks
+        try:
+            from uwsgidecorators import postfork
+            postfork(db.engine.dispose)
+            log.info("uWSGI postfork decorator applied for DB pool disposal")
+        except ImportError:
+            log.info("uWSGI not installed; skipping postfork DB pool disposal")
 
         # Initialize the models
         if not IS_MIGRATING:
