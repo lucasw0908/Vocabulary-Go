@@ -7,13 +7,18 @@
 
   <div class="container">
     <div class="row justify-content-center" data-aos="zoom-out">
-      <div class="col-xl-8 col-lg-10 text-center">
-        <h1 style="color: #e4ebef;">{% trans %}One word{% endtrans %}  <span style="color: #49a2e1;">{% trans %}infinite progress{% endtrans %}<span style="color: #e4ebef;"></span></span></h1>
-        <p>{% trans %}Easily review translation fill-in-the-blanks and vocabulary in context{% endtrans %}</p>
+      <div class="text-center">
+        <h1 style="color: #e4ebef;">
+          {% trans %}One word{% endtrans %}
+          <span style="color: #49a2e1;">{% trans %}infinite progress{% endtrans %}</span>
+        </h1>
+        <p class="lead mt-3">
+          {% trans %}Easily review translation fill-in-the-blanks and vocabulary in context{% endtrans %}
+        </p>
       </div>
     </div>
     <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
-      <a href="{{ url_for('main.sentence_test') }}" class="btn-get-started">{% trans %}Start for Free{% endtrans %}</a>
+      <a href="/login" class="btn-get-started">{% trans %}Start for Free{% endtrans %}</a>
     </div>
 
   </div>
@@ -24,44 +29,43 @@
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    <div class="row gy-4">
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5">
-        <div class="col">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-            <p>{% trans %}Developers{% endtrans %}</p>
-          </div>
-        </div>
-      
-        <div class="col">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="{{ statistics['users'] }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p>{% trans %}Users{% endtrans %}</p>
-          </div>
-        </div>
-      
-        <div class="col">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="{{ statistics['libraries'] }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p>{% trans %}Libraries{% endtrans %}</p>
-          </div>
-        </div>
-      
-        <div class="col">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="{{ statistics['words'] }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p>{% trans %}Words Included{% endtrans %}</p>
-          </div>
-        </div>
-      
-        <div class="col">
-          <div class="stats-item text-center w-100 h-100">
-            <span data-purecounter-start="0" data-purecounter-end="{{ statistics['sentences'] }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p>{% trans %}Sentences Generated{% endtrans %}</p>
-          </div>
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-5">
+      <div class="col">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+          <p>{% trans %}Developers{% endtrans %}</p>
         </div>
       </div>
+    
+      <div class="col">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="{{ statistics['users'] }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>{% trans %}Users{% endtrans %}</p>
+        </div>
+      </div>
+    
+      <div class="col">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="{{ statistics['libraries'] }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>{% trans %}Libraries{% endtrans %}</p>
+        </div>
+      </div>
+    
+      <div class="col">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="{{ statistics['words'] }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>{% trans %}Words Included{% endtrans %}</p>
+        </div>
+      </div>
+    
+      <div class="col">
+        <div class="stats-item text-center w-100 h-100">
+          <span data-purecounter-start="0" data-purecounter-end="{{ statistics['sentences'] }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>{% trans %}Sentences Generated{% endtrans %}</p>
+        </div>
+      </div>
+    </div>
+    
       
   </div>
 
