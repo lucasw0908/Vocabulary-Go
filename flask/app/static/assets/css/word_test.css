@@ -337,7 +337,32 @@
     border: none;
   }
   
+
+  .sentence {
+    width: 80vw;
+  }
+
+
   @media (max-width: 768px) {
+    .sentence {
+      width: auto;
+    }
+  
+    #chinese-word {
+      font-size: 25px;
+      text-align: left;
+    }
+
+    #english-word {
+      font-size: 25px;
+      text-align: left;
+    }
+
+    #question-container {
+      position: absolute;
+      top: 15%;
+    }
+
     .control-panel {
       position: absolute; /* 保持 absolute，使其能夠隨父容器滾動 */
       top: 5px; /* 距離父容器頂部 5px */
@@ -369,6 +394,10 @@
       width: 15px;
       height: 15px;
       margin-top: 0;
+    }
+
+    .card-front, .card-back {
+      font-size: 1.1em !important;
     }
   }
   

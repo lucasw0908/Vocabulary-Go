@@ -442,7 +442,10 @@ h6 {
 }
 
 @media (max-width: 1199px) {
-
+  
+  .hero .container {
+    top: 40%;
+  }
   #dcjoin {
     display: flex;
     justify-content: space-between; 
@@ -962,7 +965,7 @@ section,
 }
 
 .hero .container {
-  position: relative;
+  position: absolute;
   z-index: 3;
 }
 
