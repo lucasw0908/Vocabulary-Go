@@ -1,0 +1,813 @@
+{
+    "name": "Level 4 - Part 2",
+    "description": "高中 7000 單字",
+    "created_at": "2025-10-07 00:00:00",
+    "updated_at": "2025-10-07 00:00:00",
+    "author": "ianwen",
+    "words": [
+        {
+          "English": "rebel",
+          "Chinese": "n./v. 反叛"
+        },
+        {
+          "English": "recall",
+          "Chinese": "v./n. 記起"
+        },
+        {
+          "English": "reception",
+          "Chinese": "n. 接待"
+        },
+        {
+          "English": "recipe",
+          "Chinese": "n. 食譜"
+        },
+        {
+          "English": "recognition",
+          "Chinese": "n. 認出"
+        },
+        {
+          "English": "recovery",
+          "Chinese": "n. 恢復"
+        },
+        {
+          "English": "recreation",
+          "Chinese": "n. 娛樂"
+        },
+        {
+          "English": "recycle",
+          "Chinese": "v. 回收"
+        },
+        {
+          "English": "reduction",
+          "Chinese": "n. 減少"
+        },
+        {
+          "English": "refer",
+          "Chinese": "v. 參考"
+        },
+        {
+          "English": "reference",
+          "Chinese": "n. 參考"
+        },
+        {
+          "English": "reflect",
+          "Chinese": "v. 反映"
+        },
+        {
+          "English": "reflection",
+          "Chinese": "n. 反射"
+        },
+        {
+          "English": "reform",
+          "Chinese": "n./v. 改革"
+        },
+        {
+          "English": "refugee",
+          "Chinese": "n. 難民"
+        },
+        {
+          "English": "refund",
+          "Chinese": "n./v. 退款"
+        },
+        {
+          "English": "refusal",
+          "Chinese": "n. 拒絕"
+        },
+        {
+          "English": "regarding",
+          "Chinese": "prep. 關於"
+        },
+        {
+          "English": "register",
+          "Chinese": "v./n. 登記"
+        },
+        {
+          "English": "registration",
+          "Chinese": "n. 登記"
+        },
+        {
+          "English": "regulate",
+          "Chinese": "v. 調節"
+        },
+        {
+          "English": "regulation",
+          "Chinese": "n. 規定"
+        },
+        {
+          "English": "rejection",
+          "Chinese": "n. 拒絕"
+        },
+        {
+          "English": "relaxation",
+          "Chinese": "n. 鬆弛"
+        },
+        {
+          "English": "relevant",
+          "Chinese": "adj. 相關的"
+        },
+        {
+          "English": "relieve",
+          "Chinese": "v. 緩解"
+        },
+        {
+          "English": "reluctant",
+          "Chinese": "adj. 不情願的"
+        },
+        {
+          "English": "remark",
+          "Chinese": "n./v. 評論"
+        },
+        {
+          "English": "remarkable",
+          "Chinese": "adj. 卓越"
+        },
+        {
+          "English": "remedy",
+          "Chinese": "n./v. 補救"
+        },
+        {
+          "English": "renew",
+          "Chinese": "v. 更新"
+        },
+        {
+          "English": "repetition",
+          "Chinese": "n. 重複"
+        },
+        {
+          "English": "representation",
+          "Chinese": "n. 表示"
+        },
+        {
+          "English": "reputation",
+          "Chinese": "n. 名聲"
+        },
+        {
+          "English": "rescue",
+          "Chinese": "n./v. 救援"
+        },
+        {
+          "English": "research",
+          "Chinese": "n./v. 研究"
+        },
+        {
+          "English": "researcher",
+          "Chinese": "n. 研究員"
+        },
+        {
+          "English": "resemble",
+          "Chinese": "v. 類似"
+        },
+        {
+          "English": "reservation",
+          "Chinese": "n. 預訂"
+        },
+        {
+          "English": "resign",
+          "Chinese": "v. 辭職"
+        },
+        {
+          "English": "resignation",
+          "Chinese": "n. 辭職"
+        },
+        {
+          "English": "resistance",
+          "Chinese": "n. 反抗"
+        },
+        {
+          "English": "resolution",
+          "Chinese": "n. 解決"
+        },
+        {
+          "English": "resolve",
+          "Chinese": "v./n. 解決"
+        },
+        {
+          "English": "respectable",
+          "Chinese": "adj. 可敬"
+        },
+        {
+          "English": "respectful",
+          "Chinese": "adj. 恭敬的"
+        },
+        {
+          "English": "restore",
+          "Chinese": "v. 恢復"
+        },
+        {
+          "English": "restriction",
+          "Chinese": "n. 限制"
+        },
+        {
+          "English": "retain",
+          "Chinese": "v. 保持"
+        },
+        {
+          "English": "retire(ment)",
+          "Chinese": "v./(n.) 退休）"
+        },
+        {
+          "English": "retreat",
+          "Chinese": "n./v. 撤退"
+        },
+        {
+          "English": "reunion",
+          "Chinese": "n. 團圓"
+        },
+        {
+          "English": "revenge",
+          "Chinese": "n./v. 復仇"
+        },
+        {
+          "English": "revise",
+          "Chinese": "v. 修訂"
+        },
+        {
+          "English": "revision",
+          "Chinese": "n. 修訂"
+        },
+        {
+          "English": "revolution",
+          "Chinese": "n. 革命"
+        },
+        {
+          "English": "revolutionary",
+          "Chinese": "adj./n. 革命性的"
+        },
+        {
+          "English": "reward",
+          "Chinese": "n./v. 報酬"
+        },
+        {
+          "English": "rhyme",
+          "Chinese": "n./v. 韻"
+        },
+        {
+          "English": "rhythm",
+          "Chinese": "n. 韻律"
+        },
+        {
+          "English": "riddle",
+          "Chinese": "n. 謎語"
+        },
+        {
+          "English": "robber",
+          "Chinese": "n. 強盜"
+        },
+        {
+          "English": "romance",
+          "Chinese": "n. 浪漫"
+        },
+        {
+          "English": "route",
+          "Chinese": "n./v. 路線"
+        },
+        {
+          "English": "ruin",
+          "Chinese": "v./n. 廢墟"
+        },
+        {
+          "English": "rural",
+          "Chinese": "adj. 鄉村的"
+        },
+        {
+          "English": "rusty",
+          "Chinese": "adj. 生鏽的"
+        },
+        {
+          "English": "sacrifice",
+          "Chinese": "n./v. 犧牲"
+        },
+        {
+          "English": "satellite",
+          "Chinese": "n. 衛星"
+        },
+        {
+          "English": "satisfaction",
+          "Chinese": "n. 滿意"
+        },
+        {
+          "English": "scarcely",
+          "Chinese": "adv. 幾乎不"
+        },
+        {
+          "English": "scenery",
+          "Chinese": "n. 風景"
+        },
+        {
+          "English": "scold",
+          "Chinese": "v./n. 罵"
+        },
+        {
+          "English": "scoop",
+          "Chinese": "n./v. 舀"
+        },
+        {
+          "English": "scratch",
+          "Chinese": "n./v. 刮痕"
+        },
+        {
+          "English": "sculpture",
+          "Chinese": "n./v. 雕塑"
+        },
+        {
+          "English": "secure",
+          "Chinese": "v./adj. 安全的"
+        },
+        {
+          "English": "seize",
+          "Chinese": "v. 搶佔"
+        },
+        {
+          "English": "settler",
+          "Chinese": "n. 定居者"
+        },
+        {
+          "English": "severe",
+          "Chinese": "adj. 劇烈"
+        },
+        {
+          "English": "sew",
+          "Chinese": "v. 縫"
+        },
+        {
+          "English": "shade",
+          "Chinese": "n./v. 陰影"
+        },
+        {
+          "English": "shady",
+          "Chinese": "adj. 陰涼"
+        },
+        {
+          "English": "shameful",
+          "Chinese": "adj. 可恥"
+        },
+        {
+          "English": "shave",
+          "Chinese": "v./n. 刮鬍子"
+        },
+        {
+          "English": "shelter",
+          "Chinese": "n./v. 庇護所"
+        },
+        {
+          "English": "shift",
+          "Chinese": "n./v. 轉移"
+        },
+        {
+          "English": "sightseeing",
+          "Chinese": "n. 觀光"
+        },
+        {
+          "English": "signature",
+          "Chinese": "n./adj. 簽名"
+        },
+        {
+          "English": "significance",
+          "Chinese": "n. 意義"
+        },
+        {
+          "English": "sincerity",
+          "Chinese": "n. 誠意"
+        },
+        {
+          "English": "singular",
+          "Chinese": "adj./n. 單數"
+        },
+        {
+          "English": "site",
+          "Chinese": "n./v. 地點"
+        },
+        {
+          "English": "sketch",
+          "Chinese": "n./v. 草圖"
+        },
+        {
+          "English": "skyscraper",
+          "Chinese": "n. 摩天大樓"
+        },
+        {
+          "English": "slight",
+          "Chinese": "adj./n./v. 輕微"
+        },
+        {
+          "English": "slogan",
+          "Chinese": "n. 口號"
+        },
+        {
+          "English": "socket",
+          "Chinese": "n. 插座"
+        },
+        {
+          "English": "software",
+          "Chinese": "n. 軟體"
+        },
+        {
+          "English": "solar",
+          "Chinese": "adj. 太陽的"
+        },
+        {
+          "English": "spade",
+          "Chinese": "n. 鏟"
+        },
+        {
+          "English": "spare",
+          "Chinese": "adj./v./n. 空閒的"
+        },
+        {
+          "English": "spark",
+          "Chinese": "n./v. 火花"
+        },
+        {
+          "English": "spear",
+          "Chinese": "n./v. 矛"
+        },
+        {
+          "English": "species",
+          "Chinese": "n. 種"
+        },
+        {
+          "English": "spiritual",
+          "Chinese": "adj. 精神"
+        },
+        {
+          "English": "splendid",
+          "Chinese": "adj. 燦爛"
+        },
+        {
+          "English": "split",
+          "Chinese": "v./n. 分裂"
+        },
+        {
+          "English": "sprinkle",
+          "Chinese": "v./n. 撒"
+        },
+        {
+          "English": "stab",
+          "Chinese": "n./v. 刺"
+        },
+        {
+          "English": "statistic(s)",
+          "Chinese": "n. 統計數據）"
+        },
+        {
+          "English": "status",
+          "Chinese": "n. 地位"
+        },
+        {
+          "English": "stem",
+          "Chinese": "n./v. 幹"
+        },
+        {
+          "English": "stereo",
+          "Chinese": "n. 立體聲"
+        },
+        {
+          "English": "stingy",
+          "Chinese": "adj. 小氣"
+        },
+        {
+          "English": "stocking(s)",
+          "Chinese": "n. 長襪"
+        },
+        {
+          "English": "strengthen",
+          "Chinese": "v. 加強"
+        },
+        {
+          "English": "stripe",
+          "Chinese": "n. 條紋"
+        },
+        {
+          "English": "strive",
+          "Chinese": "v. 努力"
+        },
+        {
+          "English": "stroke",
+          "Chinese": "n./v. 中風"
+        },
+        {
+          "English": "submarine",
+          "Chinese": "n./adj. 潛水艇"
+        },
+        {
+          "English": "sue",
+          "Chinese": "v. 起訴"
+        },
+        {
+          "English": "suggestion",
+          "Chinese": "n. 建議"
+        },
+        {
+          "English": "summarize",
+          "Chinese": "v. 總結"
+        },
+        {
+          "English": "surgeon",
+          "Chinese": "n. 外科醫生"
+        },
+        {
+          "English": "surgery",
+          "Chinese": "n. 手術"
+        },
+        {
+          "English": "surrender",
+          "Chinese": "v./n. 投降"
+        },
+        {
+          "English": "surroundings",
+          "Chinese": "n. 周圍環境"
+        },
+        {
+          "English": "suspicious",
+          "Chinese": "adj. 可疑的"
+        },
+        {
+          "English": "sway",
+          "Chinese": "n./v. 搖擺"
+        },
+        {
+          "English": "syllable",
+          "Chinese": "n. 音節"
+        },
+        {
+          "English": "sympathetic",
+          "Chinese": "adj. 富有同情心的"
+        },
+        {
+          "English": "sympathy",
+          "Chinese": "n. 同情"
+        },
+        {
+          "English": "systematic",
+          "Chinese": "adj. 系統的"
+        },
+        {
+          "English": "technician",
+          "Chinese": "n. 技術員"
+        },
+        {
+          "English": "technological",
+          "Chinese": "adj. 技術性的"
+        },
+        {
+          "English": "telegraph",
+          "Chinese": "n./v. 電報"
+        },
+        {
+          "English": "telescope",
+          "Chinese": "n. 望遠鏡"
+        },
+        {
+          "English": "tendency",
+          "Chinese": "n. 趨勢"
+        },
+        {
+          "English": "tense",
+          "Chinese": "adj./v. 緊張"
+        },
+        {
+          "English": "tension",
+          "Chinese": "n. 緊張"
+        },
+        {
+          "English": "terror",
+          "Chinese": "n. 恐怖"
+        },
+        {
+          "English": "theme",
+          "Chinese": "n. 主題"
+        },
+        {
+          "English": "thorough",
+          "Chinese": "adj. 徹底"
+        },
+        {
+          "English": "thoughtful",
+          "Chinese": "adj. 周到"
+        },
+        {
+          "English": "tickle",
+          "Chinese": "v./n. 癢癢"
+        },
+        {
+          "English": "timetable",
+          "Chinese": "n. 時間表"
+        },
+        {
+          "English": "timid",
+          "Chinese": "adj. 膽小"
+        },
+        {
+          "English": "tolerable",
+          "Chinese": "adj. 可以忍受的"
+        },
+        {
+          "English": "tolerance",
+          "Chinese": "n. 寬容"
+        },
+        {
+          "English": "tolerant",
+          "Chinese": "adj. 寬容"
+        },
+        {
+          "English": "tolerate",
+          "Chinese": "v. 容忍"
+        },
+        {
+          "English": "tomb",
+          "Chinese": "n. 墓"
+        },
+        {
+          "English": "tortoise",
+          "Chinese": "n. 龜"
+        },
+        {
+          "English": "torture",
+          "Chinese": "n./v. 酷刑"
+        },
+        {
+          "English": "tragedy",
+          "Chinese": "n. 悲劇"
+        },
+        {
+          "English": "tragic",
+          "Chinese": "adj. 悲慘"
+        },
+        {
+          "English": "transfer",
+          "Chinese": "n./v. 轉移"
+        },
+        {
+          "English": "transform",
+          "Chinese": "v. 轉換"
+        },
+        {
+          "English": "translate",
+          "Chinese": "v. 翻譯"
+        },
+        {
+          "English": "translation",
+          "Chinese": "n. 翻譯"
+        },
+        {
+          "English": "translator",
+          "Chinese": "n. 翻譯者"
+        },
+        {
+          "English": "transportation",
+          "Chinese": "n. 運輸"
+        },
+        {
+          "English": "tremble",
+          "Chinese": "v./n. 顫抖"
+        },
+        {
+          "English": "tremendous",
+          "Chinese": "adj. 巨大的"
+        },
+        {
+          "English": "tribal",
+          "Chinese": "adj. 部落的"
+        },
+        {
+          "English": "triumph",
+          "Chinese": "n./v. 勝利"
+        },
+        {
+          "English": "troublesome",
+          "Chinese": "adj. 麻煩的"
+        },
+        {
+          "English": "tumble",
+          "Chinese": "v./n. 翻滾"
+        },
+        {
+          "English": "twig",
+          "Chinese": "n. 枝條"
+        },
+        {
+          "English": "universal",
+          "Chinese": "adj./n. 普遍的"
+        },
+        {
+          "English": "urge",
+          "Chinese": "n./v. 敦促"
+        },
+        {
+          "English": "urgent",
+          "Chinese": "adj. 緊迫的"
+        },
+        {
+          "English": "usage",
+          "Chinese": "n. 用法"
+        },
+        {
+          "English": "vacancy",
+          "Chinese": "n. 空缺"
+        },
+        {
+          "English": "vain",
+          "Chinese": "adj. 徒勞的"
+        },
+        {
+          "English": "vast",
+          "Chinese": "adj. 廣闊的"
+        },
+        {
+          "English": "vegetarian",
+          "Chinese": "n. 素食主義者"
+        },
+        {
+          "English": "vessel",
+          "Chinese": "n. 血管"
+        },
+        {
+          "English": "violate",
+          "Chinese": "v. 違反"
+        },
+        {
+          "English": "violation",
+          "Chinese": "n. 違反"
+        },
+        {
+          "English": "virtue",
+          "Chinese": "n. 美德"
+        },
+        {
+          "English": "virus",
+          "Chinese": "n. 病毒"
+        },
+        {
+          "English": "visual",
+          "Chinese": "adj. 視覺的"
+        },
+        {
+          "English": "vital",
+          "Chinese": "adj. 必不可少的"
+        },
+        {
+          "English": "voluntary",
+          "Chinese": "adj. 自願"
+        },
+        {
+          "English": "volunteer",
+          "Chinese": "n./v. 志工"
+        },
+        {
+          "English": "voyage",
+          "Chinese": "n./v. 航程"
+        },
+        {
+          "English": "waken",
+          "Chinese": "v. 喚醒"
+        },
+        {
+          "English": "website",
+          "Chinese": "n. 網站"
+        },
+        {
+          "English": "welfare",
+          "Chinese": "n. 福利"
+        },
+        {
+          "English": "wink",
+          "Chinese": "n./v. 眨眼"
+        },
+        {
+          "English": "wit",
+          "Chinese": "n. 機智"
+        },
+        {
+          "English": "witch/wizard",
+          "Chinese": "n. 女巫/巫師"
+        },
+        {
+          "English": "withdraw",
+          "Chinese": "v. 提取"
+        },
+        {
+          "English": "witness",
+          "Chinese": "n./v. 證人"
+        },
+        {
+          "English": "workout",
+          "Chinese": "n. 鍛鍊"
+        },
+        {
+          "English": "workplace",
+          "Chinese": "n. 工作場所"
+        },
+        {
+          "English": "wreck",
+          "Chinese": "n./v. 破壞"
+        },
+        {
+          "English": "yawn",
+          "Chinese": "n./v. 打哈欠"
+        },
+        {
+          "English": "youthful",
+          "Chinese": "adj. 青春的"
+        }
+      ]
+}

@@ -1,0 +1,805 @@
+{
+    "name": "Level 4 - Part 1",
+    "description": "高中 7000 單字",
+    "created_at": "2025-10-07 00:00:00",
+    "updated_at": "2025-10-07 00:00:00",
+    "author": "ianwen",
+    "words": [
+        {
+          "English": "abandon",
+          "Chinese": "v. 放棄"
+        },
+        {
+          "English": "absolute",
+          "Chinese": "adj. 絕對"
+        },
+        {
+          "English": "absorb",
+          "Chinese": "v. 吸收"
+        },
+        {
+          "English": "abstract",
+          "Chinese": "adj. 抽象的"
+        },
+        {
+          "English": "academic",
+          "Chinese": "adj. 學術的"
+        },
+        {
+          "English": "accent",
+          "Chinese": "n. 口音"
+        },
+        {
+          "English": "acceptance",
+          "Chinese": "n. 驗收"
+        },
+        {
+          "English": "access",
+          "Chinese": "n./v. 使用權"
+        },
+        {
+          "English": "accidental",
+          "Chinese": "adj. 偶然"
+        },
+        {
+          "English": "accompany",
+          "Chinese": "v. 陪伴"
+        },
+        {
+          "English": "accomplish(ment)",
+          "Chinese": "v./(n.) 成就）"
+        },
+        {
+          "English": "accountant",
+          "Chinese": "n. 會計"
+        },
+        {
+          "English": "accuracy",
+          "Chinese": "n. 準確性"
+        },
+        {
+          "English": "accuse",
+          "Chinese": "v. 控"
+        },
+        {
+          "English": "acid",
+          "Chinese": "n./adj. 酸"
+        },
+        {
+          "English": "acquaintance",
+          "Chinese": "n. 熟人"
+        },
+        {
+          "English": "acquire",
+          "Chinese": "v. 獲得"
+        },
+        {
+          "English": "adapt",
+          "Chinese": "v. 適應"
+        },
+        {
+          "English": "addict",
+          "Chinese": "n./v. 癮君子"
+        },
+        {
+          "English": "adequate",
+          "Chinese": "adj. 足夠的"
+        },
+        {
+          "English": "adjust(ment)",
+          "Chinese": "v./(n.) 調整）"
+        },
+        {
+          "English": "admirable",
+          "Chinese": "adj. 令人欽佩的"
+        },
+        {
+          "English": "admiration",
+          "Chinese": "n. 欽佩"
+        },
+        {
+          "English": "admission",
+          "Chinese": "n. 入場"
+        },
+        {
+          "English": "adopt",
+          "Chinese": "v. 採納"
+        },
+        {
+          "English": "agency",
+          "Chinese": "n. 機構"
+        },
+        {
+          "English": "agent",
+          "Chinese": "n. 代理人"
+        },
+        {
+          "English": "aggressive",
+          "Chinese": "adj. 挑釁的"
+        },
+        {
+          "English": "agreeable",
+          "Chinese": "adj. 令人愉快的"
+        },
+        {
+          "English": "alcohol",
+          "Chinese": "n. 酒精"
+        },
+        {
+          "English": "alert",
+          "Chinese": "adj./v./n. 警報"
+        },
+        {
+          "English": "allowance",
+          "Chinese": "n. 津貼"
+        },
+        {
+          "English": "alternative",
+          "Chinese": "adj./n. 選擇"
+        },
+        {
+          "English": "amateur",
+          "Chinese": "adj./n. 業餘"
+        },
+        {
+          "English": "ambiguous",
+          "Chinese": "adj. 模糊的"
+        },
+        {
+          "English": "ambitious",
+          "Chinese": "adj. 雄心勃勃的"
+        },
+        {
+          "English": "amuse(ment)",
+          "Chinese": "v./(n.) 娛樂）"
+        },
+        {
+          "English": "analysis",
+          "Chinese": "n. 分析"
+        },
+        {
+          "English": "analyze",
+          "Chinese": "v. 分析"
+        },
+        {
+          "English": "ancestor",
+          "Chinese": "n. 祖先"
+        },
+        {
+          "English": "anniversary",
+          "Chinese": "n. 週年紀念日"
+        },
+        {
+          "English": "annoy",
+          "Chinese": "v. 惹惱"
+        },
+        {
+          "English": "annual",
+          "Chinese": "adj. 年度的"
+        },
+        {
+          "English": "anxiety",
+          "Chinese": "n. 焦慮"
+        },
+        {
+          "English": "apology",
+          "Chinese": "n. 道歉"
+        },
+        {
+          "English": "apparent",
+          "Chinese": "adj. 明顯的"
+        },
+        {
+          "English": "applicant",
+          "Chinese": "n. 申請人"
+        },
+        {
+          "English": "application",
+          "Chinese": "n. 應用"
+        },
+        {
+          "English": "appoint(ment)",
+          "Chinese": "v./(n.) 預約）"
+        },
+        {
+          "English": "appreciation",
+          "Chinese": "n. 欣賞"
+        },
+        {
+          "English": "appropriate",
+          "Chinese": "adj. 合適的"
+        },
+        {
+          "English": "approval",
+          "Chinese": "n. 贊同"
+        },
+        {
+          "English": "aquarium",
+          "Chinese": "n. 水族館"
+        },
+        {
+          "English": "arch",
+          "Chinese": "n./v. 拱"
+        },
+        {
+          "English": "arise",
+          "Chinese": "v. 出現"
+        },
+        {
+          "English": "arms",
+          "Chinese": "n. 武器"
+        },
+        {
+          "English": "artificial",
+          "Chinese": "adj. 人造的"
+        },
+        {
+          "English": "artistic",
+          "Chinese": "adj. 藝術的"
+        },
+        {
+          "English": "ashamed",
+          "Chinese": "adj. 羞愧"
+        },
+        {
+          "English": "aspect",
+          "Chinese": "n. 方面"
+        },
+        {
+          "English": "aspirin",
+          "Chinese": "n. 阿斯匹林"
+        },
+        {
+          "English": "assemble",
+          "Chinese": "v. 集合"
+        },
+        {
+          "English": "assembly",
+          "Chinese": "n. 集會"
+        },
+        {
+          "English": "assign(ment)",
+          "Chinese": "v./(n.) 任務）"
+        },
+        {
+          "English": "assistance",
+          "Chinese": "n. 協助"
+        },
+        {
+          "English": "associate",
+          "Chinese": "adj./n./v. 聯繫"
+        },
+        {
+          "English": "association",
+          "Chinese": "n. 協會"
+        },
+        {
+          "English": "assurance",
+          "Chinese": "n. 保證"
+        },
+        {
+          "English": "assure",
+          "Chinese": "v. 保證"
+        },
+        {
+          "English": "athletic",
+          "Chinese": "adj. 運動的"
+        },
+        {
+          "English": "atmosphere",
+          "Chinese": "n. 氣氛"
+        },
+        {
+          "English": "atom",
+          "Chinese": "n. 原子"
+        },
+        {
+          "English": "atomic",
+          "Chinese": "adj. 原子"
+        },
+        {
+          "English": "attach(ment)",
+          "Chinese": "v./(n.) 依戀）"
+        },
+        {
+          "English": "attraction",
+          "Chinese": "n. 景點"
+        },
+        {
+          "English": "audio",
+          "Chinese": "adj. 聲音的"
+        },
+        {
+          "English": "authentic",
+          "Chinese": "adj. 真正的"
+        },
+        {
+          "English": "authority",
+          "Chinese": "n. 權威"
+        },
+        {
+          "English": "autobiography",
+          "Chinese": "n. 自傳"
+        },
+        {
+          "English": "autograph",
+          "Chinese": "n./v. 簽名"
+        },
+        {
+          "English": "await",
+          "Chinese": "v. 等待"
+        },
+        {
+          "English": "baid",
+          "Chinese": "adj. 拜德"
+        },
+        {
+          "English": "ballet",
+          "Chinese": "n. 芭蕾舞"
+        },
+        {
+          "English": "bandage",
+          "Chinese": "n./v. 繃帶"
+        },
+        {
+          "English": "bankrupt",
+          "Chinese": "adj./v./n. 破產"
+        },
+        {
+          "English": "bargain",
+          "Chinese": "n./v. 便宜貨"
+        },
+        {
+          "English": "barrier",
+          "Chinese": "n. 障礙"
+        },
+        {
+          "English": "basin",
+          "Chinese": "n. 盆地"
+        },
+        {
+          "English": "battery",
+          "Chinese": "n. 電池"
+        },
+        {
+          "English": "beggar",
+          "Chinese": "n. 乞丐"
+        },
+        {
+          "English": "behavior",
+          "Chinese": "n. 行為"
+        },
+        {
+          "English": "bin",
+          "Chinese": "n. 垃圾桶"
+        },
+        {
+          "English": "biography",
+          "Chinese": "n. 傳"
+        },
+        {
+          "English": "biology",
+          "Chinese": "n. 生物學"
+        },
+        {
+          "English": "blade",
+          "Chinese": "n. 刀刃"
+        },
+        {
+          "English": "blend",
+          "Chinese": "v./n. 混合"
+        },
+        {
+          "English": "blessing",
+          "Chinese": "n. 祝福"
+        },
+        {
+          "English": "blink",
+          "Chinese": "v./n. 眨"
+        },
+        {
+          "English": "bloom",
+          "Chinese": "n./v. 盛開"
+        },
+        {
+          "English": "blossom",
+          "Chinese": "n./v. 開花"
+        },
+        {
+          "English": "boast",
+          "Chinese": "v./n. 誇"
+        },
+        {
+          "English": "bond",
+          "Chinese": "n./v. 紐帶"
+        },
+        {
+          "English": "bounce",
+          "Chinese": "v./n. 彈跳"
+        },
+        {
+          "English": "bracelet",
+          "Chinese": "n. 手鐲"
+        },
+        {
+          "English": "breed",
+          "Chinese": "n./v. 品種"
+        },
+        {
+          "English": "bridegroom/groom",
+          "Chinese": "n. 新郎/新郎"
+        },
+        {
+          "English": "broke",
+          "Chinese": "adj. 壞了"
+        },
+        {
+          "English": "broom",
+          "Chinese": "n. 掃帚"
+        },
+        {
+          "English": "brutal",
+          "Chinese": "adj. 野蠻"
+        },
+        {
+          "English": "bulletin",
+          "Chinese": "n. 公告"
+        },
+        {
+          "English": "burglar",
+          "Chinese": "n. 竊賊"
+        },
+        {
+          "English": "cabinet",
+          "Chinese": "n. 內閣"
+        },
+        {
+          "English": "calculate",
+          "Chinese": "v. 計算"
+        },
+        {
+          "English": "calculation",
+          "Chinese": "n. 計算"
+        },
+        {
+          "English": "calorie",
+          "Chinese": "n. 卡路里"
+        },
+        {
+          "English": "campaign",
+          "Chinese": "n./v. 活動"
+        },
+        {
+          "English": "candidate",
+          "Chinese": "n. 候選人"
+        },
+        {
+          "English": "cane",
+          "Chinese": "n. 甘蔗"
+        },
+        {
+          "English": "canoe",
+          "Chinese": "n./v. 獨木舟"
+        },
+        {
+          "English": "capacity",
+          "Chinese": "n. 容量"
+        },
+        {
+          "English": "capital(ism)",
+          "Chinese": "n. 資本（主義）"
+        },
+        {
+          "English": "capitalist",
+          "Chinese": "n. 資本家"
+        },
+        {
+          "English": "cargo",
+          "Chinese": "n. 貨物"
+        },
+        {
+          "English": "carrier",
+          "Chinese": "n. 載體"
+        },
+        {
+          "English": "carve",
+          "Chinese": "v. 雕刻"
+        },
+        {
+          "English": "catalogue",
+          "Chinese": "n./v. 目錄"
+        },
+        {
+          "English": "category",
+          "Chinese": "n. 類別"
+        },
+        {
+          "English": "cease",
+          "Chinese": "v./n. 停止"
+        },
+        {
+          "English": "celebration",
+          "Chinese": "n. 慶典"
+        },
+        {
+          "English": "chamber",
+          "Chinese": "n. 室"
+        },
+        {
+          "English": "championship",
+          "Chinese": "n. 錦標賽"
+        },
+        {
+          "English": "characteristic",
+          "Chinese": "n./adj. 特徵"
+        },
+        {
+          "English": "charity",
+          "Chinese": "n. 慈善事業"
+        },
+        {
+          "English": "chemistry",
+          "Chinese": "n. 化學"
+        },
+        {
+          "English": "cherish",
+          "Chinese": "v. 珍惜"
+        },
+        {
+          "English": "chew",
+          "Chinese": "v./n. 嚼"
+        },
+        {
+          "English": "choke",
+          "Chinese": "v./n. 嗆"
+        },
+        {
+          "English": "chorus",
+          "Chinese": "n. 合唱"
+        },
+        {
+          "English": "circular",
+          "Chinese": "adj. 圓"
+        },
+        {
+          "English": "circulate",
+          "Chinese": "v. 流通"
+        },
+        {
+          "English": "circulation",
+          "Chinese": "n. 循環"
+        },
+        {
+          "English": "circumstance",
+          "Chinese": "n. 環境"
+        },
+        {
+          "English": "civilian",
+          "Chinese": "adj./n. 平民"
+        },
+        {
+          "English": "civilization",
+          "Chinese": "n. 文明"
+        },
+        {
+          "English": "clarify",
+          "Chinese": "v. 闡明"
+        },
+        {
+          "English": "clash",
+          "Chinese": "n./v. 衝突"
+        },
+        {
+          "English": "classification",
+          "Chinese": "n. 分類"
+        },
+        {
+          "English": "classify",
+          "Chinese": "v. 分類"
+        },
+        {
+          "English": "claw",
+          "Chinese": "n./v. 爪"
+        },
+        {
+          "English": "cliff",
+          "Chinese": "n. 懸崖"
+        },
+        {
+          "English": "clumsy",
+          "Chinese": "adj. 笨拙"
+        },
+        {
+          "English": "coarse",
+          "Chinese": "adj. 粗"
+        },
+        {
+          "English": "code",
+          "Chinese": "n./v. 程式碼"
+        },
+        {
+          "English": "collapse",
+          "Chinese": "n./v. 坍塌"
+        },
+        {
+          "English": "colleague",
+          "Chinese": "n. 同事"
+        },
+        {
+          "English": "combination",
+          "Chinese": "n. 組合"
+        },
+        {
+          "English": "comedy",
+          "Chinese": "n. 喜劇"
+        },
+        {
+          "English": "commander",
+          "Chinese": "n. 指揮官"
+        },
+        {
+          "English": "comment",
+          "Chinese": "n./v. 評論"
+        },
+        {
+          "English": "commerce",
+          "Chinese": "n. 商業"
+        },
+        {
+          "English": "commit",
+          "Chinese": "v. 犯罪"
+        },
+        {
+          "English": "communication",
+          "Chinese": "n. 溝通"
+        },
+        {
+          "English": "community",
+          "Chinese": "n. 社群"
+        },
+        {
+          "English": "companion",
+          "Chinese": "n. 伴侶"
+        },
+        {
+          "English": "competition",
+          "Chinese": "n. 競賽"
+        },
+        {
+          "English": "competitive",
+          "Chinese": "adj. 競爭的"
+        },
+        {
+          "English": "competitor",
+          "Chinese": "n. 競爭者"
+        },
+        {
+          "English": "complicate",
+          "Chinese": "v. 使複雜化"
+        },
+        {
+          "English": "compose",
+          "Chinese": "v. 撰寫"
+        },
+        {
+          "English": "composer",
+          "Chinese": "n. 作曲家"
+        },
+        {
+          "English": "composition",
+          "Chinese": "n. 作品"
+        },
+        {
+          "English": "concentrate",
+          "Chinese": "v. 集中"
+        },
+        {
+          "English": "concentration",
+          "Chinese": "n. 專注"
+        },
+        {
+          "English": "concept",
+          "Chinese": "n. 概念"
+        },
+        {
+          "English": "concerning",
+          "Chinese": "prep. 有關"
+        },
+        {
+          "English": "concrete",
+          "Chinese": "adj./n./v. 具體的"
+        },
+        {
+          "English": "conductor",
+          "Chinese": "n. 導體"
+        },
+        {
+          "English": "conference",
+          "Chinese": "n. 會議"
+        },
+        {
+          "English": "confess",
+          "Chinese": "v. 承認"
+        },
+        {
+          "English": "confidence",
+          "Chinese": "n. 信心"
+        },
+        {
+          "English": "confusion",
+          "Chinese": "n. 錯亂"
+        },
+        {
+          "English": "congratulate",
+          "Chinese": "v. 恭喜"
+        },
+        {
+          "English": "congress",
+          "Chinese": "n. 國會"
+        },
+        {
+          "English": "conquer",
+          "Chinese": "v. 征服"
+        },
+        {
+          "English": "conscience",
+          "Chinese": "n. 良心"
+        },
+        {
+          "English": "consequence",
+          "Chinese": "n. 結果"
+        },
+        {
+          "English": "consequent",
+          "Chinese": "adj. 結果"
+        },
+        {
+          "English": "conservative",
+          "Chinese": "adj./n. 保守的"
+        },
+        {
+          "English": "consist",
+          "Chinese": "v. 組成"
+        },
+        {
+          "English": "consistent",
+          "Chinese": "adj. 持續的"
+        },
+        {
+          "English": "constitute",
+          "Chinese": "v. 構成"
+        },
+        {
+          "English": "constitution",
+          "Chinese": "n. 憲法"
+        },
+        {
+          "English": "construct",
+          "Chinese": "v. 構造"
+        },
+        {
+          "English": "construction",
+          "Chinese": "n. 建造"
+        },
+        {
+          "English": "constructive",
+          "Chinese": "adj. 建設性的"
+        },
+        {
+          "English": "consult",
+          "Chinese": "v. 諮詢"
+        },
+        {
+          "English": "consultant",
+          "Chinese": "n. 顧問"
+        },
+        {
+          "English": "consume",
+          "Chinese": "v. 消耗"
+        },
+        {
+          "English": "consumer",
+          "Chinese": "n. 消費者"
+        }
+      ]
+}

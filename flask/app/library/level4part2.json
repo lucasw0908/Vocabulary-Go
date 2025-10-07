@@ -1,0 +1,809 @@
+{
+    "name": "Level 4 - Part 2",
+    "description": "高中 7000 單字",
+    "created_at": "2025-10-07 00:00:00",
+    "updated_at": "2025-10-07 00:00:00",
+    "author": "ianwen",
+    "words": [
+        {
+          "English": "container",
+          "Chinese": "n. 容器"
+        },
+        {
+          "English": "content",
+          "Chinese": "n./adj. 內容"
+        },
+        {
+          "English": "content(ment)",
+          "Chinese": "v./(n.) 滿意）"
+        },
+        {
+          "English": "contest",
+          "Chinese": "n./v. 競賽"
+        },
+        {
+          "English": "context",
+          "Chinese": "n. 情境"
+        },
+        {
+          "English": "continual",
+          "Chinese": "adj. 連續的"
+        },
+        {
+          "English": "continuous",
+          "Chinese": "adj. 連續的"
+        },
+        {
+          "English": "contrary",
+          "Chinese": "n./adj. 相反"
+        },
+        {
+          "English": "contrast",
+          "Chinese": "n./v. 對比"
+        },
+        {
+          "English": "contribute",
+          "Chinese": "v. 貢獻"
+        },
+        {
+          "English": "contribution",
+          "Chinese": "n. 貢獻"
+        },
+        {
+          "English": "convenience",
+          "Chinese": "n. 方便"
+        },
+        {
+          "English": "convention",
+          "Chinese": "n. 習俗"
+        },
+        {
+          "English": "conventional",
+          "Chinese": "adj. 傳統的"
+        },
+        {
+          "English": "converse",
+          "Chinese": "v. 交談"
+        },
+        {
+          "English": "convey",
+          "Chinese": "v. 傳達"
+        },
+        {
+          "English": "convince",
+          "Chinese": "v. 說服"
+        },
+        {
+          "English": "cooperate",
+          "Chinese": "v. 合作"
+        },
+        {
+          "English": "cooperation",
+          "Chinese": "n. 合作"
+        },
+        {
+          "English": "cooperative",
+          "Chinese": "adj./n. 合作社"
+        },
+        {
+          "English": "cope",
+          "Chinese": "v. 應付"
+        },
+        {
+          "English": "copper",
+          "Chinese": "n./adj. 銅"
+        },
+        {
+          "English": "cord",
+          "Chinese": "n. 繩索"
+        },
+        {
+          "English": "correspond",
+          "Chinese": "v. 對應"
+        },
+        {
+          "English": "costume",
+          "Chinese": "n. 戲服"
+        },
+        {
+          "English": "cottage",
+          "Chinese": "n. 小屋"
+        },
+        {
+          "English": "council",
+          "Chinese": "n. 理事會"
+        },
+        {
+          "English": "counter",
+          "Chinese": "n./v./adj./adv. 櫃檯"
+        },
+        {
+          "English": "courageous",
+          "Chinese": "adj. 勇敢"
+        },
+        {
+          "English": "courtesy",
+          "Chinese": "n. 禮貌"
+        },
+        {
+          "English": "coward",
+          "Chinese": "n. 懦夫"
+        },
+        {
+          "English": "crack",
+          "Chinese": "n./v. 裂縫"
+        },
+        {
+          "English": "craft",
+          "Chinese": "n. 工藝"
+        },
+        {
+          "English": "creation",
+          "Chinese": "n. 創建"
+        },
+        {
+          "English": "creativity",
+          "Chinese": "n. 創造力"
+        },
+        {
+          "English": "creep",
+          "Chinese": "v. 蠕動"
+        },
+        {
+          "English": "critic",
+          "Chinese": "n. 評論家"
+        },
+        {
+          "English": "critical",
+          "Chinese": "adj. 批判的"
+        },
+        {
+          "English": "criticism",
+          "Chinese": "n. 批評"
+        },
+        {
+          "English": "criticize",
+          "Chinese": "v. 批評"
+        },
+        {
+          "English": "cruelty",
+          "Chinese": "n. 殘酷"
+        },
+        {
+          "English": "crunchy",
+          "Chinese": "adj. 脆脆的"
+        },
+        {
+          "English": "crush",
+          "Chinese": "n./v. 壓碎"
+        },
+        {
+          "English": "cube",
+          "Chinese": "n./v. 立方體"
+        },
+        {
+          "English": "cue",
+          "Chinese": "n./v. 提示"
+        },
+        {
+          "English": "cunning",
+          "Chinese": "adj./n. 狡猾"
+        },
+        {
+          "English": "curiosity",
+          "Chinese": "n. 好奇心"
+        },
+        {
+          "English": "curl",
+          "Chinese": "n./v. 捲曲"
+        },
+        {
+          "English": "curse",
+          "Chinese": "n./v. 詛咒"
+        },
+        {
+          "English": "curve",
+          "Chinese": "n./v. 曲線"
+        },
+        {
+          "English": "cushion",
+          "Chinese": "n./v. 軟墊"
+        },
+        {
+          "English": "damp",
+          "Chinese": "adj./n./v. 潮濕"
+        },
+        {
+          "English": "deadline",
+          "Chinese": "n. 最後期限"
+        },
+        {
+          "English": "declare",
+          "Chinese": "v. 宣告"
+        },
+        {
+          "English": "decoration",
+          "Chinese": "n. 裝飾"
+        },
+        {
+          "English": "defeat",
+          "Chinese": "n./v. 擊敗"
+        },
+        {
+          "English": "defend",
+          "Chinese": "v. 保衛"
+        },
+        {
+          "English": "defense",
+          "Chinese": "n. 防禦"
+        },
+        {
+          "English": "defensible",
+          "Chinese": "adj. 可以防禦的"
+        },
+        {
+          "English": "defensive",
+          "Chinese": "adj. 防禦性的"
+        },
+        {
+          "English": "definite",
+          "Chinese": "adj. 定"
+        },
+        {
+          "English": "delicate",
+          "Chinese": "adj. 精美的"
+        },
+        {
+          "English": "delight",
+          "Chinese": "n./v. 喜"
+        },
+        {
+          "English": "delightful",
+          "Chinese": "adj. 愉快"
+        },
+        {
+          "English": "demand",
+          "Chinese": "n./v. 要求"
+        },
+        {
+          "English": "demonstrate",
+          "Chinese": "v. 證明"
+        },
+        {
+          "English": "demonstration",
+          "Chinese": "n. 示範"
+        },
+        {
+          "English": "dense",
+          "Chinese": "adj. 稠密"
+        },
+        {
+          "English": "depart",
+          "Chinese": "v. 離開"
+        },
+        {
+          "English": "departure",
+          "Chinese": "n. 離開"
+        },
+        {
+          "English": "dependent",
+          "Chinese": "adj./n. 依賴的"
+        },
+        {
+          "English": "depression",
+          "Chinese": "n. 沮喪"
+        },
+        {
+          "English": "deserve",
+          "Chinese": "v. 應得"
+        },
+        {
+          "English": "desperate",
+          "Chinese": "adj. 絕望的"
+        },
+        {
+          "English": "despite",
+          "Chinese": "prep. 儘管"
+        },
+        {
+          "English": "destruction",
+          "Chinese": "n. 破壞"
+        },
+        {
+          "English": "detective",
+          "Chinese": "n./adj. 偵探"
+        },
+        {
+          "English": "determination",
+          "Chinese": "n. 決心"
+        },
+        {
+          "English": "device",
+          "Chinese": "n. 裝置"
+        },
+        {
+          "English": "devise",
+          "Chinese": "v. 設計"
+        },
+        {
+          "English": "devote",
+          "Chinese": "v. 奉獻"
+        },
+        {
+          "English": "dew",
+          "Chinese": "n. 露"
+        },
+        {
+          "English": "diagram",
+          "Chinese": "n./v. 圖表"
+        },
+        {
+          "English": "differ",
+          "Chinese": "v. 不同"
+        },
+        {
+          "English": "digest",
+          "Chinese": "n./v. 消化"
+        },
+        {
+          "English": "digital",
+          "Chinese": "adj. 數位的"
+        },
+        {
+          "English": "dignity",
+          "Chinese": "n. 尊嚴"
+        },
+        {
+          "English": "diligence",
+          "Chinese": "n. 勤勉"
+        },
+        {
+          "English": "diligent",
+          "Chinese": "adj. 勤奮"
+        },
+        {
+          "English": "diploma",
+          "Chinese": "n. 文憑"
+        },
+        {
+          "English": "diplomat",
+          "Chinese": "n. 外交官"
+        },
+        {
+          "English": "disability",
+          "Chinese": "n. 殘障"
+        },
+        {
+          "English": "disadvantage",
+          "Chinese": "n./v. 劣勢"
+        },
+        {
+          "English": "disappoint(ment)",
+          "Chinese": "v./(n.) 失望（心）"
+        },
+        {
+          "English": "disaster",
+          "Chinese": "n. 災難"
+        },
+        {
+          "English": "discipline",
+          "Chinese": "n./v. 紀律"
+        },
+        {
+          "English": "discourage(ment)",
+          "Chinese": "v./(n.) 勸阻（勸阻）"
+        },
+        {
+          "English": "disguise",
+          "Chinese": "v./n. 偽裝"
+        },
+        {
+          "English": "disgust",
+          "Chinese": "n./v. 厭惡"
+        },
+        {
+          "English": "dismiss",
+          "Chinese": "v. 解僱"
+        },
+        {
+          "English": "disorder",
+          "Chinese": "n./v. 紊亂"
+        },
+        {
+          "English": "dispute",
+          "Chinese": "n./v. 爭議"
+        },
+        {
+          "English": "distinct",
+          "Chinese": "adj. 清楚的"
+        },
+        {
+          "English": "distinguish",
+          "Chinese": "v. 區分"
+        },
+        {
+          "English": "distinguished",
+          "Chinese": "adj. 傑出的"
+        },
+        {
+          "English": "distribute",
+          "Chinese": "v. 散佈"
+        },
+        {
+          "English": "distribution",
+          "Chinese": "n. 分配"
+        },
+        {
+          "English": "district",
+          "Chinese": "n. 區"
+        },
+        {
+          "English": "disturb",
+          "Chinese": "v. 打擾"
+        },
+        {
+          "English": "diverse",
+          "Chinese": "adj. 各種各樣的"
+        },
+        {
+          "English": "diversity",
+          "Chinese": "n. 多樣性"
+        },
+        {
+          "English": "divine",
+          "Chinese": "adj. 神聖的"
+        },
+        {
+          "English": "divorce",
+          "Chinese": "n./v. 離婚"
+        },
+        {
+          "English": "dodge",
+          "Chinese": "v./n. 閃避"
+        },
+        {
+          "English": "dominant",
+          "Chinese": "adj. 主導的"
+        },
+        {
+          "English": "dominate",
+          "Chinese": "v. 支配"
+        },
+        {
+          "English": "draft",
+          "Chinese": "n./v. 草稿"
+        },
+        {
+          "English": "dread",
+          "Chinese": "n./v. 恐懼"
+        },
+        {
+          "English": "drift",
+          "Chinese": "v./n. 漂移"
+        },
+        {
+          "English": "drill",
+          "Chinese": "n./v. 鑽頭"
+        },
+        {
+          "English": "drowsy",
+          "Chinese": "adj. 昏昏欲睡"
+        },
+        {
+          "English": "durable",
+          "Chinese": "adj. 耐用的"
+        },
+        {
+          "English": "dusty",
+          "Chinese": "adj. 塵土飛揚的"
+        },
+        {
+          "English": "dye",
+          "Chinese": "n./v. 染料"
+        },
+        {
+          "English": "dynamic",
+          "Chinese": "adj. 動態的"
+        },
+        {
+          "English": "dynasty",
+          "Chinese": "n. 王朝"
+        },
+        {
+          "English": "earnest",
+          "Chinese": "adj./n. 認真"
+        },
+        {
+          "English": "earphone",
+          "Chinese": "n. 耳機"
+        },
+        {
+          "English": "economic",
+          "Chinese": "adj. 經濟的"
+        },
+        {
+          "English": "economical",
+          "Chinese": "adj. 經濟"
+        },
+        {
+          "English": "economics",
+          "Chinese": "n. 經濟學"
+        },
+        {
+          "English": "economist",
+          "Chinese": "n. 經濟學家"
+        },
+        {
+          "English": "economy",
+          "Chinese": "n. 經濟"
+        },
+        {
+          "English": "efficiency",
+          "Chinese": "n. 效率"
+        },
+        {
+          "English": "elastic",
+          "Chinese": "adj./n. 鬆緊帶"
+        },
+        {
+          "English": "electronics",
+          "Chinese": "n. 電子產品"
+        },
+        {
+          "English": "elegant",
+          "Chinese": "adj. 優雅的"
+        },
+        {
+          "English": "elementary",
+          "Chinese": "adj. 初級"
+        },
+        {
+          "English": "eliminate",
+          "Chinese": "v. 排除"
+        },
+        {
+          "English": "elsewhere",
+          "Chinese": "adv. 別處"
+        },
+        {
+          "English": "embarrass(ment)",
+          "Chinese": "v./(n.) 尷尬（心）"
+        },
+        {
+          "English": "embassy",
+          "Chinese": "n. 大使館"
+        },
+        {
+          "English": "emerge",
+          "Chinese": "v. 出現"
+        },
+        {
+          "English": "emphasis",
+          "Chinese": "n. 強調"
+        },
+        {
+          "English": "empire",
+          "Chinese": "n. 帝國"
+        },
+        {
+          "English": "enclose",
+          "Chinese": "v. 括"
+        },
+        {
+          "English": "encounter",
+          "Chinese": "n./v. 遇到"
+        },
+        {
+          "English": "endanger",
+          "Chinese": "v. 危害"
+        },
+        {
+          "English": "endure",
+          "Chinese": "v. 忍受"
+        },
+        {
+          "English": "enforce(ment)",
+          "Chinese": "v./(n.) 執行（執行）"
+        },
+        {
+          "English": "engineering",
+          "Chinese": "n. 工程"
+        },
+        {
+          "English": "enlarge(ment)",
+          "Chinese": "v./(n.) 放大）"
+        },
+        {
+          "English": "enormous",
+          "Chinese": "adj. 巨大的"
+        },
+        {
+          "English": "ensure",
+          "Chinese": "v. 確保"
+        },
+        {
+          "English": "entertain(ment)",
+          "Chinese": "v./(n.) 娛樂）"
+        },
+        {
+          "English": "enthusiasm",
+          "Chinese": "n. 熱情"
+        },
+        {
+          "English": "equality",
+          "Chinese": "n. 平等"
+        },
+        {
+          "English": "equip(ment)",
+          "Chinese": "v./(n.) 裝置)"
+        },
+        {
+          "English": "era",
+          "Chinese": "n. 時代"
+        },
+        {
+          "English": "essential",
+          "Chinese": "adj./n. 基本的"
+        },
+        {
+          "English": "establish(ment)",
+          "Chinese": "v./(n.) 設立（設立）"
+        },
+        {
+          "English": "estimate",
+          "Chinese": "n./v. 估計"
+        },
+        {
+          "English": "ethnic",
+          "Chinese": "adj./n. 種族的"
+        },
+        {
+          "English": "evaluate",
+          "Chinese": "v. 評價"
+        },
+        {
+          "English": "evaluation",
+          "Chinese": "n. 評估"
+        },
+        {
+          "English": "eventual",
+          "Chinese": "adj. 最終的"
+        },
+        {
+          "English": "evidence",
+          "Chinese": "n./v. 證據"
+        },
+        {
+          "English": "evident",
+          "Chinese": "adj. 明顯"
+        },
+        {
+          "English": "exaggerate",
+          "Chinese": "v. 誇大"
+        },
+        {
+          "English": "exception",
+          "Chinese": "n. 例外"
+        },
+        {
+          "English": "exhaust",
+          "Chinese": "n./v. 排氣"
+        },
+        {
+          "English": "exhibit",
+          "Chinese": "n./v. 展覽"
+        },
+        {
+          "English": "expand",
+          "Chinese": "v. 擴張"
+        },
+        {
+          "English": "expansion",
+          "Chinese": "n. 擴張"
+        },
+        {
+          "English": "experimental",
+          "Chinese": "adj. 實驗性的"
+        },
+        {
+          "English": "explanation",
+          "Chinese": "n. 解釋"
+        },
+        {
+          "English": "explosion",
+          "Chinese": "n. 霹靂"
+        },
+        {
+          "English": "explosive",
+          "Chinese": "adj./n. 霹靂"
+        },
+        {
+          "English": "expose",
+          "Chinese": "v. 暴露"
+        },
+        {
+          "English": "exposure",
+          "Chinese": "n. 曝露"
+        },
+        {
+          "English": "extend",
+          "Chinese": "v. 延長"
+        },
+        {
+          "English": "extent",
+          "Chinese": "n. 程度"
+        },
+        {
+          "English": "facial",
+          "Chinese": "adj. 臉部的"
+        },
+        {
+          "English": "facility",
+          "Chinese": "n. 設施"
+        },
+        {
+          "English": "faithful",
+          "Chinese": "adj. 忠實"
+        },
+        {
+          "English": "fame",
+          "Chinese": "n. 名聲"
+        },
+        {
+          "English": "fantastic",
+          "Chinese": "adj. 極佳的"
+        },
+        {
+          "English": "fantasy",
+          "Chinese": "n. 幻想"
+        },
+        {
+          "English": "farewell",
+          "Chinese": "n. 告別"
+        },
+        {
+          "English": "fasten",
+          "Chinese": "v. 系"
+        },
+        {
+          "English": "fatal",
+          "Chinese": "adj. 致命的"
+        },
+        {
+          "English": "favorable",
+          "Chinese": "adj. 有利"
+        },
+        {
+          "English": "fax",
+          "Chinese": "n./v. 傳真"
+        },
+        {
+          "English": "feast",
+          "Chinese": "n./v. 盛宴"
+        },
+        {
+          "English": "feedback",
+          "Chinese": "n. 回饋"
+        },
+        {
+          "English": "ferry",
+          "Chinese": "n./v. 渡輪"
+        },
+        {
+          "English": "fertile",
+          "Chinese": "adj. 沃"
+        },
+        {
+          "English": "fetch",
+          "Chinese": "v./n. 拿來"
+        },
+        {
+          "English": "fiction",
+          "Chinese": "n. 小說"
+        },
+        {
+          "English": "fierce",
+          "Chinese": "adj. 兇猛的"
+        }
+      ]
+}
