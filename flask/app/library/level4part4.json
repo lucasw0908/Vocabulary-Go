@@ -1,0 +1,813 @@
+{
+    "name": "Level 4 - Part 2",
+    "description": "高中 7000 單字",
+    "created_at": "2025-10-07 00:00:00",
+    "updated_at": "2025-10-07 00:00:00",
+    "author": "ianwen",
+    "words": [
+        {
+          "English": "logic",
+          "Chinese": "n. 邏輯"
+        },
+        {
+          "English": "logical",
+          "Chinese": "adj. 邏輯的"
+        },
+        {
+          "English": "loosen",
+          "Chinese": "v. 鬆開"
+        },
+        {
+          "English": "lousy",
+          "Chinese": "adj. 糟糕的"
+        },
+        {
+          "English": "loyal",
+          "Chinese": "adj. 忠誠"
+        },
+        {
+          "English": "loyalty",
+          "Chinese": "n. 忠誠"
+        },
+        {
+          "English": "luxurious",
+          "Chinese": "adj. 豪華"
+        },
+        {
+          "English": "luxury",
+          "Chinese": "n. 奢華"
+        },
+        {
+          "English": "machinery",
+          "Chinese": "n. 機械"
+        },
+        {
+          "English": "magnetic",
+          "Chinese": "adj. 磁的"
+        },
+        {
+          "English": "magnificent",
+          "Chinese": "adj. 壯麗"
+        },
+        {
+          "English": "makeup",
+          "Chinese": "n. 化妝品"
+        },
+        {
+          "English": "manual",
+          "Chinese": "n./adj. 手動的"
+        },
+        {
+          "English": "manufacture",
+          "Chinese": "n./v. 生產"
+        },
+        {
+          "English": "manufacturer",
+          "Chinese": "n. 製造商"
+        },
+        {
+          "English": "marathon",
+          "Chinese": "n. 馬拉松"
+        },
+        {
+          "English": "margin",
+          "Chinese": "n. 利潤"
+        },
+        {
+          "English": "maturity",
+          "Chinese": "n. 到期"
+        },
+        {
+          "English": "maximum",
+          "Chinese": "adj./n. 最大限度"
+        },
+        {
+          "English": "measurable",
+          "Chinese": "adj. 可測量的"
+        },
+        {
+          "English": "measure(s)",
+          "Chinese": "n. 措施"
+        },
+        {
+          "English": "mechanic",
+          "Chinese": "n. 機械"
+        },
+        {
+          "English": "mechanical",
+          "Chinese": "adj. 機械的"
+        },
+        {
+          "English": "memorable",
+          "Chinese": "adj. 難忘"
+        },
+        {
+          "English": "memorial",
+          "Chinese": "adj./n. 紀念館"
+        },
+        {
+          "English": "memorize",
+          "Chinese": "v. 記住"
+        },
+        {
+          "English": "merchant",
+          "Chinese": "n. 商人"
+        },
+        {
+          "English": "mercy",
+          "Chinese": "n. 憐憫"
+        },
+        {
+          "English": "mere",
+          "Chinese": "adj. 僅僅"
+        },
+        {
+          "English": "merit",
+          "Chinese": "n. 優點"
+        },
+        {
+          "English": "messenger",
+          "Chinese": "n. 信差"
+        },
+        {
+          "English": "messy",
+          "Chinese": "adj. 凌亂的"
+        },
+        {
+          "English": "microscope",
+          "Chinese": "n. 顯微鏡"
+        },
+        {
+          "English": "mild",
+          "Chinese": "adj. 輕微"
+        },
+        {
+          "English": "mill",
+          "Chinese": "n./v. 磨"
+        },
+        {
+          "English": "millionaire",
+          "Chinese": "n. 百萬富翁"
+        },
+        {
+          "English": "miner",
+          "Chinese": "n. 礦工"
+        },
+        {
+          "English": "mineral",
+          "Chinese": "n. 礦物"
+        },
+        {
+          "English": "minimum",
+          "Chinese": "adj./n. 最低限度"
+        },
+        {
+          "English": "minister",
+          "Chinese": "n. 部長"
+        },
+        {
+          "English": "ministry",
+          "Chinese": "n. 部"
+        },
+        {
+          "English": "mischief",
+          "Chinese": "n. 惡作劇"
+        },
+        {
+          "English": "miserable",
+          "Chinese": "adj. 悲慘的"
+        },
+        {
+          "English": "misfortune",
+          "Chinese": "n. 不幸"
+        },
+        {
+          "English": "mislead",
+          "Chinese": "v. 誤導"
+        },
+        {
+          "English": "misunderstand",
+          "Chinese": "v. 誤解"
+        },
+        {
+          "English": "moderate",
+          "Chinese": "adj. 緩和"
+        },
+        {
+          "English": "modest",
+          "Chinese": "adj. 謙虛的"
+        },
+        {
+          "English": "modesty",
+          "Chinese": "n. 謙遜"
+        },
+        {
+          "English": "monitor",
+          "Chinese": "n./v. 監視器"
+        },
+        {
+          "English": "monument",
+          "Chinese": "n. 紀念碑"
+        },
+        {
+          "English": "moreover",
+          "Chinese": "adv. 而且"
+        },
+        {
+          "English": "motivate",
+          "Chinese": "v. 激勵"
+        },
+        {
+          "English": "motivation",
+          "Chinese": "n. 動機"
+        },
+        {
+          "English": "mountainous",
+          "Chinese": "adj. 多山"
+        },
+        {
+          "English": "muddy",
+          "Chinese": "adj. 渾"
+        },
+        {
+          "English": "mule",
+          "Chinese": "n. 騾子"
+        },
+        {
+          "English": "multiple",
+          "Chinese": "adj. 多種的"
+        },
+        {
+          "English": "murderer",
+          "Chinese": "n. 兇手"
+        },
+        {
+          "English": "murmur",
+          "Chinese": "n./v. 雜音"
+        },
+        {
+          "English": "mutual",
+          "Chinese": "adj. 相互的"
+        },
+        {
+          "English": "mysterious",
+          "Chinese": "adj. 神秘"
+        },
+        {
+          "English": "namely",
+          "Chinese": "adv. 即"
+        },
+        {
+          "English": "nationality",
+          "Chinese": "n. 國籍"
+        },
+        {
+          "English": "needy",
+          "Chinese": "adj. 有需要的"
+        },
+        {
+          "English": "neglect",
+          "Chinese": "n./v. 忽視"
+        },
+        {
+          "English": "negotiate",
+          "Chinese": "v. 談判"
+        },
+        {
+          "English": "nevertheless",
+          "Chinese": "adv. 儘管如此"
+        },
+        {
+          "English": "nightmare",
+          "Chinese": "n. 惡夢"
+        },
+        {
+          "English": "noble",
+          "Chinese": "adj./n. 高貴"
+        },
+        {
+          "English": "nonsense",
+          "Chinese": "n. 廢話"
+        },
+        {
+          "English": "nowadays",
+          "Chinese": "adv. 如今"
+        },
+        {
+          "English": "nuclear",
+          "Chinese": "adj. 核"
+        },
+        {
+          "English": "numerous",
+          "Chinese": "adj. 很多的"
+        },
+        {
+          "English": "nursery",
+          "Chinese": "n. 苗圃"
+        },
+        {
+          "English": "nutritious",
+          "Chinese": "adj. 有營養的"
+        },
+        {
+          "English": "obedience",
+          "Chinese": "n. 服從"
+        },
+        {
+          "English": "obedient",
+          "Chinese": "adj. 聽話"
+        },
+        {
+          "English": "objection",
+          "Chinese": "n. 異議"
+        },
+        {
+          "English": "objective",
+          "Chinese": "n./adj. 客觀的"
+        },
+        {
+          "English": "observation",
+          "Chinese": "n. 觀察"
+        },
+        {
+          "English": "obstacle",
+          "Chinese": "n. 障礙"
+        },
+        {
+          "English": "obtain",
+          "Chinese": "v. 獲得"
+        },
+        {
+          "English": "occasional",
+          "Chinese": "adj. 偶然"
+        },
+        {
+          "English": "occupation",
+          "Chinese": "n. 職業"
+        },
+        {
+          "English": "occupy",
+          "Chinese": "v. 佔據"
+        },
+        {
+          "English": "offend",
+          "Chinese": "v. 得罪"
+        },
+        {
+          "English": "offense",
+          "Chinese": "n. 罪行"
+        },
+        {
+          "English": "offensive",
+          "Chinese": "adj. 進攻"
+        },
+        {
+          "English": "opera",
+          "Chinese": "n. 歌劇"
+        },
+        {
+          "English": "oppose",
+          "Chinese": "v. 反對"
+        },
+        {
+          "English": "option",
+          "Chinese": "n. 選項"
+        },
+        {
+          "English": "orbit",
+          "Chinese": "n./v. 軌道"
+        },
+        {
+          "English": "orchestra",
+          "Chinese": "n. 樂團"
+        },
+        {
+          "English": "orientation",
+          "Chinese": "n. 方向"
+        },
+        {
+          "English": "orphan",
+          "Chinese": "n./v. 孤兒"
+        },
+        {
+          "English": "otherwise",
+          "Chinese": "adv. 否則"
+        },
+        {
+          "English": "outcome",
+          "Chinese": "n. 結果"
+        },
+        {
+          "English": "outstanding",
+          "Chinese": "adj. 傑出的"
+        },
+        {
+          "English": "oval",
+          "Chinese": "adj./n. 橢圓形"
+        },
+        {
+          "English": "overcoat",
+          "Chinese": "n. 大衣"
+        },
+        {
+          "English": "overcome",
+          "Chinese": "v. 克服"
+        },
+        {
+          "English": "overlook",
+          "Chinese": "v. 俯瞰"
+        },
+        {
+          "English": "overnight",
+          "Chinese": "adv./adj. 過夜"
+        },
+        {
+          "English": "overthrow",
+          "Chinese": "v. 推翻"
+        },
+        {
+          "English": "oxygen",
+          "Chinese": "n. 氧"
+        },
+        {
+          "English": "pace",
+          "Chinese": "n./v. 步伐"
+        },
+        {
+          "English": "panel",
+          "Chinese": "n. 控制板"
+        },
+        {
+          "English": "parachute",
+          "Chinese": "n./v. 降落傘"
+        },
+        {
+          "English": "paragraph",
+          "Chinese": "n. 段落"
+        },
+        {
+          "English": "partial",
+          "Chinese": "adj. 部分的"
+        },
+        {
+          "English": "participation",
+          "Chinese": "n. 參與"
+        },
+        {
+          "English": "partnership",
+          "Chinese": "n. 合夥"
+        },
+        {
+          "English": "passive",
+          "Chinese": "adj. 被動的"
+        },
+        {
+          "English": "pasta",
+          "Chinese": "n. 義大利麵"
+        },
+        {
+          "English": "paw",
+          "Chinese": "n./v. 爪子"
+        },
+        {
+          "English": "peculiar",
+          "Chinese": "adj. 奇特"
+        },
+        {
+          "English": "peep",
+          "Chinese": "n./v. 窺視"
+        },
+        {
+          "English": "peer",
+          "Chinese": "n./v. 同行"
+        },
+        {
+          "English": "penalty",
+          "Chinese": "n. 懲罰"
+        },
+        {
+          "English": "percent",
+          "Chinese": "n. 百分比"
+        },
+        {
+          "English": "percentage",
+          "Chinese": "n. 百分比"
+        },
+        {
+          "English": "perfection",
+          "Chinese": "n. 完美"
+        },
+        {
+          "English": "perfume",
+          "Chinese": "n./v. 香水"
+        },
+        {
+          "English": "permanent",
+          "Chinese": "adj. 永恆的"
+        },
+        {
+          "English": "persuasion",
+          "Chinese": "n. 勸說"
+        },
+        {
+          "English": "persuasive",
+          "Chinese": "adj. 有說服力的"
+        },
+        {
+          "English": "pessimistic",
+          "Chinese": "adj. 悲觀"
+        },
+        {
+          "English": "pest",
+          "Chinese": "n. 害蟲"
+        },
+        {
+          "English": "phenomenon",
+          "Chinese": "n. 現象"
+        },
+        {
+          "English": "philosopher",
+          "Chinese": "n. 哲學家"
+        },
+        {
+          "English": "philosophical",
+          "Chinese": "adj. 哲學的"
+        },
+        {
+          "English": "philosophy",
+          "Chinese": "n. 哲學"
+        },
+        {
+          "English": "photography",
+          "Chinese": "n. 攝影"
+        },
+        {
+          "English": "physical",
+          "Chinese": "adj. 身體的"
+        },
+        {
+          "English": "physician",
+          "Chinese": "n. 醫生"
+        },
+        {
+          "English": "physicist",
+          "Chinese": "n. 物理學家"
+        },
+        {
+          "English": "physics",
+          "Chinese": "n. 物理"
+        },
+        {
+          "English": "pickle",
+          "Chinese": "n. 泡菜"
+        },
+        {
+          "English": "pioneer",
+          "Chinese": "n./v. 先鋒"
+        },
+        {
+          "English": "plentiful",
+          "Chinese": "adj. 豐富"
+        },
+        {
+          "English": "plot",
+          "Chinese": "n./v. 陰謀"
+        },
+        {
+          "English": "plum",
+          "Chinese": "n. 李子"
+        },
+        {
+          "English": "plumber",
+          "Chinese": "n. 水管工"
+        },
+        {
+          "English": "poisonous",
+          "Chinese": "adj. 有毒"
+        },
+        {
+          "English": "polish",
+          "Chinese": "n./v. 拋光"
+        },
+        {
+          "English": "popularity",
+          "Chinese": "n. 人氣"
+        },
+        {
+          "English": "portable",
+          "Chinese": "adj. 便攜的"
+        },
+        {
+          "English": "portray",
+          "Chinese": "v. 寫真"
+        },
+        {
+          "English": "possess",
+          "Chinese": "v. 具有"
+        },
+        {
+          "English": "possession",
+          "Chinese": "n. 擁有"
+        },
+        {
+          "English": "postage",
+          "Chinese": "n. 郵資"
+        },
+        {
+          "English": "potential",
+          "Chinese": "adj./n. 潛在的"
+        },
+        {
+          "English": "precise",
+          "Chinese": "adj. 精確的"
+        },
+        {
+          "English": "predict",
+          "Chinese": "v. 預測"
+        },
+        {
+          "English": "prediction",
+          "Chinese": "n. 預言"
+        },
+        {
+          "English": "pregnancy",
+          "Chinese": "n. 懷孕"
+        },
+        {
+          "English": "pregnant",
+          "Chinese": "adj. 懷孕"
+        },
+        {
+          "English": "presentation",
+          "Chinese": "n. 推介會"
+        },
+        {
+          "English": "preservation",
+          "Chinese": "n. 儲存"
+        },
+        {
+          "English": "preserve",
+          "Chinese": "v. 儲存"
+        },
+        {
+          "English": "prevention",
+          "Chinese": "n. 預防"
+        },
+        {
+          "English": "prime",
+          "Chinese": "adj./n. 主要的"
+        },
+        {
+          "English": "primitive",
+          "Chinese": "adj. 原始"
+        },
+        {
+          "English": "priority",
+          "Chinese": "n. 優先事項"
+        },
+        {
+          "English": "privacy",
+          "Chinese": "n. 隱私"
+        },
+        {
+          "English": "privilege",
+          "Chinese": "n./v. 特權"
+        },
+        {
+          "English": "procedure",
+          "Chinese": "n. 程式"
+        },
+        {
+          "English": "proceed",
+          "Chinese": "v. 繼續"
+        },
+        {
+          "English": "productive",
+          "Chinese": "adj. 富有成效的"
+        },
+        {
+          "English": "profession",
+          "Chinese": "n. 職業"
+        },
+        {
+          "English": "professional",
+          "Chinese": "adj./n. 專業的"
+        },
+        {
+          "English": "profitable",
+          "Chinese": "adj. 有利可圖"
+        },
+        {
+          "English": "prominent",
+          "Chinese": "adj. 著名的"
+        },
+        {
+          "English": "promising",
+          "Chinese": "adj. 有前途的"
+        },
+        {
+          "English": "promotion",
+          "Chinese": "n. 晉升"
+        },
+        {
+          "English": "prompt",
+          "Chinese": "v./adj./n. 迅速的"
+        },
+        {
+          "English": "pronunciation",
+          "Chinese": "n. 發音"
+        },
+        {
+          "English": "proposal",
+          "Chinese": "n. 提議"
+        },
+        {
+          "English": "prosper",
+          "Chinese": "v. 繁榮"
+        },
+        {
+          "English": "prosperity",
+          "Chinese": "n. 繁榮"
+        },
+        {
+          "English": "prosperous",
+          "Chinese": "adj. 繁榮"
+        },
+        {
+          "English": "protein",
+          "Chinese": "n. 蛋白質"
+        },
+        {
+          "English": "protest",
+          "Chinese": "n./v. 反對"
+        },
+        {
+          "English": "psychological",
+          "Chinese": "adj. 心理"
+        },
+        {
+          "English": "psychologist",
+          "Chinese": "n. 心理學家"
+        },
+        {
+          "English": "psychology",
+          "Chinese": "n. 心理學"
+        },
+        {
+          "English": "publication",
+          "Chinese": "n. 出版品"
+        },
+        {
+          "English": "publicity",
+          "Chinese": "n. 宣傳"
+        },
+        {
+          "English": "publish",
+          "Chinese": "v. 發布"
+        },
+        {
+          "English": "publisher",
+          "Chinese": "n. 出版商"
+        },
+        {
+          "English": "pursue",
+          "Chinese": "v. 追求"
+        },
+        {
+          "English": "pursuit",
+          "Chinese": "n. 追求"
+        },
+        {
+          "English": "quarrel",
+          "Chinese": "n./v. 爭吵"
+        },
+        {
+          "English": "quilt",
+          "Chinese": "n./v. 被子"
+        },
+        {
+          "English": "quotation",
+          "Chinese": "n. 引述"
+        },
+        {
+          "English": "radar",
+          "Chinese": "n. 雷達"
+        },
+        {
+          "English": "rage",
+          "Chinese": "n./v. 憤怒"
+        },
+        {
+          "English": "rainfall",
+          "Chinese": "n. 雨量"
+        },
+        {
+          "English": "raisin",
+          "Chinese": "n. 葡萄乾"
+        },
+        {
+          "English": "realistic",
+          "Chinese": "adj. 實際的"
+        }
+      ]
+}

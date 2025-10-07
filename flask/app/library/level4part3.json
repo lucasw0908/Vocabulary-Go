@@ -1,0 +1,813 @@
+{
+    "name": "Level 4 - Part 2",
+    "description": "高中 7000 單字",
+    "created_at": "2025-10-07 00:00:00",
+    "updated_at": "2025-10-07 00:00:00",
+    "author": "ianwen",
+    "words": [
+        {
+          "English": "finance",
+          "Chinese": "n./v. 金融"
+        },
+        {
+          "English": "financial",
+          "Chinese": "adj. 金融的"
+        },
+        {
+          "English": "fireplace",
+          "Chinese": "n. 壁爐"
+        },
+        {
+          "English": "flatter",
+          "Chinese": "v. 奉承"
+        },
+        {
+          "English": "flea",
+          "Chinese": "n. 跳蚤"
+        },
+        {
+          "English": "flee",
+          "Chinese": "v. 逃跑"
+        },
+        {
+          "English": "flexible",
+          "Chinese": "adj. 靈活的"
+        },
+        {
+          "English": "fluent",
+          "Chinese": "adj. 流暢"
+        },
+        {
+          "English": "flush",
+          "Chinese": "v./n. 沖水"
+        },
+        {
+          "English": "foam",
+          "Chinese": "n./v. 泡棉"
+        },
+        {
+          "English": "forbid",
+          "Chinese": "v. 禁止"
+        },
+        {
+          "English": "forecast",
+          "Chinese": "n./v. 預報"
+        },
+        {
+          "English": "formation",
+          "Chinese": "n. 形成"
+        },
+        {
+          "English": "formula",
+          "Chinese": "n. 公式"
+        },
+        {
+          "English": "fort",
+          "Chinese": "n. 堡"
+        },
+        {
+          "English": "fortunate",
+          "Chinese": "adj. 幸運"
+        },
+        {
+          "English": "fossil",
+          "Chinese": "n./adj. 化石"
+        },
+        {
+          "English": "foundation",
+          "Chinese": "n. 基礎"
+        },
+        {
+          "English": "founder",
+          "Chinese": "n. 創辦人"
+        },
+        {
+          "English": "fragile",
+          "Chinese": "adj. 脆弱的"
+        },
+        {
+          "English": "frame",
+          "Chinese": "n./v. 框架"
+        },
+        {
+          "English": "frequency",
+          "Chinese": "n. 頻率"
+        },
+        {
+          "English": "freshman",
+          "Chinese": "n. 新生"
+        },
+        {
+          "English": "frost",
+          "Chinese": "n./v. 霜"
+        },
+        {
+          "English": "frown",
+          "Chinese": "n./v. 皺眉"
+        },
+        {
+          "English": "frustrate",
+          "Chinese": "v. 阻撓"
+        },
+        {
+          "English": "frustration",
+          "Chinese": "n. 挫折"
+        },
+        {
+          "English": "fulfill(ment)",
+          "Chinese": "v./(n.) 履行）"
+        },
+        {
+          "English": "functional",
+          "Chinese": "adj. 功能性的"
+        },
+        {
+          "English": "fundamental",
+          "Chinese": "adj./n. 基本的"
+        },
+        {
+          "English": "funeral",
+          "Chinese": "n. 葬禮"
+        },
+        {
+          "English": "furious",
+          "Chinese": "adj. 狂怒"
+        },
+        {
+          "English": "furnish",
+          "Chinese": "v. 提供"
+        },
+        {
+          "English": "furthermore",
+          "Chinese": "adv. 另外"
+        },
+        {
+          "English": "gallery",
+          "Chinese": "n. 畫廊"
+        },
+        {
+          "English": "gaze",
+          "Chinese": "n./v. 目光"
+        },
+        {
+          "English": "gear",
+          "Chinese": "n./v. 齒輪"
+        },
+        {
+          "English": "gender",
+          "Chinese": "n. 性別"
+        },
+        {
+          "English": "gene",
+          "Chinese": "n. 基因"
+        },
+        {
+          "English": "generation",
+          "Chinese": "n. 世代"
+        },
+        {
+          "English": "generosity",
+          "Chinese": "n. 慷慨"
+        },
+        {
+          "English": "genius",
+          "Chinese": "n. 天才"
+        },
+        {
+          "English": "genuine",
+          "Chinese": "adj. 真的"
+        },
+        {
+          "English": "germ",
+          "Chinese": "n. 胚芽"
+        },
+        {
+          "English": "gifted",
+          "Chinese": "adj. 天才"
+        },
+        {
+          "English": "gigantic",
+          "Chinese": "adj. 巨大"
+        },
+        {
+          "English": "giggle",
+          "Chinese": "n./v. 傻笑"
+        },
+        {
+          "English": "ginger",
+          "Chinese": "n. 薑"
+        },
+        {
+          "English": "glimpse",
+          "Chinese": "n./v. 一瞥"
+        },
+        {
+          "English": "globe",
+          "Chinese": "n. 地球"
+        },
+        {
+          "English": "glorious",
+          "Chinese": "adj. 輝煌"
+        },
+        {
+          "English": "goods",
+          "Chinese": "n. 商品"
+        },
+        {
+          "English": "gown",
+          "Chinese": "n. 袍"
+        },
+        {
+          "English": "grace",
+          "Chinese": "n./v. 優雅"
+        },
+        {
+          "English": "graceful",
+          "Chinese": "adj. 優美"
+        },
+        {
+          "English": "gracious",
+          "Chinese": "adj. 親切"
+        },
+        {
+          "English": "graduation",
+          "Chinese": "n. 畢業"
+        },
+        {
+          "English": "grammar",
+          "Chinese": "n. 文法"
+        },
+        {
+          "English": "grammatical",
+          "Chinese": "adj. 語法的"
+        },
+        {
+          "English": "graph",
+          "Chinese": "n./v. 圖形"
+        },
+        {
+          "English": "grateful",
+          "Chinese": "adj. 感激的"
+        },
+        {
+          "English": "gratitude",
+          "Chinese": "n. 感激"
+        },
+        {
+          "English": "grave",
+          "Chinese": "n./adj. 嚴重"
+        },
+        {
+          "English": "greasy",
+          "Chinese": "adj. 膩"
+        },
+        {
+          "English": "greeting(s)",
+          "Chinese": "n. 問候）"
+        },
+        {
+          "English": "grief",
+          "Chinese": "n. 悲傷"
+        },
+        {
+          "English": "grind",
+          "Chinese": "v./n. 研磨"
+        },
+        {
+          "English": "guarantee",
+          "Chinese": "v./n. 保證"
+        },
+        {
+          "English": "guardian",
+          "Chinese": "n. 監護人"
+        },
+        {
+          "English": "guilt",
+          "Chinese": "n. 有罪"
+        },
+        {
+          "English": "guilty",
+          "Chinese": "adj. 有罪的"
+        },
+        {
+          "English": "gulf",
+          "Chinese": "n. 海灣"
+        },
+        {
+          "English": "habitual",
+          "Chinese": "adj. 習慣性的"
+        },
+        {
+          "English": "halt",
+          "Chinese": "n./v. 停止"
+        },
+        {
+          "English": "handwriting",
+          "Chinese": "n. 手寫"
+        },
+        {
+          "English": "hardship",
+          "Chinese": "n. 困難"
+        },
+        {
+          "English": "hardware",
+          "Chinese": "n. 硬體"
+        },
+        {
+          "English": "harmony",
+          "Chinese": "n. 和諧"
+        },
+        {
+          "English": "harsh",
+          "Chinese": "adj. 殘酷的"
+        },
+        {
+          "English": "haste",
+          "Chinese": "n. 匆忙"
+        },
+        {
+          "English": "hasten",
+          "Chinese": "v. 趨"
+        },
+        {
+          "English": "hatred",
+          "Chinese": "n. 仇恨"
+        },
+        {
+          "English": "hawk",
+          "Chinese": "n. 鷹"
+        },
+        {
+          "English": "helicopter",
+          "Chinese": "n. 直升機"
+        },
+        {
+          "English": "herd",
+          "Chinese": "n./v. 一群"
+        },
+        {
+          "English": "hesitation",
+          "Chinese": "n. 猶豫"
+        },
+        {
+          "English": "hive",
+          "Chinese": "n. 蜂巢"
+        },
+        {
+          "English": "homeland",
+          "Chinese": "n. 家園"
+        },
+        {
+          "English": "honeymoon",
+          "Chinese": "n./v. 蜜月"
+        },
+        {
+          "English": "hook",
+          "Chinese": "n./v. 鉤"
+        },
+        {
+          "English": "horizon",
+          "Chinese": "n. 地平線"
+        },
+        {
+          "English": "horrify",
+          "Chinese": "v. 驚嚇"
+        },
+        {
+          "English": "hose",
+          "Chinese": "n./v. 軟管"
+        },
+        {
+          "English": "household",
+          "Chinese": "n. 家庭"
+        },
+        {
+          "English": "housework",
+          "Chinese": "n. 家務"
+        },
+        {
+          "English": "humanity",
+          "Chinese": "n. 人類"
+        },
+        {
+          "English": "humidity",
+          "Chinese": "n. 濕度"
+        },
+        {
+          "English": "hurricane",
+          "Chinese": "n. 颶風"
+        },
+        {
+          "English": "hush",
+          "Chinese": "n./v. 噓"
+        },
+        {
+          "English": "hydrogen",
+          "Chinese": "n. 氫"
+        },
+        {
+          "English": "identical",
+          "Chinese": "adj. 完全相同的"
+        },
+        {
+          "English": "identification",
+          "Chinese": "n. 鑑別"
+        },
+        {
+          "English": "identify",
+          "Chinese": "v. 確認"
+        },
+        {
+          "English": "idiom",
+          "Chinese": "n. 成語"
+        },
+        {
+          "English": "idle",
+          "Chinese": "adj./v. 閒置的"
+        },
+        {
+          "English": "idol",
+          "Chinese": "n. 偶像"
+        },
+        {
+          "English": "ignorance",
+          "Chinese": "n. 無知"
+        },
+        {
+          "English": "ignorant",
+          "Chinese": "adj. 無知"
+        },
+        {
+          "English": "illustrate",
+          "Chinese": "v. 闡明"
+        },
+        {
+          "English": "illustration",
+          "Chinese": "n. 插圖"
+        },
+        {
+          "English": "imaginary",
+          "Chinese": "adj. 假想"
+        },
+        {
+          "English": "imaginative",
+          "Chinese": "adj. 富有想像力的"
+        },
+        {
+          "English": "imitate",
+          "Chinese": "v. 模擬"
+        },
+        {
+          "English": "imitation",
+          "Chinese": "n. 模仿"
+        },
+        {
+          "English": "immigrant",
+          "Chinese": "n. 移民"
+        },
+        {
+          "English": "immigrate",
+          "Chinese": "v. 移民"
+        },
+        {
+          "English": "immigration",
+          "Chinese": "n. 移民"
+        },
+        {
+          "English": "impact",
+          "Chinese": "n./v. 影響"
+        },
+        {
+          "English": "imply",
+          "Chinese": "v. 意味著"
+        },
+        {
+          "English": "impose",
+          "Chinese": "v. 強加"
+        },
+        {
+          "English": "impression",
+          "Chinese": "n. 印象"
+        },
+        {
+          "English": "incident",
+          "Chinese": "n. 事件"
+        },
+        {
+          "English": "including",
+          "Chinese": "prep. 包括"
+        },
+        {
+          "English": "incredible",
+          "Chinese": "adj. 極佳的"
+        },
+        {
+          "English": "indication",
+          "Chinese": "n. 指示"
+        },
+        {
+          "English": "infant",
+          "Chinese": "n. 嬰兒"
+        },
+        {
+          "English": "infection",
+          "Chinese": "n. 感染"
+        },
+        {
+          "English": "inflation",
+          "Chinese": "n. 通貨膨脹"
+        },
+        {
+          "English": "influential",
+          "Chinese": "adj. 有影響"
+        },
+        {
+          "English": "informative",
+          "Chinese": "adj. 資訊豐富的"
+        },
+        {
+          "English": "ingredient",
+          "Chinese": "n. 成分"
+        },
+        {
+          "English": "initial",
+          "Chinese": "adj./n./v. 最初的"
+        },
+        {
+          "English": "injure",
+          "Chinese": "v. 損傷"
+        },
+        {
+          "English": "innocence",
+          "Chinese": "n. 純真"
+        },
+        {
+          "English": "input",
+          "Chinese": "n./v. 輸入"
+        },
+        {
+          "English": "insert",
+          "Chinese": "v./n. 插入"
+        },
+        {
+          "English": "inspection",
+          "Chinese": "n. 檢查"
+        },
+        {
+          "English": "inspiration",
+          "Chinese": "n. 靈感"
+        },
+        {
+          "English": "inspire",
+          "Chinese": "v. 啟發"
+        },
+        {
+          "English": "install",
+          "Chinese": "v. 安裝"
+        },
+        {
+          "English": "instinct",
+          "Chinese": "n. 本能"
+        },
+        {
+          "English": "instruct",
+          "Chinese": "v. 指示"
+        },
+        {
+          "English": "instructor",
+          "Chinese": "n. 講師"
+        },
+        {
+          "English": "insult",
+          "Chinese": "n./v. 侮辱"
+        },
+        {
+          "English": "insurance",
+          "Chinese": "n. 保險"
+        },
+        {
+          "English": "intellectual",
+          "Chinese": "adj./n. 知識分子"
+        },
+        {
+          "English": "intelligence",
+          "Chinese": "n. 智力"
+        },
+        {
+          "English": "intend",
+          "Chinese": "v. 打算"
+        },
+        {
+          "English": "intense",
+          "Chinese": "adj. 激烈的"
+        },
+        {
+          "English": "intensity",
+          "Chinese": "n. 強度"
+        },
+        {
+          "English": "intensive",
+          "Chinese": "adj. 密集的"
+        },
+        {
+          "English": "intention",
+          "Chinese": "n. 意圖"
+        },
+        {
+          "English": "interact",
+          "Chinese": "v. 相互影響"
+        },
+        {
+          "English": "interaction",
+          "Chinese": "n. 交互作用"
+        },
+        {
+          "English": "interfere",
+          "Chinese": "v. 幹擾"
+        },
+        {
+          "English": "intermediate",
+          "Chinese": "adj./n./v. 中間的"
+        },
+        {
+          "English": "interpret",
+          "Chinese": "v. 解釋"
+        },
+        {
+          "English": "interruption",
+          "Chinese": "n. 中斷"
+        },
+        {
+          "English": "intimate",
+          "Chinese": "adj./n. 親密的"
+        },
+        {
+          "English": "intuition",
+          "Chinese": "n. 直覺"
+        },
+        {
+          "English": "invade",
+          "Chinese": "v. 入侵"
+        },
+        {
+          "English": "invasion",
+          "Chinese": "n. 入侵"
+        },
+        {
+          "English": "invention",
+          "Chinese": "n. 發明"
+        },
+        {
+          "English": "invest(ment)",
+          "Chinese": "v./(n.) 投資）"
+        },
+        {
+          "English": "investigation",
+          "Chinese": "n. 調查"
+        },
+        {
+          "English": "involve(ment)",
+          "Chinese": "v./(n.) 參與（參與）"
+        },
+        {
+          "English": "isolate",
+          "Chinese": "v. 隔離"
+        },
+        {
+          "English": "isolation",
+          "Chinese": "n. 隔離"
+        },
+        {
+          "English": "issue",
+          "Chinese": "n./v. 問題"
+        },
+        {
+          "English": "jealousy",
+          "Chinese": "n. 妒忌"
+        },
+        {
+          "English": "keen",
+          "Chinese": "adj. 敏銳的"
+        },
+        {
+          "English": "kettle",
+          "Chinese": "n. 壺"
+        },
+        {
+          "English": "kneel",
+          "Chinese": "v. 下跪"
+        },
+        {
+          "English": "knob",
+          "Chinese": "n. 旋鈕"
+        },
+        {
+          "English": "labor",
+          "Chinese": "n./v. 勞動"
+        },
+        {
+          "English": "laboratory/lab",
+          "Chinese": "n. 實驗室/實驗室"
+        },
+        {
+          "English": "lag",
+          "Chinese": "n./v. 落後"
+        },
+        {
+          "English": "landmark",
+          "Chinese": "n. 地標"
+        },
+        {
+          "English": "landscape",
+          "Chinese": "n./v. 景觀"
+        },
+        {
+          "English": "largely",
+          "Chinese": "adv. 很大程度上"
+        },
+        {
+          "English": "launch",
+          "Chinese": "v./n. 發射"
+        },
+        {
+          "English": "lawful",
+          "Chinese": "adj. 合法的"
+        },
+        {
+          "English": "lean",
+          "Chinese": "v./adj. 傾斜"
+        },
+        {
+          "English": "learned",
+          "Chinese": "adj. 學到了"
+        },
+        {
+          "English": "lecture",
+          "Chinese": "n./v. 演講"
+        },
+        {
+          "English": "lecturer",
+          "Chinese": "n. 講師"
+        },
+        {
+          "English": "legend",
+          "Chinese": "n. 傳奇"
+        },
+        {
+          "English": "leisurely",
+          "Chinese": "adj./adv. 悠閒"
+        },
+        {
+          "English": "lengthen",
+          "Chinese": "v. 加長"
+        },
+        {
+          "English": "liar",
+          "Chinese": "n. 說謊者"
+        },
+        {
+          "English": "librarian",
+          "Chinese": "n. 圖書館員"
+        },
+        {
+          "English": "license",
+          "Chinese": "n./v. 執照"
+        },
+        {
+          "English": "lifeguard",
+          "Chinese": "n. 救生員"
+        },
+        {
+          "English": "limitation",
+          "Chinese": "n. 限制"
+        },
+        {
+          "English": "linen",
+          "Chinese": "n. 亞麻布"
+        },
+        {
+          "English": "lipstick",
+          "Chinese": "n. 口紅"
+        },
+        {
+          "English": "liquor",
+          "Chinese": "n. 酒"
+        },
+        {
+          "English": "literary",
+          "Chinese": "adj. 文學的"
+        },
+        {
+          "English": "literature",
+          "Chinese": "n. 文學"
+        },
+        {
+          "English": "loan",
+          "Chinese": "n./v. 貸款"
+        },
+        {
+          "English": "lobster",
+          "Chinese": "n. 龍蝦"
+        }
+      ]
+}
