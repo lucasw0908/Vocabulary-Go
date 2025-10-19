@@ -31,8 +31,8 @@
         "backup_count": 5
     },
     "api": {
-        "model_type": "groq",
-        "model_name": "llama-3.3-70b-versatile",
+        "model_type": "mistral",
+        "model_name": "mistral-small-latest",
         "retry_attempts": 5,
         "retry_delay": 1,
         "generation_duration": 3600,
