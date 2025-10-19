@@ -1,5 +1,3 @@
-const words = [];
-
 const wordsField = document.getElementById('wordsField');
 const tableBody = document.getElementById('wordsTableBody');
 const englishInput = document.getElementById('englishInput');
@@ -121,12 +119,5 @@ jsonInput.addEventListener('change', async function () {
     jsonInput.value = '';
 });
 
-// Initialize with prefilled words (from hidden field rendered by server)
-try {
-    const initial = JSON.parse(wordsField.value || '[]');
-    if (Array.isArray(initial)) {
-        words.splice(0, words.length, ...initial);
-    }
-} catch (e) { console.error(e); }
 syncHiddenField();
 renderTable();

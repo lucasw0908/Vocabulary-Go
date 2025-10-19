@@ -254,7 +254,7 @@ msgstr "單字列表"
 
 #: app/templates/library_create.html:59 app/templates/library_edit.html:50
 msgid "Clear"
-msgstr "關閉"
+msgstr "清空"
 
 #: app/templates/library_create.html:83 app/templates/library_edit.html:75
 msgid "Library Name"

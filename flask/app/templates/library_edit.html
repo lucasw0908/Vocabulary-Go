@@ -97,5 +97,14 @@
   </form>
 </section>
 
-<script src="{{ url_for('static', filename='assets/js/dist/library_edit.bundle.js') }}"></script>
+<script>
+  var words = [];
+  try {
+    const initial = JSON.parse(wordsField.value || '[]');
+    if (Array.isArray(initial)) {
+        words.splice(0, words.length, ...initial);
+    }
+  } catch (e) { console.error(e); }
+</script>
+<script src="{{ url_for('static', filename='assets/js/dist/library_handler.bundle.js') }}"></script>
 {% endblock main %}
