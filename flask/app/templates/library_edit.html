@@ -73,7 +73,7 @@
         <div class="row g-3">
           <div class="col-md-6">
             <label class="form-label">{% trans %}Library Name{% endtrans %}</label>
-            {{ form.name(class="form-control dark-input", placeholder="{{_('Enter library name')}}") }}
+            {{ form.name(class="form-control dark-input", placeholder=_('Enter library name')) }}
           </div>
           <div class="col-md-6 d-flex align-items-center" style="gap: 1rem;">
             <div class="form-check mt-3">
@@ -83,7 +83,7 @@
           </div>
           <div class="col-12">
             <label class="form-label">{% trans %}Library Description{% endtrans %}</label>
-            {{ form.description(class="form-control dark-input", placeholder="{{_('Optional, up to 200 characters')}}") }}
+            {{ form.description(class="form-control dark-input", placeholder=_('Optional, up to 200 characters')) }}
           </div>
           {{ form.words(id="wordsField", class="form-control d-none dark-input") }}
         </div>
@@ -97,5 +97,5 @@
   </form>
 </section>
 
-<script src="{{ url_for('static', filename='assets/js/dist/library_create.bundle.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/dist/library_edit.bundle.js') }}"></script>
 {% endblock main %}
