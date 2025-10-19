@@ -10,28 +10,27 @@ from ..models import db
 from ..models.words import Words
 from ..models.sentences import Sentences
 from ..models.libraries import Libraries
-from .english_helper import GroqEnglishHelper, GeminiEnglishHelper
+from .english_helper import EnglishHelper
 from .api_key_manager import ApiKeyManager
+from .api_config import API_INFO
 
 
 log = logging.getLogger(__name__)
-Config = {
-    "model_name": API_MODEL_NAME,
-    "max_retry_attempts": API_RETRY_ATTEMPTS,
-    "retry_delay": API_RETRY_DELAY
-}
 
-if API_MODEL_TYPE.lower() == "groq":
-    ai_helper = GroqEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "gsk_"), **Config)
-    
-elif API_MODEL_TYPE.lower() == "gemini":
-    ai_helper = GeminiEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "AIzaSy"), **Config)
-    
-else:
+if API_MODEL_TYPE not in API_INFO:
     raise ValueError(f"Unsupported API model type: {API_MODEL_TYPE}")
+
+ai_helper_class = API_INFO[API_MODEL_TYPE]["helper_class"]
+ai_helper: EnglishHelper = ai_helper_class(
+    ApiKeyManager(APIKEYS, API_INFO[API_MODEL_TYPE]["prefix"]),
+    model_name=API_MODEL_NAME,
+    max_retry_attempts=API_RETRY_ATTEMPTS,
+    retry_delay=API_RETRY_DELAY,
+)
 
 
 async def generate() -> None:
+    MAX_SENTENCES_PER_WORD = 5
     
     session = scoped_session(sessionmaker(bind=db.engine), scopefunc=threading.get_ident)
     
@@ -43,6 +42,12 @@ async def generate() -> None:
         random.shuffle(words)
 
         for word in words:
+            count = len(Sentences.query.filter_by(word_english=word.english).all())
+            
+            if count > MAX_SENTENCES_PER_WORD:
+                log.debug(f"Library '{library.name}': Word '{word.english}' already has {count} sentences, skipping...")
+                continue
+            
             ai_helper.retry_attempts = 0
             question = await ai_helper.question(word.english)
             

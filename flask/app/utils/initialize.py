@@ -68,6 +68,7 @@ def load_libraries() -> None:
             
         # Database
         if Libraries.query.filter_by(name=library_json["name"]).first():
+            log.debug(f"Library {library_json['name']} already exists in the database. Skipping...")
             continue
         
         author_id = author.id if (author := Users.query.filter_by(username=library_json["author"]).first()) else None

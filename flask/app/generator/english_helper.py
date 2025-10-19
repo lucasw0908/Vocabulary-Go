@@ -3,7 +3,7 @@ import logging
 import json
 from difflib import SequenceMatcher
 from functools import wraps
-from typing import Callable, Optional, overload
+from typing import Callable, Optional, overload, TYPE_CHECKING
 from opencc import OpenCC
 
 import aiohttp
@@ -11,7 +11,9 @@ import google.generativeai as genai
 from google.api_core import exceptions
 from google.rpc.error_details_pb2 import RetryInfo
 
-from .api_key_manager import ApiKeyManager
+if TYPE_CHECKING:
+    from .api_key_manager import ApiKeyManager
+    
 
 log = logging.getLogger(__name__)
 
@@ -27,7 +29,7 @@ class RateLimitError(GenerationError):
 
 class EnglishHelper:
 
-    def __init__(self, api_key_manager: ApiKeyManager, *, model_name: str,
+    def __init__(self, api_key_manager: "ApiKeyManager", *, model_name: str,
                  max_retry_attempts: int = 5, retry_delay: int = 1):
         self.api_key_manager = api_key_manager
         self.model_name = model_name
@@ -278,3 +280,38 @@ class GeminiEnglishHelper(EnglishHelper):
             raise APIError(f"Gemini API call error: {e}")
         
         return self.trim_empty_lines(response.text)
+    
+
+class MistralEnglishHelper(EnglishHelper):
+    API_URL = "https://api.mistral.ai/v1/chat/completions"
+
+    async def request_api(self, prompt) -> str:
+        api_key = await self.api_key_manager.get_available_api_key()
+        payload = {
+            "model": self.model_name or "mistral-small-latest",
+            "messages": [{"role": "user", "content": prompt}],
+        }
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
+
+        async with aiohttp.ClientSession() as session:
+            async with session.post(self.API_URL, headers=headers, json=payload) as resp:
+                if resp.status == 429:
+                    raise RateLimitError("Rate limit exceeded")
+                elif resp.status == 401:
+                    log.error("Unauthorized: Invalid API key")
+                    raise APIError("Unauthorized: Invalid API key")
+                elif resp.status != 200:
+                    error_text = await resp.text()
+                    log.error(f"Mistral API error: status={resp.status}, body={error_text}")
+                    raise GenerationError(f"Mistral API error: {resp.status} - {error_text}")
+
+                data = await resp.json()
+                try:
+                    return data["choices"][0]["message"]["content"]
+                except (KeyError, IndexError):
+                    log.debug(f"Unexpected response: {json.dumps(data, ensure_ascii=False)}")
+                    raise GenerationError("Unexpected response format")
