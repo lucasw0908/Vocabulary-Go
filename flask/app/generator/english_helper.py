@@ -3,7 +3,7 @@ import logging
 import json
 from difflib import SequenceMatcher
 from functools import wraps
-from typing import Callable, Optional, overload
+from typing import Callable, Optional, overload, TYPE_CHECKING
 from opencc import OpenCC
 
 import aiohttp
@@ -11,7 +11,9 @@ import google.generativeai as genai
 from google.api_core import exceptions
 from google.rpc.error_details_pb2 import RetryInfo
 
-from .api_key_manager import ApiKeyManager
+if TYPE_CHECKING:
+    from .api_key_manager import ApiKeyManager
+    
 
 log = logging.getLogger(__name__)
 
@@ -27,7 +29,7 @@ class RateLimitError(GenerationError):
 
 class EnglishHelper:
 
-    def __init__(self, api_key_manager: ApiKeyManager, *, model_name: str,
+    def __init__(self, api_key_manager: "ApiKeyManager", *, model_name: str,
                  max_retry_attempts: int = 5, retry_delay: int = 1):
         self.api_key_manager = api_key_manager
         self.model_name = model_name
@@ -278,7 +280,6 @@ class GeminiEnglishHelper(EnglishHelper):
             raise APIError(f"Gemini API call error: {e}")
         
         return self.trim_empty_lines(response.text)
-    
     
 
 class MistralEnglishHelper(EnglishHelper):

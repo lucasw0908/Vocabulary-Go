@@ -3,16 +3,21 @@ import logging
 import time
 import threading
 from collections import deque
-from typing import Callable
+from typing import Callable, Optional
 
+from .api_config import API_INFO
 
 log = logging.getLogger(__name__)
 
 
 class ApiKeyManager:
     
-    def __init__(self, api_keys: list[str], prefix: str=""):
-        self.api_keys = deque([key for key in api_keys if key.startswith(prefix)])
+    def __init__(self, api_keys: list[str], prefix: Optional[str]):
+        if prefix is None:
+            prefix_list = [info["prefix"] for info in API_INFO.values() if info["prefix"] is not None]
+            self.api_keys = deque([key for key in api_keys if all(not key.startswith(p) for p in prefix_list)])
+        else:
+            self.api_keys = deque([key for key in api_keys if key.startswith(prefix)])
         self.available = {key: True for key in api_keys}
             
 

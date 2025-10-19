@@ -10,28 +10,24 @@ from ..models import db
 from ..models.words import Words
 from ..models.sentences import Sentences
 from ..models.libraries import Libraries
-from .english_helper import GroqEnglishHelper, GeminiEnglishHelper, MistralEnglishHelper
+from .english_helper import EnglishHelper
 from .api_key_manager import ApiKeyManager
+from .api_config import API_INFO
 
 
 log = logging.getLogger(__name__)
-Config = {
-    "model_name": API_MODEL_NAME,
-    "max_retry_attempts": API_RETRY_ATTEMPTS,
-    "retry_delay": API_RETRY_DELAY
-}
 
-if API_MODEL_TYPE.lower() == "groq":
-    ai_helper = GroqEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "gsk_"), **Config)
-    
-elif API_MODEL_TYPE.lower() == "gemini":
-    ai_helper = GeminiEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "AIzaSy"), **Config)
-    
-elif API_MODEL_TYPE.lower() == "mistral":
-    ai_helper = MistralEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS), **Config)
-    
-else:
+if API_MODEL_TYPE not in API_INFO:
     raise ValueError(f"Unsupported API model type: {API_MODEL_TYPE}")
+
+ai_helper_class = API_INFO[API_MODEL_TYPE]["helper_class"]
+api_key_manager = ApiKeyManager(APIKEYS, API_INFO[API_MODEL_TYPE]["prefix"])
+ai_helper: EnglishHelper = ai_helper_class(
+    api_key_manager,
+    model_name=API_MODEL_NAME,
+    max_retry_attempts=API_RETRY_ATTEMPTS,
+    retry_delay=API_RETRY_DELAY,
+)
 
 
 async def generate() -> None:
