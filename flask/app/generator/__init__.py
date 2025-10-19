@@ -10,7 +10,7 @@ from ..models import db
 from ..models.words import Words
 from ..models.sentences import Sentences
 from ..models.libraries import Libraries
-from .english_helper import GroqEnglishHelper, GeminiEnglishHelper
+from .english_helper import GroqEnglishHelper, GeminiEnglishHelper, MistralEnglishHelper
 from .api_key_manager import ApiKeyManager
 
 
@@ -26,6 +26,9 @@ if API_MODEL_TYPE.lower() == "groq":
     
 elif API_MODEL_TYPE.lower() == "gemini":
     ai_helper = GeminiEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS, "AIzaSy"), **Config)
+    
+elif API_MODEL_TYPE.lower() == "mistral":
+    ai_helper = MistralEnglishHelper(api_key_manager=ApiKeyManager(APIKEYS), **Config)
     
 else:
     raise ValueError(f"Unsupported API model type: {API_MODEL_TYPE}")
