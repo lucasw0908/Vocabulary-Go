@@ -44,7 +44,7 @@ def get_current_user_info():
         "avatar_url": current_user.avatar_url,
         "locale": current_user.locale,
         "link_discord": current_user.discord_id is not None,
-        "link_google": current_user.google_token is not None,
+        "link_google": current_user.google_id is not None,
     })
     
     
