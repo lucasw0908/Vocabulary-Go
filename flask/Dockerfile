@@ -26,9 +26,6 @@ RUN uv pip install --no-cache-dir uwsgi
 RUN npm install
 RUN npm run build
 
-# Migrate database
-RUN uv run flask db upgrade
-
 # Compile translations
 RUN uv run pybabel compile -d app/translations
 
