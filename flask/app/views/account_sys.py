@@ -253,6 +253,7 @@ def callback():
         return abort(400, description=_("Invalid OAuth callback parameters."))
 
     db.session.add(user)
+    
     db.session.commit()
     login_user(user, remember=True)
     log.debug(f"User {user.email} logged in via OAuth successfully")
@@ -276,7 +277,6 @@ def discord_unlink():
         return abort(400, description=_("No Discord account linked."))
     
     current_user.discord_id = None
-    current_user.discord_token = None
     db.session.commit()
     log.debug(f"User {current_user.email} unlinked Discord account successfully")
     return redirect("/settings")
@@ -295,7 +295,6 @@ def google_unlink():
         return abort(400, description=_("No Google account linked."))
     
     current_user.google_id = None
-    current_user.google_token = None
     db.session.commit()
     log.debug(f"User {current_user.email} unlinked Google account successfully")
     return redirect("/settings")
