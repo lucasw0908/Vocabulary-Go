@@ -51,19 +51,17 @@ class Users(db.Model, UserMixin):
     email_verified: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     # Discord fields
-    discord_token: Mapped[Optional[str]] = mapped_column(String(256), unique=True, nullable=True)
     discord_id: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
 
     # Google fields
-    google_token: Mapped[Optional[str]] = mapped_column(String(256), unique=True, nullable=True)
     google_id: Mapped[Optional[str]] = mapped_column(String(64), unique=True, nullable=True)
     
     
     def __init__(self, username: str, password: Optional[str], email: str, is_admin: bool=False,
                  unlimited_access: bool=False, locale: Optional[str]=None, avatar_url: Optional[str]=None,
-                 discord_token: Optional[str]=None, discord_id: Optional[str]=None,
-                 google_token: Optional[str]=None, google_id: Optional[str]=None):
-        
+                 discord_id: Optional[str]=None, google_id: Optional[str]=None
+                 ):
+
         self.username = username
         self.password = hash_password(password) if password else None
         self.email = email
@@ -74,11 +72,9 @@ class Users(db.Model, UserMixin):
         self.avatar_url = avatar_url or self.avatar_url
         
         # Discord fields
-        self.discord_token = discord_token
         self.discord_id = discord_id
         
         # Google fields
-        self.google_token = google_token
         self.google_id = google_id
         
     

@@ -37,7 +37,7 @@ class FlaskOAuth:
     class DiscordOAuthError(OAuthError): ...
     
     @staticmethod
-    def discord() -> tuple[OwnUser, str]:
+    def discord() -> OwnUser:
         """
         Handle Discord OAuth2 callback and return the current user and access token.
         """
@@ -57,11 +57,11 @@ class FlaskOAuth:
         bearer_client = APIClient(access_token, bearer=True)
         current_user = bearer_client.users.get_current_user()
         
-        return current_user, access_token
+        return current_user
         
     
     @staticmethod
-    def google() -> tuple[dict, str]:
+    def google() -> dict:
         """
         Handle Google OAuth2 callback and return the ID info and access token.  
         """
@@ -96,4 +96,4 @@ class FlaskOAuth:
             log.warning(f"Wrong issuer: {idinfo['iss']}")
             raise FlaskOAuth.GoogleOAuthError("Wrong issuer")
         
-        return idinfo, credentials.token
+        return idinfo

@@ -203,61 +203,54 @@ def google_oauth():
 
 @account_sys.route("/oauth/callback", methods=["GET"])
 def callback():
-    try:
-        if ("state" in request.args) and (request.args["state"] == session.get("google_oauth_state")):
-            id_info, google_token = FlaskOAuth.google()
-            session.pop("google_oauth_state", None)
-
-        elif "code" in request.args:
-            discord_current_user, discord_token = FlaskOAuth.discord()
-        
-        else:
-            log.warning("No valid OAuth parameters found in callback")
-            return abort(400, description=_("Invalid OAuth callback parameters."))
-        
-    except FlaskOAuth.OAuthError as e:
-        if isinstance(e, FlaskOAuth.GoogleOAuthError):
-            log.warning(f"Google OAuth error: {e}")
-            
-        elif isinstance(e, FlaskOAuth.DiscordOAuthError):
-            log.warning(f"Discord OAuth error: {e}")
-            
-        return abort(400, description=_("OAuth authentication failed."))
-            
     user: Optional[Users] = current_user if current_user.is_authenticated else Users(
         username=None, password=None, email=None, is_admin=False
     )
+    
+    # Handle Google OAuth callback
+    if ("state" in request.args) and (request.args["state"] == session.get("google_oauth_state")):
+        try:
+            id_info = FlaskOAuth.google()
+            user = Users.query.filter(
+                (Users.google_id == id_info["sub"]) |
+                (Users.email == id_info.get("email", None))
+            ).first() or user
+            user.google_id = id_info["sub"]
+            user.email_verified = id_info.get("email_verified", False) or user.email_verified
+            user.username = user.username or id_info.get("name", user.username)
+            user.email = user.email or id_info.get("email", user.email)
+            user.avatar_url = user.avatar_url or id_info.get("picture", user.avatar_url)
+            user.locale = user.locale or id_info.get("locale", user.locale)
+            user.is_admin = user.is_admin or (user.email in ADMINS)
             
-    if "id_info" in locals() and "google_token" in locals():
-        # Try to find existing user by Google ID or email
-        user = Users.query.filter(
-            (Users.google_id == id_info["sub"]) |
-            (Users.email == id_info.get("email", None))
-        ).first() or user
-        user.google_id = id_info["sub"]
-        user.google_token = google_token
-        user.email_verified = id_info.get("email_verified", False) or user.email_verified
-        user.username = user.username or id_info.get("name", user.username)
-        user.email = user.email or id_info.get("email", user.email)
-        user.avatar_url = user.avatar_url or id_info.get("picture", user.avatar_url)
-        user.locale = user.locale or id_info.get("locale", user.locale)
-        user.is_admin = user.is_admin or (user.email in ADMINS)
+        except FlaskOAuth.GoogleOAuthError as e:
+            log.warning(f"Google OAuth error: {e}")
+            return abort(400, description=_("Google OAuth failed."))
+            
+        session.pop("google_oauth_state", None)
 
-    elif "discord_current_user" in locals() and "discord_token" in locals():
-        # Try to find existing user by Discord ID or email
-        user = Users.query.filter(
-            (Users.discord_id == str(discord_current_user.id)) |
-            (Users.email == discord_current_user.email)
-        ).first() or user
-        user.discord_id = str(discord_current_user.id)
-        user.discord_token = discord_token
-        user.username = user.username or discord_current_user.username
-        # Alternatively, you could use the discriminator to ensure uniqueness (Gmail is ascii only)
-        # user.username = user.username or f"{discord_current_user.username}#{discord_current_user.discriminator}"
-        user.email = user.email or discord_current_user.email
-        user.avatar_url = user.avatar_url or discord_current_user.avatar_url
-        user.locale = user.locale or discord_current_user.locale
-        user.is_admin = user.is_admin or (discord_current_user.username in ADMINS)
+    # Handle Discord OAuth callback
+    elif "code" in request.args:
+        try:
+            discord_current_user = FlaskOAuth.discord()
+            user = Users.query.filter(
+                (Users.discord_id == str(discord_current_user.id)) |
+                (Users.email == discord_current_user.email)
+            ).first() or user
+            user.discord_id = str(discord_current_user.id)
+            user.username = user.username or discord_current_user.username
+            user.email = user.email or discord_current_user.email
+            user.avatar_url = user.avatar_url or discord_current_user.avatar_url
+            user.locale = user.locale or discord_current_user.locale
+            user.is_admin = user.is_admin or (discord_current_user.username in ADMINS)
+            
+        except FlaskOAuth.DiscordOAuthError as e:
+            log.warning(f"Discord OAuth error: {e}")
+            return abort(400, description=_("Discord OAuth failed."))
+
+    else:
+        log.warning("No valid OAuth parameters found in callback")
+        return abort(400, description=_("Invalid OAuth callback parameters."))
 
     db.session.add(user)
     db.session.commit()
